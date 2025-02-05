@@ -358,7 +358,89 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (CheckIfTextBoxesIsNull())
+                {
+                    if (CheckIfPhoneNumberTrueOrNot())
+                    {
+                        int PoweStationID = 1;
+                        int EmployeePermission = 0;
+                        int EmployeeType = 1;
+                        int EmployeeState = 0;
 
+                        if (cmb_EmployeeType.Text == "موظف")
+                        {
+                            EmployeeType = 1;
+                        }
+                        else if (cmb_EmployeeType.Text == "محصل")
+                        {
+                            EmployeeType = 2;
+                        }
+
+
+                        if (cmb_EmployeeState.Text == "فعال")
+                        {
+                            EmployeeState = 1;
+                        }
+                        else if (cmb_EmployeeType.Text == "غير فعال")
+                        {
+                            EmployeeState = 0;
+                        }
+
+                        employee.UpdateEmployee(Convert.ToInt32(txt_EmployeeID.Text),txt_EmployeeName.Text, txt_EmployeePhone.Text, Convert.ToDouble(txt_EmployeeSalary.Text), txt_EmployeePassword.Text, EmployeeType, EmployeePermission, EmployeeState, PoweStationID);
+                        MessageBox.Show("تم تعديل الموظف بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                        EmptyTextBoxes();
+
+                        EnableAndDisEnableTextBoxesAndButtons(false);
+
+                        GetAllEmployees();
+
+                        txt_EmployeePhone.Text = string.Empty;
+
+
+                        btn_Edit.Enabled = false;
+                        btn_Delete.Enabled = false;
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("تأكد من: " + ex, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult result = MessageBox.Show("هل أنت متأكد من عملية الحذف..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    employee.DeleteEmployee(Convert.ToInt32(txt_EmployeeID.Text));
+                    MessageBox.Show("تمت علمية الحذف بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    EmptyTextBoxes();
+                    EnableAndDisEnableTextBoxesAndButtons(false);
+                    GetAllEmployees();
+
+                    txt_EmployeePhone.Text = string.Empty;
+                    btn_Delete.Enabled = false;
+                    btn_Edit.Enabled = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("تأكد من: " + ex, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
 }

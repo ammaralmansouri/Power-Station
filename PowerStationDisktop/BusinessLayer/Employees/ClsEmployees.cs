@@ -135,5 +135,60 @@ namespace PowerStationDisktop.BusinessLayer.Employees
 
             return DataTable1;
         }
+
+
+        public void UpdateEmployee(int EmployeeID , string EmployeeName, string EmployeePhoneNumber, double EmployeeSalary, string EmployeePassword, int EmployeeType, int EmployeePermission, int EmployeeState, int PowerStationID)
+        {
+
+            DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
+            con.OpenConnection();
+
+            SqlParameter[] para = new SqlParameter[9];
+
+            para[0] = new SqlParameter("@EmployeeID", SqlDbType.NVarChar, 100);
+            para[0].Value = EmployeeID;
+
+            para[1] = new SqlParameter("@EmployeeName", SqlDbType.NVarChar, 100);
+            para[1].Value = EmployeeName;
+
+            para[2] = new SqlParameter("@EmployeePhoneNumber", SqlDbType.NVarChar, 20);
+            para[2].Value = EmployeePhoneNumber;
+
+            para[3] = new SqlParameter("@EmployeeSalary", SqlDbType.Money);
+            para[3].Value = EmployeeSalary;
+
+            para[4] = new SqlParameter("@EmployeePassword", SqlDbType.NVarChar, 20);
+            para[4].Value = EmployeePassword;
+
+            para[5] = new SqlParameter("@EmployeeType", SqlDbType.Int);
+            para[5].Value = EmployeeType;
+
+            para[6] = new SqlParameter("@EmployeePermission", SqlDbType.Int);
+            para[6].Value = EmployeePermission;
+
+            para[7] = new SqlParameter("@EmployeeState", SqlDbType.Int);
+            para[7].Value = EmployeeState;
+
+            para[8] = new SqlParameter("@PowerStationID", SqlDbType.Int);
+            para[8].Value = PowerStationID;
+
+            con.ExecuteCommands("Update_Employee", para);
+            con.CloseConnection();
+
+        }
+        public void DeleteEmployee(int EmployeeID)
+        {
+            DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
+            con.OpenConnection();
+
+            SqlParameter[] para = new SqlParameter[1];
+
+            para[0] = new SqlParameter("@EmployeeID", SqlDbType.Int);
+            para[0].Value = EmployeeID;
+
+
+            con.ExecuteCommands("Delete_Employee", para);
+            con.CloseConnection();
+        }
     }
 }

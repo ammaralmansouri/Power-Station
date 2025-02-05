@@ -43,6 +43,7 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.btn_New = new System.Windows.Forms.Button();
+            this.txt_SupplierID = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Suppliers)).BeginInit();
@@ -106,6 +107,7 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txt_SupplierID);
             this.groupBox1.Controls.Add(this.rich_SupplierDiscription);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
@@ -155,6 +157,7 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
             this.dgv_Suppliers.RowTemplate.Height = 24;
             this.dgv_Suppliers.Size = new System.Drawing.Size(687, 321);
             this.dgv_Suppliers.TabIndex = 31;
+            this.dgv_Suppliers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Suppliers_CellDoubleClick);
             // 
             // groupBox4
             // 
@@ -178,6 +181,7 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
             this.btn_Delete.TabIndex = 9;
             this.btn_Delete.Text = "حذف";
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Edit
             // 
@@ -189,6 +193,7 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
             this.btn_Edit.TabIndex = 8;
             this.btn_Edit.Text = "تعديل";
             this.btn_Edit.UseVisualStyleBackColor = true;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_Save
             // 
@@ -212,6 +217,19 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
             this.btn_New.Text = "جديد";
             this.btn_New.UseVisualStyleBackColor = true;
             this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
+            // 
+            // txt_SupplierID
+            // 
+            this.txt_SupplierID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_SupplierID.Enabled = false;
+            this.txt_SupplierID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SupplierID.Location = new System.Drawing.Point(6, 10);
+            this.txt_SupplierID.MaxLength = 9;
+            this.txt_SupplierID.Name = "txt_SupplierID";
+            this.txt_SupplierID.Size = new System.Drawing.Size(34, 30);
+            this.txt_SupplierID.TabIndex = 24;
+            this.txt_SupplierID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_SupplierID.Visible = false;
             // 
             // frm_Suppliers
             // 
@@ -250,5 +268,6 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
         private System.Windows.Forms.Button btn_Edit;
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Button btn_New;
+        private System.Windows.Forms.TextBox txt_SupplierID;
     }
 }

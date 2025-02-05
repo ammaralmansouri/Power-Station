@@ -33,15 +33,13 @@ namespace PowerStationDisktop
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-<<<<<<< HEAD
             this.button5 = new System.Windows.Forms.Button();
-=======
->>>>>>> a9f0c3d75cecd7e2f3d60ffc8abae6136086c924
+            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(614, 67);
+            this.button1.Location = new System.Drawing.Point(611, 33);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 45);
             this.button1.TabIndex = 0;
@@ -51,7 +49,7 @@ namespace PowerStationDisktop
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(614, 136);
+            this.button2.Location = new System.Drawing.Point(611, 102);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 45);
             this.button2.TabIndex = 1;
@@ -61,7 +59,7 @@ namespace PowerStationDisktop
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(614, 200);
+            this.button3.Location = new System.Drawing.Point(611, 166);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(110, 45);
             this.button3.TabIndex = 2;
@@ -71,7 +69,7 @@ namespace PowerStationDisktop
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(614, 272);
+            this.button4.Location = new System.Drawing.Point(611, 238);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(110, 45);
             this.button4.TabIndex = 3;
@@ -79,10 +77,9 @@ namespace PowerStationDisktop
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-<<<<<<< HEAD
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(614, 342);
+            this.button5.Location = new System.Drawing.Point(611, 308);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(110, 45);
             this.button5.TabIndex = 4;
@@ -90,17 +87,23 @@ namespace PowerStationDisktop
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-=======
->>>>>>> a9f0c3d75cecd7e2f3d60ffc8abae6136086c924
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(611, 377);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(110, 45);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "الأسعار";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-<<<<<<< HEAD
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-=======
->>>>>>> a9f0c3d75cecd7e2f3d60ffc8abae6136086c924
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -117,10 +120,8 @@ namespace PowerStationDisktop
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-<<<<<<< HEAD
         private System.Windows.Forms.Button button5;
-=======
->>>>>>> a9f0c3d75cecd7e2f3d60ffc8abae6136086c924
+        private System.Windows.Forms.Button button6;
     }
 }
 

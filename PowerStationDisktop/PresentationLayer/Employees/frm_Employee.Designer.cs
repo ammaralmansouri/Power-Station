@@ -55,20 +55,13 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             this.label5 = new System.Windows.Forms.Label();
             this.txt_EmployeeName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-<<<<<<< HEAD
             this.txt_EmployeePhone = new System.Windows.Forms.TextBox();
-=======
->>>>>>> a9f0c3d75cecd7e2f3d60ffc8abae6136086c924
             this.label7 = new System.Windows.Forms.Label();
             this.rad_All = new System.Windows.Forms.RadioButton();
             this.rad_InsideEmployee = new System.Windows.Forms.RadioButton();
             this.rad_outEmployee = new System.Windows.Forms.RadioButton();
             this.rad_Active = new System.Windows.Forms.RadioButton();
             this.rad_NoneActive = new System.Windows.Forms.RadioButton();
-<<<<<<< HEAD
-=======
-            this.txt_EmployeePhone = new System.Windows.Forms.TextBox();
->>>>>>> a9f0c3d75cecd7e2f3d60ffc8abae6136086c924
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Employees)).BeginInit();
@@ -190,6 +183,7 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             this.btn_Delete.TabIndex = 9;
             this.btn_Delete.Text = "حذف";
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Edit
             // 
@@ -235,11 +229,7 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             this.groupBox3.Size = new System.Drawing.Size(817, 334);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
-<<<<<<< HEAD
             this.groupBox3.Text = "الموظفين";
-=======
-            this.groupBox3.Text = "العملاء";
->>>>>>> a9f0c3d75cecd7e2f3d60ffc8abae6136086c924
             // 
             // dgv_Employees
             // 
@@ -354,7 +344,6 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات الموظف";
             // 
-<<<<<<< HEAD
             // txt_EmployeePhone
             // 
             this.txt_EmployeePhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -368,8 +357,6 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             this.txt_EmployeePhone.TextChanged += new System.EventHandler(this.txt_EmployeePhone_TextChanged);
             this.txt_EmployeePhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_EmployeePhone_KeyPress);
             // 
-=======
->>>>>>> a9f0c3d75cecd7e2f3d60ffc8abae6136086c924
             // label7
             // 
             this.label7.AutoSize = true;
@@ -442,22 +429,6 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             this.rad_NoneActive.UseVisualStyleBackColor = true;
             this.rad_NoneActive.CheckedChanged += new System.EventHandler(this.rad_NoneActive_CheckedChanged);
             // 
-<<<<<<< HEAD
-=======
-            // txt_EmployeePhone
-            // 
-            this.txt_EmployeePhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_EmployeePhone.Enabled = false;
-            this.txt_EmployeePhone.Location = new System.Drawing.Point(291, 103);
-            this.txt_EmployeePhone.MaxLength = 9;
-            this.txt_EmployeePhone.Name = "txt_EmployeePhone";
-            this.txt_EmployeePhone.Size = new System.Drawing.Size(227, 26);
-            this.txt_EmployeePhone.TabIndex = 16;
-            this.txt_EmployeePhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_EmployeePhone.TextChanged += new System.EventHandler(this.txt_EmployeePhone_TextChanged);
-            this.txt_EmployeePhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_EmployeePhone_KeyPress);
-            // 
->>>>>>> a9f0c3d75cecd7e2f3d60ffc8abae6136086c924
             // frm_Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);

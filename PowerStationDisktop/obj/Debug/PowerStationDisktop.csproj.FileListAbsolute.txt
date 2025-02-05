@@ -12,7 +12,5 @@ E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\Po
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.ElectronicMeters.frm_ElectronicMeters.resources
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Emloyees.frm_Employee.resources
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Areas.frm_Areas.resources
-<<<<<<< HEAD
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Suppliers.frm_Suppliers.resources
-=======
->>>>>>> a9f0c3d75cecd7e2f3d60ffc8abae6136086c924
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Prices.frm_Prices.resources

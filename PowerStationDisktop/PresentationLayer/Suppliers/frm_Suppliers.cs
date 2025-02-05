@@ -174,5 +174,92 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
                 e.Handled = true;
             }
         }
+
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CheckIfTextBoxesIsNull())
+                {
+                    if (CheckIfPhoneNumberTrueOrNot())
+                    {
+                        int PoweStationID = 1;
+
+                        supplier.UpdateSupplier(Convert.ToInt32(txt_SupplierID.Text), txt_SupplierName.Text, txt_SupplierPhone.Text, rich_SupplierDiscription.Text,  PoweStationID);
+                        MessageBox.Show("تم تعديل العميل بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                        EmptyTextBoxes();
+
+                        EnableAndDisEnableTextBoxesAndButtons(false);
+
+                        GetAllSuppliers();
+
+                        rich_SupplierDiscription.Text = string.Empty;
+
+
+                        btn_Edit.Enabled = false;
+                        btn_Delete.Enabled = false;
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("تأكد من: " + ex, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void dgv_Suppliers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EnableAndDisEnableTextBoxesAndButtons(true);
+            btn_Save.Enabled = false;
+            btn_Edit.Enabled = true;
+            btn_Delete.Enabled = true;
+
+            DataTable DataTable1 = new DataTable();
+
+            DataTable1 = supplier.GetSupplierInformation(Convert.ToInt32(dgv_Suppliers.CurrentRow.Cells[0].Value.ToString()));
+
+            txt_SupplierID.Text = DataTable1.Rows[0][0].ToString();
+            txt_SupplierName.Text = DataTable1.Rows[0][1].ToString();
+            txt_SupplierPhone.Text = DataTable1.Rows[0][2].ToString();
+            rich_SupplierDiscription.Text = DataTable1.Rows[0][3].ToString();
+
+           
+
+
+            btn_New.Enabled = true;
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult result = MessageBox.Show("هل أنت متأكد من عملية الحذف..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    supplier.DeleteSupplier(Convert.ToInt32(txt_SupplierID.Text));
+                    MessageBox.Show("تمت علمية الحذف بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    EmptyTextBoxes();
+                    EnableAndDisEnableTextBoxesAndButtons(false);
+                    GetAllSuppliers();
+
+                    rich_SupplierDiscription.Text = string.Empty;
+                    btn_Delete.Enabled = false;
+                    btn_Edit.Enabled = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("تأكد من: " + ex, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
     }
 }

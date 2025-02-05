@@ -40,14 +40,17 @@ namespace PowerStationDisktop
             PresentationLayer.Areas.frm_Areas area = new PresentationLayer.Areas.frm_Areas();
             area.Show();
         }
-<<<<<<< HEAD
 
         private void button5_Click(object sender, EventArgs e)
         {
             PresentationLayer.Suppliers.frm_Suppliers supplier = new PresentationLayer.Suppliers.frm_Suppliers();
             supplier.Show();
         }
-=======
->>>>>>> a9f0c3d75cecd7e2f3d60ffc8abae6136086c924
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            PresentationLayer.Prices.frm_Prices price = new PresentationLayer.Prices.frm_Prices();
+            price.Show();
+        }
     }
 }

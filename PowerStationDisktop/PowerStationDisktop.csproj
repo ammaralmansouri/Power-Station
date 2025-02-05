@@ -50,10 +50,8 @@
     <Compile Include="BusinessLayer\Customers\ClsCustomers.cs" />
     <Compile Include="BusinessLayer\ElectronicMeters\ClsElectronicMeter.cs" />
     <Compile Include="BusinessLayer\Employees\ClsEmployees.cs" />
-<<<<<<< HEAD
+    <Compile Include="BusinessLayer\Prices\ClsPrices.cs" />
     <Compile Include="BusinessLayer\Suppliers\ClsSuppliers.cs" />
-=======
->>>>>>> a9f0c3d75cecd7e2f3d60ffc8abae6136086c924
     <Compile Include="DataAccessLayer\ClsConnection.cs" />
     <Compile Include="frm_Main.cs">
       <SubType>Form</SubType>
@@ -85,15 +83,18 @@
     <Compile Include="PresentationLayer\frm_Customers.Designer.cs">
       <DependentUpon>frm_Customers.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
+    <Compile Include="PresentationLayer\Prices\frm_Prices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Prices\frm_Prices.Designer.cs">
+      <DependentUpon>frm_Prices.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\Suppliers\frm_Suppliers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PresentationLayer\Suppliers\frm_Suppliers.Designer.cs">
       <DependentUpon>frm_Suppliers.cs</DependentUpon>
     </Compile>
-=======
->>>>>>> a9f0c3d75cecd7e2f3d60ffc8abae6136086c924
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_Main.resx">
@@ -111,12 +112,12 @@
     <EmbeddedResource Include="PresentationLayer\frm_Customers.resx">
       <DependentUpon>frm_Customers.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
+    <EmbeddedResource Include="PresentationLayer\Prices\frm_Prices.resx">
+      <DependentUpon>frm_Prices.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Suppliers\frm_Suppliers.resx">
       <DependentUpon>frm_Suppliers.cs</DependentUpon>
     </EmbeddedResource>
-=======
->>>>>>> a9f0c3d75cecd7e2f3d60ffc8abae6136086c924
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
