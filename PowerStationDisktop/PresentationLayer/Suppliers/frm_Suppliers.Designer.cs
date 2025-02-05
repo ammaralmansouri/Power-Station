@@ -1,0 +1,254 @@
+﻿
+namespace PowerStationDisktop.PresentationLayer.Suppliers
+{
+    partial class frm_Suppliers
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.txt_SupplierPhone = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_SupplierName = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rich_SupplierDiscription = new System.Windows.Forms.RichTextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgv_Suppliers = new System.Windows.Forms.DataGridView();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btn_Delete = new System.Windows.Forms.Button();
+            this.btn_Edit = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.btn_New = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Suppliers)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // txt_SupplierPhone
+            // 
+            this.txt_SupplierPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_SupplierPhone.Enabled = false;
+            this.txt_SupplierPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SupplierPhone.Location = new System.Drawing.Point(40, 40);
+            this.txt_SupplierPhone.MaxLength = 9;
+            this.txt_SupplierPhone.Name = "txt_SupplierPhone";
+            this.txt_SupplierPhone.Size = new System.Drawing.Size(227, 30);
+            this.txt_SupplierPhone.TabIndex = 22;
+            this.txt_SupplierPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_SupplierPhone.TextChanged += new System.EventHandler(this.txt_SupplierPhone_TextChanged);
+            this.txt_SupplierPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SupplierPhone_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(273, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 25);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "رقم الهاتف";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(613, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 25);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "الإسم";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(613, 91);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 25);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "الوصف";
+            // 
+            // txt_SupplierName
+            // 
+            this.txt_SupplierName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_SupplierName.Enabled = false;
+            this.txt_SupplierName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SupplierName.Location = new System.Drawing.Point(380, 38);
+            this.txt_SupplierName.Name = "txt_SupplierName";
+            this.txt_SupplierName.Size = new System.Drawing.Size(227, 30);
+            this.txt_SupplierName.TabIndex = 17;
+            this.txt_SupplierName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rich_SupplierDiscription);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txt_SupplierPhone);
+            this.groupBox1.Controls.Add(this.txt_SupplierName);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(693, 188);
+            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "بيانات المورد";
+            // 
+            // rich_SupplierDiscription
+            // 
+            this.rich_SupplierDiscription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rich_SupplierDiscription.Enabled = false;
+            this.rich_SupplierDiscription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rich_SupplierDiscription.Location = new System.Drawing.Point(40, 89);
+            this.rich_SupplierDiscription.Name = "rich_SupplierDiscription";
+            this.rich_SupplierDiscription.Size = new System.Drawing.Size(548, 71);
+            this.rich_SupplierDiscription.TabIndex = 23;
+            this.rich_SupplierDiscription.Text = "";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgv_Suppliers);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(12, 206);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(693, 346);
+            this.groupBox2.TabIndex = 24;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "الموردين";
+            // 
+            // dgv_Suppliers
+            // 
+            this.dgv_Suppliers.AllowUserToAddRows = false;
+            this.dgv_Suppliers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Suppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Suppliers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_Suppliers.Location = new System.Drawing.Point(3, 22);
+            this.dgv_Suppliers.Name = "dgv_Suppliers";
+            this.dgv_Suppliers.RowHeadersVisible = false;
+            this.dgv_Suppliers.RowHeadersWidth = 51;
+            this.dgv_Suppliers.RowTemplate.Height = 24;
+            this.dgv_Suppliers.Size = new System.Drawing.Size(687, 321);
+            this.dgv_Suppliers.TabIndex = 31;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btn_Delete);
+            this.groupBox4.Controls.Add(this.btn_Edit);
+            this.groupBox4.Controls.Add(this.btn_Save);
+            this.groupBox4.Controls.Add(this.btn_New);
+            this.groupBox4.Location = new System.Drawing.Point(12, 558);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(693, 86);
+            this.groupBox4.TabIndex = 25;
+            this.groupBox4.TabStop = false;
+            // 
+            // btn_Delete
+            // 
+            this.btn_Delete.Enabled = false;
+            this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Delete.Location = new System.Drawing.Point(40, 23);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(91, 41);
+            this.btn_Delete.TabIndex = 9;
+            this.btn_Delete.Text = "حذف";
+            this.btn_Delete.UseVisualStyleBackColor = true;
+            // 
+            // btn_Edit
+            // 
+            this.btn_Edit.Enabled = false;
+            this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Edit.Location = new System.Drawing.Point(208, 24);
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Size = new System.Drawing.Size(91, 41);
+            this.btn_Edit.TabIndex = 8;
+            this.btn_Edit.Text = "تعديل";
+            this.btn_Edit.UseVisualStyleBackColor = true;
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.Enabled = false;
+            this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Save.Location = new System.Drawing.Point(371, 24);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(91, 41);
+            this.btn_Save.TabIndex = 7;
+            this.btn_Save.Text = "حفظ";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // btn_New
+            // 
+            this.btn_New.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_New.Location = new System.Drawing.Point(562, 23);
+            this.btn_New.Name = "btn_New";
+            this.btn_New.Size = new System.Drawing.Size(91, 42);
+            this.btn_New.TabIndex = 10;
+            this.btn_New.Text = "جديد";
+            this.btn_New.UseVisualStyleBackColor = true;
+            this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
+            // 
+            // frm_Suppliers
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(717, 646);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "frm_Suppliers";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
+            this.Text = "الموردين";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Suppliers)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TextBox txt_SupplierPhone;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_SupplierName;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RichTextBox rich_SupplierDiscription;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dgv_Suppliers;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.Button btn_Edit;
+        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.Button btn_New;
+    }
+}

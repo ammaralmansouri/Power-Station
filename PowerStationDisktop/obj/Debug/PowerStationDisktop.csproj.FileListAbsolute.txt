@@ -1,0 +1,18 @@
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\bin\Debug\PowerStationDisktop.exe.config
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\bin\Debug\PowerStationDisktop.exe
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\bin\Debug\PowerStationDisktop.pdb
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.csproj.AssemblyReference.cache
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.frm_Customers.resources
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.Properties.Resources.resources
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.csproj.GenerateResource.cache
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.csproj.CoreCompileInputs.cache
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.exe
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.pdb
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.frm_Main.resources
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.ElectronicMeters.frm_ElectronicMeters.resources
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Emloyees.frm_Employee.resources
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Areas.frm_Areas.resources
+<<<<<<< HEAD
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Suppliers.frm_Suppliers.resources
+=======
+>>>>>>> a9f0c3d75cecd7e2f3d60ffc8abae6136086c924
