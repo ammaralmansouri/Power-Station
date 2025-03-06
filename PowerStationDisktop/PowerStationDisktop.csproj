@@ -47,10 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\Areas\ClsAreas.cs" />
+    <Compile Include="BusinessLayer\CustomerMovement\ClsCustomerMovement.cs" />
     <Compile Include="BusinessLayer\Customers\ClsCustomers.cs" />
     <Compile Include="BusinessLayer\ElectronicMeters\ClsElectronicMeter.cs" />
     <Compile Include="BusinessLayer\Employees\ClsEmployees.cs" />
+    <Compile Include="BusinessLayer\PaymentVouchers\ClsPaymentVouchers.cs" />
     <Compile Include="BusinessLayer\Prices\ClsPrices.cs" />
+    <Compile Include="BusinessLayer\Readings\ClsReadings.cs" />
     <Compile Include="BusinessLayer\Suppliers\ClsSuppliers.cs" />
     <Compile Include="DataAccessLayer\ClsConnection.cs" />
     <Compile Include="frm_Main.cs">
@@ -64,6 +67,12 @@
     </Compile>
     <Compile Include="PresentationLayer\Areas\frm_Areas.Designer.cs">
       <DependentUpon>frm_Areas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\CustomerMovements\frm_CustomerMovements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\CustomerMovements\frm_CustomerMovements.Designer.cs">
+      <DependentUpon>frm_CustomerMovements.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\ElectronicMeters\frm_ElectronicMeters.cs">
       <SubType>Form</SubType>
@@ -83,11 +92,23 @@
     <Compile Include="PresentationLayer\frm_Customers.Designer.cs">
       <DependentUpon>frm_Customers.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\PaymentVoucher\frm_PaymentVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\PaymentVoucher\frm_PaymentVoucher.Designer.cs">
+      <DependentUpon>frm_PaymentVoucher.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\Prices\frm_Prices.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PresentationLayer\Prices\frm_Prices.Designer.cs">
       <DependentUpon>frm_Prices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Readings\frm_Readings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Readings\frm_Readings.Designer.cs">
+      <DependentUpon>frm_Readings.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\Suppliers\frm_Suppliers.cs">
       <SubType>Form</SubType>
@@ -103,6 +124,9 @@
     <EmbeddedResource Include="PresentationLayer\Areas\frm_Areas.resx">
       <DependentUpon>frm_Areas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\CustomerMovements\frm_CustomerMovements.resx">
+      <DependentUpon>frm_CustomerMovements.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\ElectronicMeters\frm_ElectronicMeters.resx">
       <DependentUpon>frm_ElectronicMeters.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,8 +136,14 @@
     <EmbeddedResource Include="PresentationLayer\frm_Customers.resx">
       <DependentUpon>frm_Customers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\PaymentVoucher\frm_PaymentVoucher.resx">
+      <DependentUpon>frm_PaymentVoucher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Prices\frm_Prices.resx">
       <DependentUpon>frm_Prices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Readings\frm_Readings.resx">
+      <DependentUpon>frm_Readings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Suppliers\frm_Suppliers.resx">
       <DependentUpon>frm_Suppliers.cs</DependentUpon>

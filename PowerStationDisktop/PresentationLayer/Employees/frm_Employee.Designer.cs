@@ -280,6 +280,7 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             this.txt_EmployeeSalary.Size = new System.Drawing.Size(227, 26);
             this.txt_EmployeeSalary.TabIndex = 5;
             this.txt_EmployeeSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_EmployeeSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_EmployeeSalary_KeyPress);
             // 
             // groupBox2
             // 

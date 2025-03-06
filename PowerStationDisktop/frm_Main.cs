@@ -52,5 +52,23 @@ namespace PowerStationDisktop
             PresentationLayer.Prices.frm_Prices price = new PresentationLayer.Prices.frm_Prices();
             price.Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            PresentationLayer.Readings.frm_Readings reading = new PresentationLayer.Readings.frm_Readings();
+            reading.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            PresentationLayer.CustomerMovements.frm_CustomerMovements customerMovement = new PresentationLayer.CustomerMovements.frm_CustomerMovements();
+            customerMovement.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            PresentationLayer.PaymentVoucher.frm_PaymentVoucher paymentVoucher = new PresentationLayer.PaymentVoucher.frm_PaymentVoucher();
+            paymentVoucher.Show();
+        }
     }
 }

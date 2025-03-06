@@ -442,5 +442,13 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
 
             }
         }
+
+        private void txt_EmployeeSalary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)  // e.KeyChar == 8    => this for backspace button..
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
     }
 }

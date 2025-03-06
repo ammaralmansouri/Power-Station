@@ -14,3 +14,6 @@ E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\Po
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Areas.frm_Areas.resources
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Suppliers.frm_Suppliers.resources
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Prices.frm_Prices.resources
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Readings.frm_Readings.resources
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.CustomerMovements.frm_CustomerMovements.resources
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.PaymentVoucher.frm_PaymentVoucher.resources

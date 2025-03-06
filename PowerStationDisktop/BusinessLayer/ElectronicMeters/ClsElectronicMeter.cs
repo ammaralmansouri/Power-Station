@@ -60,6 +60,23 @@ namespace PowerStationDisktop.BusinessLayer.ElectronicMeters
             return DataTable1;
         }
 
+        public DataTable GetElectronicMeterInformationWhichConnectedToCustomer(double ElectronicMeterID)
+        {
+            DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
+            con.OpenConnection();
+
+            SqlParameter[] para = new SqlParameter[1];
+
+            para[0] = new SqlParameter("@ElectronicMeterID", SqlDbType.Decimal);
+            para[0].Value = ElectronicMeterID;
+
+            DataTable DataTable1 = new DataTable();
+            DataTable1 = con.SelectData("Get_ElectronicMeter_Information_Which_Connected_To_Customer", para);
+            con.CloseConnection();
+
+            return DataTable1;
+        }
+
 
         public void DeleteElectronicMeter(double ElectronicMeterID)
         {

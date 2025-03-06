@@ -204,6 +204,25 @@ namespace PowerStationDisktop.BusinessLayer.Customers
 
         }
 
+        public void UpdateCustomerTotalDues(double ElectronicMeterID, double TotalDues)
+        {
+
+            DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
+            con.OpenConnection();
+
+            SqlParameter[] para = new SqlParameter[2];
+
+            para[0] = new SqlParameter("@ElectronicMeterID", SqlDbType.Float);
+            para[0].Value = ElectronicMeterID;
+
+            para[1] = new SqlParameter("@TotalDues", SqlDbType.Money);
+            para[1].Value = TotalDues;
+
+            con.ExecuteCommands("Update_Customer_TotalDues", para);
+            con.CloseConnection();
+
+        }
+
 
 
     }
