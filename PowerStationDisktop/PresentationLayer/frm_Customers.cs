@@ -15,6 +15,8 @@ namespace PowerStationDisktop.PresentationLayer
     {
         BusinessLayer.Customers.ClsCustomers customer = new BusinessLayer.Customers.ClsCustomers();
         private Regex regex = new Regex(@"^7[80137]\d{7}$");
+
+        private string placeholderText = "ابحث هنا ..";
         public frm_Customers()
         {
             InitializeComponent();
@@ -25,7 +27,8 @@ namespace PowerStationDisktop.PresentationLayer
             GetAllAreas();
             GetElectronicMeterswhichHaveNotBeenChoosen();
             GetAllCustomers();
-            AutocompeleteSearchText();
+            //AutocompeleteSearchText();
+
         }
 
 
@@ -39,8 +42,8 @@ namespace PowerStationDisktop.PresentationLayer
 
             for (int i = 0; i < DataTable1.Rows.Count; i++)
             {
-                ob.Add(DataTable1.Rows[i][5].ToString());
                 ob.Add(DataTable1.Rows[i][2].ToString());
+                ob.Add(DataTable1.Rows[i][5].ToString());
             }
 
             this.txt_Search.AutoCompleteCustomSource = ob;
@@ -76,7 +79,7 @@ namespace PowerStationDisktop.PresentationLayer
             dgv_Customers.Columns[1].HeaderText = "الاسم";
             dgv_Customers.Columns[2].HeaderText = "رقم الهاتف";
             dgv_Customers.Columns[3].Visible = false;
-            dgv_Customers.Columns[4].HeaderText = "عليه";
+            dgv_Customers.Columns[4].HeaderText = "المتأخرات";
             dgv_Customers.Columns[5].HeaderText = "رقم العداد";
             dgv_Customers.Columns[6].HeaderText = "المنطقة";
 
@@ -267,12 +270,17 @@ namespace PowerStationDisktop.PresentationLayer
             txt_CustomerPassword.Text = DataTable1.Rows[0][3].ToString();
             txt_CustomerTotalDues.Text = DataTable1.Rows[0][4].ToString();
             cmb_ElectronicMeters.Text = DataTable1.Rows[0][5].ToString();
-            cmb_AreaID.Text = DataTable1.Rows[0][6].ToString();
+            cmb_AreaID.Text = DataTable1.Rows[0][8].ToString();
 
             
             btn_New.Enabled = true;
 
+            txt_Search.Text = placeholderText;
+            txt_Search.ForeColor = Color.Gray;
+
         }
+
+
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
@@ -377,5 +385,81 @@ namespace PowerStationDisktop.PresentationLayer
                 txt_CustomerPhone.BackColor = Color.White;
             }
         }
+
+        private void txt_Search_TextChanged(object sender, EventArgs e)
+        {
+
+            if (txt_Search.Text == placeholderText || string.IsNullOrWhiteSpace(txt_Search.Text))
+            {
+                // لا تنفذ البحث عند وجود العنصر النائب
+                return;
+            }
+
+
+            dgv_Customers.DataSource = customer.SearchForCustomer(txt_Search.Text);
+
+            dgv_Customers.Columns[0].Visible = false;
+            dgv_Customers.Columns[1].HeaderText = "الاسم";
+            dgv_Customers.Columns[2].HeaderText = "رقم الهاتف";
+            dgv_Customers.Columns[3].Visible = false;
+            dgv_Customers.Columns[4].HeaderText = "المتأخرات";
+            dgv_Customers.Columns[5].HeaderText = "رقم العداد";
+            dgv_Customers.Columns[6].Visible = false;
+            dgv_Customers.Columns[7].Visible = false;
+            dgv_Customers.Columns[8].HeaderText = "المنطقة";
+
+        }
+
+       
+
+        private void dgv_Customers_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                EnableAndDisEnableTextBoxesAndButtons(true);
+                btn_Save.Enabled = false;
+                btn_Edit.Enabled = true;
+                btn_Delete.Enabled = true;
+
+                DataTable DataTable1 = new DataTable();
+
+                DataTable1 = customer.SearchForCustomer(dgv_Customers.CurrentRow.Cells[5].Value.ToString());
+
+                txt_CustomerID.Text = DataTable1.Rows[0][0].ToString();
+                txt_CustomerName.Text = DataTable1.Rows[0][1].ToString();
+                txt_CustomerPhone.Text = DataTable1.Rows[0][2].ToString();
+                txt_CustomerPassword.Text = DataTable1.Rows[0][3].ToString();
+                txt_CustomerTotalDues.Text = DataTable1.Rows[0][4].ToString();
+                cmb_ElectronicMeters.Text = DataTable1.Rows[0][5].ToString();
+                cmb_AreaID.Text = DataTable1.Rows[0][8].ToString();
+
+
+                btn_New.Enabled = true;
+
+                txt_Search.Text = placeholderText;
+                txt_Search.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txt_Search_Enter(object sender, EventArgs e)
+        {
+            if (txt_Search.Text == placeholderText)
+            {
+                txt_Search.Text = "";
+                txt_Search.ForeColor = Color.Black;
+            }
+        }
+
+        private void txt_Search_Leave(object sender, EventArgs e)
+        {
+            if (txt_Search.Text == "")
+            {
+                txt_Search.Text = placeholderText;
+                txt_Search.ForeColor = Color.Gray;
+                GetAllCustomers();
+            }
+        }
+
+        
     }
 }

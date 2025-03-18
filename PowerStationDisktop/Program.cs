@@ -8,12 +8,20 @@ namespace PowerStationDisktop
 {
     static class Program
     {
+
+         
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            // This is to delete  Expired Permissions when the system start ..
+            // I have a Schedule in Sql Server Agint for this .. but I also run the prcedure here to make sure ..
+            BusinessLayer.Permissions.ClsPermissions permissionss = new BusinessLayer.Permissions.ClsPermissions();
+            permissionss.DeleteExpiredPermissions();
+
+
             if (Environment.OSVersion.Version.Major >= 6)
                 SetProcessDPIAware(); // السطرين هؤلاء واخر سطرين عشان الدقة .. لاتنسى
 

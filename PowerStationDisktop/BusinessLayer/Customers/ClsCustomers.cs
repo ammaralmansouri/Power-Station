@@ -109,7 +109,7 @@ namespace PowerStationDisktop.BusinessLayer.Customers
 
             SqlParameter[] para = new SqlParameter[1];
 
-            para[0] = new SqlParameter("@@ElectronicMeterIDOrCustomerPhoneNumber", SqlDbType.Float);
+            para[0] = new SqlParameter("@ElectronicMeterID", SqlDbType.Float);
             para[0].Value = ElectronicMeterID;
 
             DataTable DataTable1 = new DataTable();

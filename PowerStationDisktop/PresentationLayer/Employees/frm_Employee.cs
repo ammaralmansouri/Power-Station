@@ -15,16 +15,40 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
     {
         BusinessLayer.Employees.ClsEmployees employee = new BusinessLayer.Employees.ClsEmployees();
         private Regex regex = new Regex(@"^7[80137]\d{7}$");
+
+        private string placeholderText = "ابحث هنا ..";
+
+
+        DataTable DataTable1 = new DataTable();
         public frm_Employee()
         {
             InitializeComponent();
             GetAllEmployees();
+           // AutocompeleteSearchText();
         }
 
-        void GetAllEmployees()
+        void AutocompeleteSearchText()
         {
-            dgv_Employees.DataSource = employee.GetAllEmployees();
+            AutoCompleteStringCollection ob = new AutoCompleteStringCollection();
 
+            DataTable DataTable1 = new DataTable();
+
+            DataTable1 = employee.SearchForEmployee(txt_Search.Text);
+
+            for (int i = 0; i < DataTable1.Rows.Count; i++)
+            {
+                ob.Add(DataTable1.Rows[i][1].ToString());
+                ob.Add(DataTable1.Rows[i][2].ToString());
+            }
+
+            this.txt_Search.AutoCompleteCustomSource = ob;
+            this.txt_Search.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            this.txt_Search.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+        }
+
+
+        void DataGrideViewFormate()
+        {
             dgv_Employees.Columns[0].Visible = false;
             dgv_Employees.Columns[1].HeaderText = "الاسم";
             dgv_Employees.Columns[2].HeaderText = "رقم الهاتف";
@@ -34,66 +58,44 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             dgv_Employees.Columns[6].Visible = false;
             dgv_Employees.Columns[7].HeaderText = "الحالة";
             dgv_Employees.Columns[8].Visible = false;
+        }
+        void GetAllEmployees()
+        {
+            dgv_Employees.DataSource = employee.GetAllEmployees();
+
+            DataGrideViewFormate();
         }
 
         void GetEmployeesWhoWorksinside()
         {
             dgv_Employees.DataSource = employee.GetEmployeesWhoWorksinside();
 
-            dgv_Employees.Columns[0].Visible = false;
-            dgv_Employees.Columns[1].HeaderText = "الاسم";
-            dgv_Employees.Columns[2].HeaderText = "رقم الهاتف";
-            dgv_Employees.Columns[3].HeaderText = "الراتب";
-            dgv_Employees.Columns[4].Visible = false;
-            dgv_Employees.Columns[5].HeaderText = "النوع";
-            dgv_Employees.Columns[6].Visible = false;
-            dgv_Employees.Columns[7].HeaderText = "الحالة";
-            dgv_Employees.Columns[8].Visible = false;
+            DataGrideViewFormate();
+
         }
 
         void GetEmployeesWhoWorksOut()
         {
             dgv_Employees.DataSource = employee.GetEmployeesWhoWorksOut();
 
-            dgv_Employees.Columns[0].Visible = false;
-            dgv_Employees.Columns[1].HeaderText = "الاسم";
-            dgv_Employees.Columns[2].HeaderText = "رقم الهاتف";
-            dgv_Employees.Columns[3].HeaderText = "الراتب";
-            dgv_Employees.Columns[4].Visible = false;
-            dgv_Employees.Columns[5].HeaderText = "النوع";
-            dgv_Employees.Columns[6].Visible = false;
-            dgv_Employees.Columns[7].HeaderText = "الحالة";
-            dgv_Employees.Columns[8].Visible = false;
+            DataGrideViewFormate();
+
         }
 
         void GetActiveEmployees()
         {
             dgv_Employees.DataSource = employee.GetActiveEmployees();
 
-            dgv_Employees.Columns[0].Visible = false;
-            dgv_Employees.Columns[1].HeaderText = "الاسم";
-            dgv_Employees.Columns[2].HeaderText = "رقم الهاتف";
-            dgv_Employees.Columns[3].HeaderText = "الراتب";
-            dgv_Employees.Columns[4].Visible = false;
-            dgv_Employees.Columns[5].HeaderText = "النوع";
-            dgv_Employees.Columns[6].Visible = false;
-            dgv_Employees.Columns[7].HeaderText = "الحالة";
-            dgv_Employees.Columns[8].Visible = false;
+            DataGrideViewFormate();
+
         }
 
         void GetInActiveEmployees()
         {
             dgv_Employees.DataSource = employee.GetInActiveEmployees();
 
-            dgv_Employees.Columns[0].Visible = false;
-            dgv_Employees.Columns[1].HeaderText = "الاسم";
-            dgv_Employees.Columns[2].HeaderText = "رقم الهاتف";
-            dgv_Employees.Columns[3].HeaderText = "الراتب";
-            dgv_Employees.Columns[4].Visible = false;
-            dgv_Employees.Columns[5].HeaderText = "النوع";
-            dgv_Employees.Columns[6].Visible = false;
-            dgv_Employees.Columns[7].HeaderText = "الحالة";
-            dgv_Employees.Columns[8].Visible = false;
+            DataGrideViewFormate();
+
         }
 
         void EnableAndDisEnableTextBoxesAndButtons(bool value)
@@ -122,7 +124,7 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
 
         private void btn_New_Click(object sender, EventArgs e)
         {
-
+                
             EnableAndDisEnableTextBoxesAndButtons(true);
             EmptyTextBoxes();
 
@@ -265,29 +267,30 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             txt_EmployeeSalary.Text = DataTable1.Rows[0][3].ToString();
             txt_EmployeePassword.Text = DataTable1.Rows[0][4].ToString();
 
-            if(DataTable1.Rows[0][5].ToString() == "1")
+            if (DataTable1.Rows[0][6].ToString() == "1")
             {
-                cmb_EmployeeType.Text = "مدير";
+                cmb_EmployeeType.Text = "موظف";
             }
-            else if(DataTable1.Rows[0][5].ToString() == "2")
+            if (DataTable1.Rows[0][6].ToString() == "2")
             {
                 cmb_EmployeeType.Text = "محصل";
-
             }
 
 
-            if(DataTable1.Rows[0][7].ToString() == "0")
+            if (DataTable1.Rows[0][8].ToString() == "0")
             {
                 cmb_EmployeeState.Text = "غير فعال";
             }
-            else if (DataTable1.Rows[0][7].ToString() == "1")
+            if (DataTable1.Rows[0][8].ToString() == "1")
             {
                 cmb_EmployeeState.Text = "فعال";
-
             }
 
-
+            
             btn_New.Enabled = true;
+
+            txt_Search.Text = placeholderText;
+            txt_Search.ForeColor = Color.Gray;
         }
 
         private void rad_All_CheckedChanged(object sender, EventArgs e)
@@ -450,5 +453,170 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             else
                 e.Handled = true;
         }
+
+        private void txt_Search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                EnableAndDisEnableTextBoxesAndButtons(true);
+                btn_Save.Enabled = false;
+                btn_Edit.Enabled = true;
+                btn_Delete.Enabled = true;
+
+                DataTable DataTable1 = new DataTable();
+
+                DataTable1 = employee.SearchForEmployee(txt_Search.Text);
+
+                if(DataTable1.Rows.Count > 0)
+                {
+                    txt_EmployeeID.Text = DataTable1.Rows[0][0].ToString();
+                    txt_EmployeeName.Text = DataTable1.Rows[0][1].ToString();
+                    txt_EmployeePhone.Text = DataTable1.Rows[0][2].ToString();
+                    txt_EmployeeSalary.Text = DataTable1.Rows[0][3].ToString();
+                    txt_EmployeePassword.Text = DataTable1.Rows[0][4].ToString();
+
+
+                    if (DataTable1.Rows[0][6].ToString() == "1")
+                    {
+                        cmb_EmployeeType.Text = "موظف";
+                    }
+                    if (DataTable1.Rows[0][6].ToString() == "2")
+                    {
+                        cmb_EmployeeType.Text = "محصل";
+                    }
+
+
+                    if (DataTable1.Rows[0][8].ToString() == "0")
+                    {
+                        cmb_EmployeeState.Text = "غير فعال";
+                    }
+                    if (DataTable1.Rows[0][8].ToString() == "1")
+                    {
+                        cmb_EmployeeState.Text = "فعال";
+                    }
+
+                    txt_Search.Text = string.Empty;
+                    btn_New.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("البيانات المدخلة غير صحيحة", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+            }
+        }
+
+        private void txt_Search_TextChanged(object sender, EventArgs e)
+        {
+
+            if (txt_Search.Text == placeholderText || string.IsNullOrWhiteSpace(txt_Search.Text))
+            {
+                // لا تنفذ البحث عند وجود العنصر النائب
+                return;
+            }
+
+
+            dgv_Employees.DataSource = employee.SearchForEmployee(txt_Search.Text);
+
+            DataGrideViewFormate();
+
+        }
+
+        private void الصلاحياتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Employees.frm_Permissions permissions = new Employees.frm_Permissions();
+
+            permissions.txt_EmployeeID.Text = DataTable1.Rows[0][0].ToString();
+            permissions.txt_EmployeeName.Text = DataTable1.Rows[0][1].ToString();
+
+            permissions.Show();
+
+        }
+
+        private void dgv_Employees_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right) // تحقق من أن النقر بالزر الأيمن
+            {
+                if (e.RowIndex >= 0) // تحقق من أن النقر تم على صف وليس على رأس العمود
+                {
+                    dgv_Employees.ClearSelection(); // إزالة أي تحديد سابق
+                    dgv_Employees.Rows[e.RowIndex].Selected = true; // تحديد الصف الذي تم النقر عليه
+                // dgv_Employees.CurrentCell = dgv_Employees.Rows[e.RowIndex].Cells[e.ColumnIndex]; // تحديد الخلية الحالية
+
+                    DataTable1 = employee.GetEmployeeInformation(Convert.ToInt32(dgv_Employees.Rows[e.RowIndex].Cells[0].Value.ToString()));
+
+                    // عرض الـ ContextMenuStrip عند موقع الماوس
+                    contextMenuStrip1.Show(Cursor.Position);
+
+                }
+            }
+        }
+
+        private void dgv_Employees_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                EnableAndDisEnableTextBoxesAndButtons(true);
+                btn_Save.Enabled = false;
+                btn_Edit.Enabled = true;
+                btn_Delete.Enabled = true;
+
+                DataTable DataTable1 = new DataTable();
+
+                DataTable1 = employee.GetEmployeeInformation(Convert.ToInt32(dgv_Employees.CurrentRow.Cells[0].Value.ToString()));
+
+                txt_EmployeeID.Text = DataTable1.Rows[0][0].ToString();
+                txt_EmployeeName.Text = DataTable1.Rows[0][1].ToString();
+                txt_EmployeePhone.Text = DataTable1.Rows[0][2].ToString();
+                txt_EmployeeSalary.Text = DataTable1.Rows[0][3].ToString();
+                txt_EmployeePassword.Text = DataTable1.Rows[0][4].ToString();
+
+                if (DataTable1.Rows[0][6].ToString() == "1")
+                {
+                    cmb_EmployeeType.Text = "موظف";
+                }
+                if (DataTable1.Rows[0][6].ToString() == "2")
+                {
+                    cmb_EmployeeType.Text = "محصل";
+                }
+
+
+                if (DataTable1.Rows[0][8].ToString() == "0")
+                {
+                    cmb_EmployeeState.Text = "غير فعال";
+                }
+                if (DataTable1.Rows[0][8].ToString() == "1")
+                {
+                    cmb_EmployeeState.Text = "فعال";
+                }
+
+                
+                btn_New.Enabled = true;
+
+                txt_Search.Text = placeholderText;
+                txt_Search.ForeColor = Color.Gray;
+            }
+        }
+
+
+        private void txt_Search_Enter(object sender, EventArgs e)
+        {
+            if (txt_Search.Text == placeholderText)
+            {
+                txt_Search.Text = "";
+                txt_Search.ForeColor = Color.Black;
+            }
+        }
+        
+        private void txt_Search_Leave(object sender, EventArgs e)
+        {
+
+            if (txt_Search.Text == "")
+            {
+                txt_Search.Text = placeholderText;
+                txt_Search.ForeColor = Color.Gray;
+            }
+        }
+
     }
 }

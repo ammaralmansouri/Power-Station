@@ -58,6 +58,7 @@ namespace PowerStationDisktop.PresentationLayer.Areas
             txt_AreaName.Focus();
 
             btn_Save.Enabled = true;
+            btn_Edit.Enabled = false;
             btn_Delete.Enabled = false;
 
         }

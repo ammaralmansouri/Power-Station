@@ -85,5 +85,24 @@ namespace PowerStationDisktop.BusinessLayer.Areas
             con.ExecuteCommands("Update_Area", para);
             con.CloseConnection();
         }
+
+        public DataTable GetAllAreasWhichEmployeeDoseNotHasAPermissionOnIt(int EmployeeID)
+        {
+            DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
+            con.OpenConnection();
+
+            DataTable DataTable1 = new DataTable();
+
+            SqlParameter[] para = new SqlParameter[1];
+
+            para[0] = new SqlParameter("@EmployeeID", SqlDbType.Int);
+            para[0].Value = EmployeeID;
+
+
+            DataTable1 = con.SelectData("Get_All_Areas_Which_Employee_Dose_Not_Has_A_Permission_On_It" , para);
+            con.CloseConnection();
+
+            return DataTable1;
+        }
     }
 }

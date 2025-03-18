@@ -33,8 +33,39 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.3\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Pipelines, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.9.0.3\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.9.0.3\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.9.0.3\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,8 +83,11 @@
     <Compile Include="BusinessLayer\ElectronicMeters\ClsElectronicMeter.cs" />
     <Compile Include="BusinessLayer\Employees\ClsEmployees.cs" />
     <Compile Include="BusinessLayer\PaymentVouchers\ClsPaymentVouchers.cs" />
+    <Compile Include="BusinessLayer\Permissions\ClsPermissions.cs" />
+    <Compile Include="BusinessLayer\PowerStation\ClsPowerStation.cs" />
     <Compile Include="BusinessLayer\Prices\ClsPrices.cs" />
     <Compile Include="BusinessLayer\Readings\ClsReadings.cs" />
+    <Compile Include="BusinessLayer\SendMassagesInWhatsapp\ClsSendMassagesInWhatsapp.cs" />
     <Compile Include="BusinessLayer\Suppliers\ClsSuppliers.cs" />
     <Compile Include="DataAccessLayer\ClsConnection.cs" />
     <Compile Include="frm_Main.cs">
@@ -86,6 +120,18 @@
     <Compile Include="PresentationLayer\Employees\frm_Employee.Designer.cs">
       <DependentUpon>frm_Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\Employees\frm_Permissions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Employees\frm_Permissions.Designer.cs">
+      <DependentUpon>frm_Permissions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Employees\frm_StartAndEndOfCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Employees\frm_StartAndEndOfCollection.Designer.cs">
+      <DependentUpon>frm_StartAndEndOfCollection.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\frm_Customers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +144,18 @@
     <Compile Include="PresentationLayer\PaymentVoucher\frm_PaymentVoucher.Designer.cs">
       <DependentUpon>frm_PaymentVoucher.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\PaymentVoucher\frm_SalaryPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\PaymentVoucher\frm_SalaryPayment.Designer.cs">
+      <DependentUpon>frm_SalaryPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\PowerStation\frm_PowerStation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\PowerStation\frm_PowerStation.Designer.cs">
+      <DependentUpon>frm_PowerStation.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\Prices\frm_Prices.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +167,12 @@
     </Compile>
     <Compile Include="PresentationLayer\Readings\frm_Readings.Designer.cs">
       <DependentUpon>frm_Readings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\SendMassagesInWhatsapp\frm_SendMassagesInWhatsapp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\SendMassagesInWhatsapp\frm_SendMassagesInWhatsapp.Designer.cs">
+      <DependentUpon>frm_SendMassagesInWhatsapp.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\Suppliers\frm_Suppliers.cs">
       <SubType>Form</SubType>
@@ -133,17 +197,32 @@
     <EmbeddedResource Include="PresentationLayer\Employees\frm_Employee.resx">
       <DependentUpon>frm_Employee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Employees\frm_Permissions.resx">
+      <DependentUpon>frm_Permissions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Employees\frm_StartAndEndOfCollection.resx">
+      <DependentUpon>frm_StartAndEndOfCollection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\frm_Customers.resx">
       <DependentUpon>frm_Customers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\PaymentVoucher\frm_PaymentVoucher.resx">
       <DependentUpon>frm_PaymentVoucher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\PaymentVoucher\frm_SalaryPayment.resx">
+      <DependentUpon>frm_SalaryPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\PowerStation\frm_PowerStation.resx">
+      <DependentUpon>frm_PowerStation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Prices\frm_Prices.resx">
       <DependentUpon>frm_Prices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Readings\frm_Readings.resx">
       <DependentUpon>frm_Readings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\SendMassagesInWhatsapp\frm_SendMassagesInWhatsapp.resx">
+      <DependentUpon>frm_SendMassagesInWhatsapp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Suppliers\frm_Suppliers.resx">
       <DependentUpon>frm_Suppliers.cs</DependentUpon>
@@ -157,6 +236,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -190,5 +190,41 @@ namespace PowerStationDisktop.BusinessLayer.Employees
             con.ExecuteCommands("Delete_Employee", para);
             con.CloseConnection();
         }
+
+        public void UpdateEmployeeTotalCredit(int EmployeeID, double EmployeeTotalCredit)
+        {
+            DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
+            con.OpenConnection();
+
+            SqlParameter[] para = new SqlParameter[2];
+
+            para[0] = new SqlParameter("@EmployeeID", SqlDbType.Int);
+            para[0].Value = EmployeeID;
+
+            para[1] = new SqlParameter("@EmployeeTotalCredit", SqlDbType.Money);
+            para[1].Value = EmployeeTotalCredit;
+
+
+            con.ExecuteCommands("Update_Employee_Total_Credit", para);
+            con.CloseConnection();
+        }
+
+        public DataTable SearchForEmployee(string EmployeePhoneNumber)
+        {
+            DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
+            con.OpenConnection();
+
+            SqlParameter[] para = new SqlParameter[1];
+
+            para[0] = new SqlParameter("@EmployeePhoneNumber", SqlDbType.NVarChar, 9);
+            para[0].Value = EmployeePhoneNumber;
+
+            DataTable DataTable1 = new DataTable();
+
+            DataTable1 = con.SelectData("Search_For_Employee", para);
+            con.CloseConnection();
+
+            return DataTable1;
+        }
     }
 }

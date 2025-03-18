@@ -103,5 +103,23 @@ namespace PowerStationDisktop.BusinessLayer.Suppliers
             con.ExecuteCommands("Delete_Supplier", para);
             con.CloseConnection();
         }
+
+        public DataTable SearchForSupplierByPhoneNumber(string SupplierPhoneNumber)
+        {
+            DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
+            con.OpenConnection();
+
+            SqlParameter[] para = new SqlParameter[1];
+
+            para[0] = new SqlParameter("@SupplierPhoneNumber", SqlDbType.NVarChar , 15);
+            para[0].Value = SupplierPhoneNumber;
+
+            DataTable DataTable1 = new DataTable();
+
+            DataTable1 = con.SelectData("Search_For_Supplier_By_Phone_Number", para);
+            con.CloseConnection();
+
+            return DataTable1;
+        }
     }
 }

@@ -226,9 +226,6 @@ namespace PowerStationDisktop.PresentationLayer.ElectronicMeters
                         MessageBox.Show("تأكد من تعبئة جميع الحقول", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
-
-
-
                 }
 
             }

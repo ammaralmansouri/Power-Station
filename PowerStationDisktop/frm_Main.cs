@@ -70,5 +70,29 @@ namespace PowerStationDisktop
             PresentationLayer.PaymentVoucher.frm_PaymentVoucher paymentVoucher = new PresentationLayer.PaymentVoucher.frm_PaymentVoucher();
             paymentVoucher.Show();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            PresentationLayer.PaymentVoucher.frm_SalaryPayment salaryPayment = new PresentationLayer.PaymentVoucher.frm_SalaryPayment();
+            salaryPayment.Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            PresentationLayer.PowerStation.frm_PowerStation powerStation = new PresentationLayer.PowerStation.frm_PowerStation();
+            powerStation.Show();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            PresentationLayer.SendMassagesInWhatsapp.frm_SendMassagesInWhatsapp sendMassagesInWhatsapp = new PresentationLayer.SendMassagesInWhatsapp.frm_SendMassagesInWhatsapp();
+            sendMassagesInWhatsapp.Show();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            PresentationLayer.Employees.frm_StartAndEndOfCollection startAndEndOfCollection = new PresentationLayer.Employees.frm_StartAndEndOfCollection();
+            startAndEndOfCollection.Show();
+        }
     }
 }
