@@ -29,6 +29,10 @@ namespace PowerStationDisktop.PresentationLayer.ElectronicMeters
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ElectronicMeters));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_ElectronicMeterIDForUpdating = new System.Windows.Forms.TextBox();
             this.cmb_ElectronicMeterType = new System.Windows.Forms.ComboBox();
@@ -54,9 +58,9 @@ namespace PowerStationDisktop.PresentationLayer.ElectronicMeters
             this.groupBox1.Controls.Add(this.txt_ElectronicMeterID);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(10, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(493, 122);
+            this.groupBox1.Size = new System.Drawing.Size(431, 140);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -65,76 +69,98 @@ namespace PowerStationDisktop.PresentationLayer.ElectronicMeters
             this.txt_ElectronicMeterIDForUpdating.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_ElectronicMeterIDForUpdating.Enabled = false;
             this.txt_ElectronicMeterIDForUpdating.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ElectronicMeterIDForUpdating.Location = new System.Drawing.Point(21, 21);
+            this.txt_ElectronicMeterIDForUpdating.Location = new System.Drawing.Point(18, 21);
             this.txt_ElectronicMeterIDForUpdating.Name = "txt_ElectronicMeterIDForUpdating";
-            this.txt_ElectronicMeterIDForUpdating.Size = new System.Drawing.Size(55, 30);
+            this.txt_ElectronicMeterIDForUpdating.Size = new System.Drawing.Size(48, 30);
             this.txt_ElectronicMeterIDForUpdating.TabIndex = 4;
             // 
             // cmb_ElectronicMeterType
             // 
             this.cmb_ElectronicMeterType.Enabled = false;
-            this.cmb_ElectronicMeterType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_ElectronicMeterType.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_ElectronicMeterType.FormattingEnabled = true;
             this.cmb_ElectronicMeterType.Items.AddRange(new object[] {
             "الكتروني",
             "غير الكتروني"});
-            this.cmb_ElectronicMeterType.Location = new System.Drawing.Point(194, 70);
+            this.cmb_ElectronicMeterType.Location = new System.Drawing.Point(170, 88);
             this.cmb_ElectronicMeterType.Name = "cmb_ElectronicMeterType";
-            this.cmb_ElectronicMeterType.Size = new System.Drawing.Size(130, 28);
+            this.cmb_ElectronicMeterType.Size = new System.Drawing.Size(114, 36);
             this.cmb_ElectronicMeterType.TabIndex = 3;
             // 
             // txt_ElectronicMeterID
             // 
             this.txt_ElectronicMeterID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_ElectronicMeterID.Enabled = false;
-            this.txt_ElectronicMeterID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ElectronicMeterID.Location = new System.Drawing.Point(97, 28);
+            this.txt_ElectronicMeterID.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ElectronicMeterID.Location = new System.Drawing.Point(85, 39);
             this.txt_ElectronicMeterID.Name = "txt_ElectronicMeterID";
-            this.txt_ElectronicMeterID.Size = new System.Drawing.Size(227, 30);
+            this.txt_ElectronicMeterID.Size = new System.Drawing.Size(199, 36);
             this.txt_ElectronicMeterID.TabIndex = 2;
             this.txt_ElectronicMeterID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ElectronicMeterID_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(342, 70);
+            this.label2.Font = new System.Drawing.Font("Droid Arabic Kufi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(299, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 25);
+            this.label2.Size = new System.Drawing.Size(88, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "نوع العداد";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(342, 38);
+            this.label1.Font = new System.Drawing.Font("Droid Arabic Kufi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(299, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 25);
+            this.label1.Size = new System.Drawing.Size(93, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "رقم العداد";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgv_ElectronicMeters);
-            this.groupBox2.Location = new System.Drawing.Point(12, 140);
+            this.groupBox2.Location = new System.Drawing.Point(10, 158);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(493, 377);
+            this.groupBox2.Size = new System.Drawing.Size(431, 377);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
             // dgv_ElectronicMeters
             // 
             this.dgv_ElectronicMeters.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F);
+            this.dgv_ElectronicMeters.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_ElectronicMeters.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ElectronicMeters.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ElectronicMeters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ElectronicMeters.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_ElectronicMeters.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_ElectronicMeters.Location = new System.Drawing.Point(3, 18);
+            this.dgv_ElectronicMeters.Location = new System.Drawing.Point(3, 20);
             this.dgv_ElectronicMeters.Name = "dgv_ElectronicMeters";
+            this.dgv_ElectronicMeters.ReadOnly = true;
             this.dgv_ElectronicMeters.RowHeadersVisible = false;
             this.dgv_ElectronicMeters.RowHeadersWidth = 51;
-            this.dgv_ElectronicMeters.RowTemplate.Height = 24;
-            this.dgv_ElectronicMeters.Size = new System.Drawing.Size(487, 356);
+            this.dgv_ElectronicMeters.RowTemplate.Height = 40;
+            this.dgv_ElectronicMeters.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_ElectronicMeters.Size = new System.Drawing.Size(425, 354);
             this.dgv_ElectronicMeters.TabIndex = 0;
             this.dgv_ElectronicMeters.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ElectronicMeters_CellDoubleClick);
             // 
@@ -143,58 +169,68 @@ namespace PowerStationDisktop.PresentationLayer.ElectronicMeters
             this.groupBox3.Controls.Add(this.btn_Delete);
             this.groupBox3.Controls.Add(this.btn_Save);
             this.groupBox3.Controls.Add(this.btn_New);
-            this.groupBox3.Location = new System.Drawing.Point(15, 523);
+            this.groupBox3.Location = new System.Drawing.Point(13, 523);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(487, 98);
+            this.groupBox3.Size = new System.Drawing.Size(426, 98);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
             // btn_Delete
             // 
             this.btn_Delete.Enabled = false;
+            this.btn_Delete.FlatAppearance.BorderSize = 0;
+            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Delete.Location = new System.Drawing.Point(66, 29);
+            this.btn_Delete.Image = ((System.Drawing.Image)(resources.GetObject("btn_Delete.Image")));
+            this.btn_Delete.Location = new System.Drawing.Point(61, 14);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(91, 41);
+            this.btn_Delete.Size = new System.Drawing.Size(80, 72);
             this.btn_Delete.TabIndex = 13;
-            this.btn_Delete.Text = "حذف";
             this.btn_Delete.UseVisualStyleBackColor = true;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Save
             // 
             this.btn_Save.Enabled = false;
+            this.btn_Save.FlatAppearance.BorderSize = 0;
+            this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Save.Location = new System.Drawing.Point(212, 29);
+            this.btn_Save.Image = ((System.Drawing.Image)(resources.GetObject("btn_Save.Image")));
+            this.btn_Save.Location = new System.Drawing.Point(183, 18);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(91, 41);
+            this.btn_Save.Size = new System.Drawing.Size(80, 69);
             this.btn_Save.TabIndex = 11;
-            this.btn_Save.Text = "حفظ";
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_New
             // 
+            this.btn_New.FlatAppearance.BorderSize = 0;
+            this.btn_New.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_New.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_New.Location = new System.Drawing.Point(364, 28);
+            this.btn_New.Image = ((System.Drawing.Image)(resources.GetObject("btn_New.Image")));
+            this.btn_New.Location = new System.Drawing.Point(304, 18);
             this.btn_New.Name = "btn_New";
-            this.btn_New.Size = new System.Drawing.Size(91, 42);
+            this.btn_New.Size = new System.Drawing.Size(80, 64);
             this.btn_New.TabIndex = 14;
-            this.btn_New.Text = "جديد";
             this.btn_New.UseVisualStyleBackColor = true;
             this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
             // 
             // frm_ElectronicMeters
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 636);
+            this.ClientSize = new System.Drawing.Size(452, 636);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_ElectronicMeters";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "العدادات";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

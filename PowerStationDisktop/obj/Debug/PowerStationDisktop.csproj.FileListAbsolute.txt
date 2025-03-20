@@ -43,3 +43,4 @@ E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\bin\Debug\Sy
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\bin\Debug\System.ValueTuple.xml
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.csproj.CopyComplete
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Employees.frm_StartAndEndOfCollection.resources
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Permissions.frm_CurrentPermisions.resources

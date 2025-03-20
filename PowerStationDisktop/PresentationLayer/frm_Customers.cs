@@ -275,7 +275,7 @@ namespace PowerStationDisktop.PresentationLayer
             
             btn_New.Enabled = true;
 
-            txt_Search.Text = placeholderText;
+            txt_Search.Text = placeholderText;  
             txt_Search.ForeColor = Color.Gray;
 
         }
@@ -392,7 +392,9 @@ namespace PowerStationDisktop.PresentationLayer
             if (txt_Search.Text == placeholderText || string.IsNullOrWhiteSpace(txt_Search.Text))
             {
                 // لا تنفذ البحث عند وجود العنصر النائب
-                return;
+                //return;
+
+                GetAllCustomers();
             }
 
 

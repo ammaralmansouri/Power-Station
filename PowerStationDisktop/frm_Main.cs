@@ -12,9 +12,19 @@ namespace PowerStationDisktop
 {
     public partial class frm_Main : Form
     {
+        BusinessLayer.PowerStation.ClsPowerStation PowerStation = new BusinessLayer.PowerStation.ClsPowerStation();
         public frm_Main()
         {
             InitializeComponent();
+            GetPowerStationINformation();
+        }
+
+        void GetPowerStationINformation()
+        {
+            DataTable DataTable1 =PowerStation.GetAllPowerStation();
+
+            label1.Text = DataTable1.Rows[0][1].ToString();
+            label2.Text = DataTable1.Rows[0][2].ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -93,6 +103,12 @@ namespace PowerStationDisktop
         {
             PresentationLayer.Employees.frm_StartAndEndOfCollection startAndEndOfCollection = new PresentationLayer.Employees.frm_StartAndEndOfCollection();
             startAndEndOfCollection.Show();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            PresentationLayer.Permissions.frm_CurrentPermisions currentPermisions = new PresentationLayer.Permissions.frm_CurrentPermisions();
+            currentPermisions.Show();
         }
     }
 }

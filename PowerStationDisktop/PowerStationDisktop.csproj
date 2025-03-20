@@ -150,6 +150,12 @@
     <Compile Include="PresentationLayer\PaymentVoucher\frm_SalaryPayment.Designer.cs">
       <DependentUpon>frm_SalaryPayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\Permissions\frm_CurrentPermisions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Permissions\frm_CurrentPermisions.Designer.cs">
+      <DependentUpon>frm_CurrentPermisions.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\PowerStation\frm_PowerStation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\PaymentVoucher\frm_SalaryPayment.resx">
       <DependentUpon>frm_SalaryPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Permissions\frm_CurrentPermisions.resx">
+      <DependentUpon>frm_CurrentPermisions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\PowerStation\frm_PowerStation.resx">
       <DependentUpon>frm_PowerStation.cs</DependentUpon>

@@ -74,6 +74,7 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
         {
             EnableAndDisEnableTextBoxesAndButtons(true);
             EmptyTextBoxes();
+            txt_CustomerMovementPaiedAmount.Enabled = false;
 
             DataTable DataTable1 = new DataTable();
 
@@ -97,6 +98,8 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
 
                 if (DataTable1.Rows.Count > 0)
                 {
+                    txt_CustomerMovementPaiedAmount.Enabled = true;
+
                     txt_CustomerID.Text = DataTable1.Rows[0][0].ToString();
                     txt_CustomerName.Text = DataTable1.Rows[0][1].ToString();
                     txt_ElectricityMeterID.Text = DataTable1.Rows[0][5].ToString();
@@ -115,7 +118,7 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
                 {
                     MessageBox.Show("رقم العداد الذي ادخلته غير صحيح أو أنه غير مرتبط بعميل ..!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     
-                    EmptyTextBoxes();
+                    txt_ElectricityMeterIDOrPhoneNumber.Text = string.Empty;
                 }
             }
                 

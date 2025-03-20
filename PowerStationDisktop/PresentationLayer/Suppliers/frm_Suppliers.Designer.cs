@@ -29,8 +29,8 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Suppliers));
             this.txt_SupplierPhone = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -142,7 +142,7 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
             // 
             this.rich_SupplierDiscription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rich_SupplierDiscription.Enabled = false;
-            this.rich_SupplierDiscription.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rich_SupplierDiscription.Font = new System.Drawing.Font("Droid Arabic Kufi", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rich_SupplierDiscription.Location = new System.Drawing.Point(35, 100);
             this.rich_SupplierDiscription.Name = "rich_SupplierDiscription";
             this.rich_SupplierDiscription.Size = new System.Drawing.Size(480, 71);
@@ -163,9 +163,9 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
             // dgv_Suppliers
             // 
             this.dgv_Suppliers.AllowUserToAddRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F);
-            this.dgv_Suppliers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F);
+            this.dgv_Suppliers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgv_Suppliers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Suppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Suppliers.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -173,9 +173,9 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
             this.dgv_Suppliers.Name = "dgv_Suppliers";
             this.dgv_Suppliers.RowHeadersVisible = false;
             this.dgv_Suppliers.RowHeadersWidth = 51;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F);
-            this.dgv_Suppliers.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.25F);
+            this.dgv_Suppliers.RowsDefaultCellStyle = dataGridViewCellStyle22;
             this.dgv_Suppliers.RowTemplate.Height = 40;
             this.dgv_Suppliers.RowTemplate.ReadOnly = true;
             this.dgv_Suppliers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

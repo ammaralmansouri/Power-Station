@@ -40,8 +40,8 @@ namespace PowerStationDisktop.PresentationLayer.Employees
 
                     if (result == DialogResult.Yes)
                     {
-                        permissions.UpdateStartAndEndDateOfCollection(dtp_StartDateOfCollection.Value, dtp_EndDateOfCollection.Value);
-                        permissions.SetExpiredDateLikeEndOfCollectionDate(dtp_EndDateOfCollection.Value);
+                        permissions.UpdateStartAndEndDateOfCollectionForAllEmployees(dtp_StartDateOfCollection.Value, dtp_EndDateOfCollection.Value);
+                        permissions.SetExpiredDateLikeEndOfCollectionDateForAllEmployee(dtp_EndDateOfCollection.Value);
                         MessageBox.Show("تم السماح لجميع المحصلين بالتحصيل في التاريخ المحدد", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
 

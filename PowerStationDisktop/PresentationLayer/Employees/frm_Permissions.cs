@@ -69,7 +69,7 @@ namespace PowerStationDisktop.PresentationLayer.Employees
             else
             {
 
-                if (num_NumberOfAllowedDaysForTakingReading.Value != 0)
+                if (num_NumberOfAllowedDaysForTakingReading.Value > 0)
                 {
                     // Here the ExpireDate will not be set to NULL becouse the permission is going to be a temporary ..
 

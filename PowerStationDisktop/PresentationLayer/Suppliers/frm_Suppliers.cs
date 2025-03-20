@@ -67,13 +67,10 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
         {
             foreach (var c in groupBox1.Controls)
             {
-                if (c is TextBox)
+                if (txt_SupplierName.Text == string.Empty || txt_SupplierPhone.Text == string.Empty)
                 {
-                    if (((TextBox)c).Text == string.Empty)
-                    {
-                        MessageBox.Show("تأكد من تعبئة جميع الحقول", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return false;
-                    }
+                    MessageBox.Show("تأكد من تعبئة جميع الحقول", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
 
                 }
 

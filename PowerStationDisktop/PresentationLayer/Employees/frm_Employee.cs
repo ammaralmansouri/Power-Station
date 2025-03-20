@@ -512,7 +512,9 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             if (txt_Search.Text == placeholderText || string.IsNullOrWhiteSpace(txt_Search.Text))
             {
                 // لا تنفذ البحث عند وجود العنصر النائب
-                return;
+                //return;
+
+                GetAllEmployees();
             }
 
 
