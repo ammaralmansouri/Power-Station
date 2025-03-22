@@ -55,41 +55,43 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.الصلاحياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txt_EmployeeSalary = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_EmployeeName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_EmployeePhone = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.rad_All = new System.Windows.Forms.RadioButton();
             this.rad_InsideEmployee = new System.Windows.Forms.RadioButton();
             this.rad_outEmployee = new System.Windows.Forms.RadioButton();
             this.rad_Active = new System.Windows.Forms.RadioButton();
             this.rad_NoneActive = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Employees)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_EmployeeID
             // 
-            this.txt_EmployeeID.Location = new System.Drawing.Point(304, 17);
+            this.txt_EmployeeID.Location = new System.Drawing.Point(27, 33);
             this.txt_EmployeeID.Name = "txt_EmployeeID";
-            this.txt_EmployeeID.Size = new System.Drawing.Size(50, 26);
+            this.txt_EmployeeID.Size = new System.Drawing.Size(20, 39);
             this.txt_EmployeeID.TabIndex = 15;
             this.txt_EmployeeID.Visible = false;
             // 
             // btn_Save
             // 
             this.btn_Save.Enabled = false;
+            this.btn_Save.FlatAppearance.BorderSize = 0;
+            this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Save.Location = new System.Drawing.Point(394, 24);
+            this.btn_Save.Image = ((System.Drawing.Image)(resources.GetObject("btn_Save.Image")));
+            this.btn_Save.Location = new System.Drawing.Point(399, 25);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(80, 41);
+            this.btn_Save.Size = new System.Drawing.Size(80, 67);
             this.btn_Save.TabIndex = 7;
-            this.btn_Save.Text = "حفظ";
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
@@ -99,9 +101,9 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             this.cmb_EmployeeState.Items.AddRange(new object[] {
             "فعال",
             "غير فعال"});
-            this.cmb_EmployeeState.Location = new System.Drawing.Point(12, 152);
+            this.cmb_EmployeeState.Location = new System.Drawing.Point(67, 142);
             this.cmb_EmployeeState.Name = "cmb_EmployeeState";
-            this.cmb_EmployeeState.Size = new System.Drawing.Size(140, 28);
+            this.cmb_EmployeeState.Size = new System.Drawing.Size(170, 40);
             this.cmb_EmployeeState.TabIndex = 6;
             // 
             // cmb_EmployeeType
@@ -110,38 +112,38 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             this.cmb_EmployeeType.Items.AddRange(new object[] {
             "موظف",
             "محصل"});
-            this.cmb_EmployeeType.Location = new System.Drawing.Point(12, 47);
+            this.cmb_EmployeeType.Location = new System.Drawing.Point(67, 44);
             this.cmb_EmployeeType.Name = "cmb_EmployeeType";
-            this.cmb_EmployeeType.Size = new System.Drawing.Size(140, 28);
+            this.cmb_EmployeeType.Size = new System.Drawing.Size(170, 40);
             this.cmb_EmployeeType.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(162, 47);
+            this.label6.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(253, 47);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 25);
+            this.label6.Size = new System.Drawing.Size(91, 28);
             this.label6.TabIndex = 9;
             this.label6.Text = "نوع الموظف";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(458, 105);
+            this.label1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(584, 97);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 25);
+            this.label1.Size = new System.Drawing.Size(88, 28);
             this.label1.TabIndex = 10;
             this.label1.Text = "رقم الهاتف";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(486, 47);
+            this.label2.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(628, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 25);
+            this.label2.Size = new System.Drawing.Size(49, 28);
             this.label2.TabIndex = 11;
             this.label2.Text = "الإسم";
             // 
@@ -149,54 +151,58 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             // 
             this.txt_EmployeePassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_EmployeePassword.Enabled = false;
-            this.txt_EmployeePassword.Location = new System.Drawing.Point(12, 104);
+            this.txt_EmployeePassword.Location = new System.Drawing.Point(67, 94);
             this.txt_EmployeePassword.Name = "txt_EmployeePassword";
             this.txt_EmployeePassword.PasswordChar = '*';
-            this.txt_EmployeePassword.Size = new System.Drawing.Size(139, 26);
+            this.txt_EmployeePassword.Size = new System.Drawing.Size(169, 39);
             this.txt_EmployeePassword.TabIndex = 4;
             this.txt_EmployeePassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(154, 152);
+            this.label3.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(245, 145);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 25);
+            this.label3.Size = new System.Drawing.Size(98, 28);
             this.label3.TabIndex = 12;
             this.label3.Text = "حالة الموظف";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(480, 149);
+            this.label4.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(630, 145);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 25);
+            this.label4.Size = new System.Drawing.Size(48, 28);
             this.label4.TabIndex = 13;
             this.label4.Text = "الراتب";
             // 
             // btn_Delete
             // 
             this.btn_Delete.Enabled = false;
+            this.btn_Delete.FlatAppearance.BorderSize = 0;
+            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Delete.Location = new System.Drawing.Point(107, 24);
+            this.btn_Delete.Image = ((System.Drawing.Image)(resources.GetObject("btn_Delete.Image")));
+            this.btn_Delete.Location = new System.Drawing.Point(96, 17);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(80, 41);
+            this.btn_Delete.Size = new System.Drawing.Size(80, 77);
             this.btn_Delete.TabIndex = 9;
-            this.btn_Delete.Text = "حذف";
             this.btn_Delete.UseVisualStyleBackColor = true;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Edit
             // 
             this.btn_Edit.Enabled = false;
+            this.btn_Edit.FlatAppearance.BorderSize = 0;
+            this.btn_Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Edit.Location = new System.Drawing.Point(252, 24);
+            this.btn_Edit.Image = ((System.Drawing.Image)(resources.GetObject("btn_Edit.Image")));
+            this.btn_Edit.Location = new System.Drawing.Point(241, 20);
             this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(80, 41);
+            this.btn_Edit.Size = new System.Drawing.Size(80, 77);
             this.btn_Edit.TabIndex = 8;
-            this.btn_Edit.Text = "تعديل";
             this.btn_Edit.UseVisualStyleBackColor = true;
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
@@ -207,20 +213,22 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             this.groupBox4.Controls.Add(this.btn_Edit);
             this.groupBox4.Controls.Add(this.btn_Save);
             this.groupBox4.Controls.Add(this.btn_New);
-            this.groupBox4.Location = new System.Drawing.Point(10, 614);
+            this.groupBox4.Location = new System.Drawing.Point(10, 726);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(715, 78);
+            this.groupBox4.Size = new System.Drawing.Size(707, 107);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             // 
             // btn_New
             // 
+            this.btn_New.FlatAppearance.BorderSize = 0;
+            this.btn_New.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_New.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_New.Location = new System.Drawing.Point(545, 23);
+            this.btn_New.Image = ((System.Drawing.Image)(resources.GetObject("btn_New.Image")));
+            this.btn_New.Location = new System.Drawing.Point(560, 15);
             this.btn_New.Name = "btn_New";
-            this.btn_New.Size = new System.Drawing.Size(80, 42);
+            this.btn_New.Size = new System.Drawing.Size(80, 86);
             this.btn_New.TabIndex = 10;
-            this.btn_New.Text = "جديد";
             this.btn_New.UseVisualStyleBackColor = true;
             this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
             // 
@@ -229,10 +237,10 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             this.groupBox3.Controls.Add(this.btn_Search);
             this.groupBox3.Controls.Add(this.dgv_Employees);
             this.groupBox3.Controls.Add(this.txt_Search);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Droid Arabic Kufi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(10, 218);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(715, 334);
+            this.groupBox3.Size = new System.Drawing.Size(710, 401);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "الموظفين";
@@ -241,36 +249,38 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             // 
             this.btn_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Search.Image = ((System.Drawing.Image)(resources.GetObject("btn_Search.Image")));
-            this.btn_Search.Location = new System.Drawing.Point(6, 25);
+            this.btn_Search.Location = new System.Drawing.Point(3, 33);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(37, 34);
+            this.btn_Search.Size = new System.Drawing.Size(44, 39);
             this.btn_Search.TabIndex = 25;
             this.btn_Search.UseVisualStyleBackColor = true;
             // 
             // dgv_Employees
             // 
             this.dgv_Employees.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.5F);
             this.dgv_Employees.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Employees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.5F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_Employees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.5F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_Employees.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_Employees.Location = new System.Drawing.Point(3, 65);
+            this.dgv_Employees.Location = new System.Drawing.Point(6, 78);
             this.dgv_Employees.MultiSelect = false;
             this.dgv_Employees.Name = "dgv_Employees";
             this.dgv_Employees.ReadOnly = true;
@@ -280,7 +290,7 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             this.dgv_Employees.RowTemplate.Height = 40;
             this.dgv_Employees.RowTemplate.ReadOnly = true;
             this.dgv_Employees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Employees.Size = new System.Drawing.Size(709, 266);
+            this.dgv_Employees.Size = new System.Drawing.Size(696, 317);
             this.dgv_Employees.TabIndex = 30;
             this.dgv_Employees.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Employees_CellDoubleClick);
             this.dgv_Employees.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Employees_CellMouseDown);
@@ -290,11 +300,11 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             // 
             this.txt_Search.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txt_Search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Search.Font = new System.Drawing.Font("Droid Arabic Kufi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Search.ForeColor = System.Drawing.Color.Gray;
-            this.txt_Search.Location = new System.Drawing.Point(49, 25);
+            this.txt_Search.Location = new System.Drawing.Point(49, 33);
             this.txt_Search.Name = "txt_Search";
-            this.txt_Search.Size = new System.Drawing.Size(657, 34);
+            this.txt_Search.Size = new System.Drawing.Size(653, 39);
             this.txt_Search.TabIndex = 24;
             this.txt_Search.Text = "ابحث هنا ..";
             this.txt_Search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -322,28 +332,20 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             // 
             this.txt_EmployeeSalary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_EmployeeSalary.Enabled = false;
-            this.txt_EmployeeSalary.Location = new System.Drawing.Point(255, 149);
+            this.txt_EmployeeSalary.Location = new System.Drawing.Point(377, 143);
             this.txt_EmployeeSalary.Name = "txt_EmployeeSalary";
-            this.txt_EmployeeSalary.Size = new System.Drawing.Size(199, 26);
+            this.txt_EmployeeSalary.Size = new System.Drawing.Size(199, 39);
             this.txt_EmployeeSalary.TabIndex = 5;
             this.txt_EmployeeSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_EmployeeSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_EmployeeSalary_KeyPress);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Location = new System.Drawing.Point(559, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(166, 200);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(162, 103);
+            this.label5.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(253, 97);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 25);
+            this.label5.Size = new System.Drawing.Size(85, 28);
             this.label5.TabIndex = 14;
             this.label5.Text = "كلمة المرور";
             // 
@@ -351,9 +353,9 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             // 
             this.txt_EmployeeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_EmployeeName.Enabled = false;
-            this.txt_EmployeeName.Location = new System.Drawing.Point(255, 49);
+            this.txt_EmployeeName.Location = new System.Drawing.Point(377, 45);
             this.txt_EmployeeName.Name = "txt_EmployeeName";
-            this.txt_EmployeeName.Size = new System.Drawing.Size(199, 26);
+            this.txt_EmployeeName.Size = new System.Drawing.Size(199, 39);
             this.txt_EmployeeName.TabIndex = 1;
             this.txt_EmployeeName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -373,10 +375,10 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             this.groupBox1.Controls.Add(this.txt_EmployeeSalary);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txt_EmployeeName);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Droid Arabic Kufi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(10, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(543, 200);
+            this.groupBox1.Size = new System.Drawing.Size(710, 200);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات الموظف";
@@ -385,33 +387,23 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             // 
             this.txt_EmployeePhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_EmployeePhone.Enabled = false;
-            this.txt_EmployeePhone.Location = new System.Drawing.Point(255, 103);
+            this.txt_EmployeePhone.Location = new System.Drawing.Point(377, 94);
             this.txt_EmployeePhone.MaxLength = 9;
             this.txt_EmployeePhone.Name = "txt_EmployeePhone";
-            this.txt_EmployeePhone.Size = new System.Drawing.Size(199, 26);
+            this.txt_EmployeePhone.Size = new System.Drawing.Size(199, 39);
             this.txt_EmployeePhone.TabIndex = 16;
             this.txt_EmployeePhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_EmployeePhone.TextChanged += new System.EventHandler(this.txt_EmployeePhone_TextChanged);
             this.txt_EmployeePhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_EmployeePhone_KeyPress);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(26, 564);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 25);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "عرض حسب: ";
-            // 
             // rad_All
             // 
             this.rad_All.AutoSize = true;
             this.rad_All.Checked = true;
-            this.rad_All.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad_All.Location = new System.Drawing.Point(133, 569);
+            this.rad_All.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad_All.Location = new System.Drawing.Point(574, 38);
             this.rad_All.Name = "rad_All";
-            this.rad_All.Size = new System.Drawing.Size(54, 24);
+            this.rad_All.Size = new System.Drawing.Size(69, 36);
             this.rad_All.TabIndex = 9;
             this.rad_All.TabStop = true;
             this.rad_All.Text = "الكل";
@@ -421,10 +413,10 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             // rad_InsideEmployee
             // 
             this.rad_InsideEmployee.AutoSize = true;
-            this.rad_InsideEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad_InsideEmployee.Location = new System.Drawing.Point(200, 569);
+            this.rad_InsideEmployee.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad_InsideEmployee.Location = new System.Drawing.Point(447, 38);
             this.rad_InsideEmployee.Name = "rad_InsideEmployee";
-            this.rad_InsideEmployee.Size = new System.Drawing.Size(79, 24);
+            this.rad_InsideEmployee.Size = new System.Drawing.Size(107, 36);
             this.rad_InsideEmployee.TabIndex = 10;
             this.rad_InsideEmployee.Text = "الموظفين";
             this.rad_InsideEmployee.UseVisualStyleBackColor = true;
@@ -433,10 +425,10 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             // rad_outEmployee
             // 
             this.rad_outEmployee.AutoSize = true;
-            this.rad_outEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad_outEmployee.Location = new System.Drawing.Point(292, 569);
+            this.rad_outEmployee.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad_outEmployee.Location = new System.Drawing.Point(322, 38);
             this.rad_outEmployee.Name = "rad_outEmployee";
-            this.rad_outEmployee.Size = new System.Drawing.Size(85, 24);
+            this.rad_outEmployee.Size = new System.Drawing.Size(105, 36);
             this.rad_outEmployee.TabIndex = 11;
             this.rad_outEmployee.Text = "المحصلين";
             this.rad_outEmployee.UseVisualStyleBackColor = true;
@@ -445,10 +437,10 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             // rad_Active
             // 
             this.rad_Active.AutoSize = true;
-            this.rad_Active.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad_Active.Location = new System.Drawing.Point(394, 569);
+            this.rad_Active.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad_Active.Location = new System.Drawing.Point(225, 38);
             this.rad_Active.Name = "rad_Active";
-            this.rad_Active.Size = new System.Drawing.Size(55, 24);
+            this.rad_Active.Size = new System.Drawing.Size(73, 36);
             this.rad_Active.TabIndex = 12;
             this.rad_Active.Text = "فعال";
             this.rad_Active.UseVisualStyleBackColor = true;
@@ -457,33 +449,46 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             // rad_NoneActive
             // 
             this.rad_NoneActive.AutoSize = true;
-            this.rad_NoneActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad_NoneActive.Location = new System.Drawing.Point(455, 569);
+            this.rad_NoneActive.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad_NoneActive.Location = new System.Drawing.Point(89, 38);
             this.rad_NoneActive.Name = "rad_NoneActive";
-            this.rad_NoneActive.Size = new System.Drawing.Size(81, 24);
+            this.rad_NoneActive.Size = new System.Drawing.Size(101, 36);
             this.rad_NoneActive.TabIndex = 13;
             this.rad_NoneActive.Text = "غير فعال";
             this.rad_NoneActive.UseVisualStyleBackColor = true;
             this.rad_NoneActive.CheckedChanged += new System.EventHandler(this.rad_NoneActive_CheckedChanged);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rad_All);
+            this.groupBox2.Controls.Add(this.rad_NoneActive);
+            this.groupBox2.Controls.Add(this.rad_InsideEmployee);
+            this.groupBox2.Controls.Add(this.rad_Active);
+            this.groupBox2.Controls.Add(this.rad_outEmployee);
+            this.groupBox2.Font = new System.Drawing.Font("Droid Arabic Kufi", 10F);
+            this.groupBox2.Location = new System.Drawing.Point(10, 625);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(710, 95);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "فرز بحسب";
+            // 
             // frm_Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 704);
-            this.Controls.Add(this.rad_NoneActive);
-            this.Controls.Add(this.rad_Active);
-            this.Controls.Add(this.rad_outEmployee);
-            this.Controls.Add(this.rad_InsideEmployee);
-            this.Controls.Add(this.rad_All);
-            this.Controls.Add(this.label7);
+            this.ClientSize = new System.Drawing.Size(732, 845);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_Employee";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "الموظفين";
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -492,8 +497,9 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -517,19 +523,18 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
         private System.Windows.Forms.DataGridView dgv_Employees;
         private System.Windows.Forms.TextBox txt_Search;
         private System.Windows.Forms.TextBox txt_EmployeeSalary;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_EmployeeName;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem الصلاحياتToolStripMenuItem;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RadioButton rad_All;
         private System.Windows.Forms.RadioButton rad_InsideEmployee;
         private System.Windows.Forms.RadioButton rad_outEmployee;
         private System.Windows.Forms.RadioButton rad_Active;
         private System.Windows.Forms.RadioButton rad_NoneActive;
         private System.Windows.Forms.TextBox txt_EmployeePhone;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

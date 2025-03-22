@@ -29,6 +29,7 @@ namespace PowerStationDisktop.PresentationLayer.Employees
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_StartAndEndOfCollection));
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dtp_StartDateOfCollection = new System.Windows.Forms.DateTimePicker();
@@ -42,7 +43,7 @@ namespace PowerStationDisktop.PresentationLayer.Employees
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(244, 60);
+            this.label1.Location = new System.Drawing.Point(245, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 28);
             this.label1.TabIndex = 12;
@@ -52,7 +53,7 @@ namespace PowerStationDisktop.PresentationLayer.Employees
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(596, 60);
+            this.label3.Location = new System.Drawing.Point(609, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 28);
             this.label3.TabIndex = 13;
@@ -63,7 +64,7 @@ namespace PowerStationDisktop.PresentationLayer.Employees
             this.dtp_StartDateOfCollection.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_StartDateOfCollection.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_StartDateOfCollection.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtp_StartDateOfCollection.Location = new System.Drawing.Point(426, 55);
+            this.dtp_StartDateOfCollection.Location = new System.Drawing.Point(439, 72);
             this.dtp_StartDateOfCollection.Name = "dtp_StartDateOfCollection";
             this.dtp_StartDateOfCollection.Size = new System.Drawing.Size(161, 36);
             this.dtp_StartDateOfCollection.TabIndex = 18;
@@ -72,7 +73,7 @@ namespace PowerStationDisktop.PresentationLayer.Employees
             // 
             this.dtp_EndDateOfCollection.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_EndDateOfCollection.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_EndDateOfCollection.Location = new System.Drawing.Point(74, 55);
+            this.dtp_EndDateOfCollection.Location = new System.Drawing.Point(75, 72);
             this.dtp_EndDateOfCollection.Name = "dtp_EndDateOfCollection";
             this.dtp_EndDateOfCollection.Size = new System.Drawing.Size(161, 36);
             this.dtp_EndDateOfCollection.TabIndex = 19;
@@ -80,9 +81,9 @@ namespace PowerStationDisktop.PresentationLayer.Employees
             // btn_EnableCollectionForAllEmployee
             // 
             this.btn_EnableCollectionForAllEmployee.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F);
-            this.btn_EnableCollectionForAllEmployee.Location = new System.Drawing.Point(241, 140);
+            this.btn_EnableCollectionForAllEmployee.Location = new System.Drawing.Point(259, 154);
             this.btn_EnableCollectionForAllEmployee.Name = "btn_EnableCollectionForAllEmployee";
-            this.btn_EnableCollectionForAllEmployee.Size = new System.Drawing.Size(307, 47);
+            this.btn_EnableCollectionForAllEmployee.Size = new System.Drawing.Size(307, 41);
             this.btn_EnableCollectionForAllEmployee.TabIndex = 20;
             this.btn_EnableCollectionForAllEmployee.Text = "السماح بالتحصيل لجميع المحصلين";
             this.btn_EnableCollectionForAllEmployee.UseVisualStyleBackColor = true;
@@ -108,6 +109,7 @@ namespace PowerStationDisktop.PresentationLayer.Employees
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 231);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_StartAndEndOfCollection";

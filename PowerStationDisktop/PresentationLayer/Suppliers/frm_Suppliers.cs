@@ -14,6 +14,8 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
     public partial class frm_Suppliers : Form
     {
         BusinessLayer.Suppliers.ClsSuppliers supplier = new BusinessLayer.Suppliers.ClsSuppliers();
+        BusinessLayer.PowerStation.ClsPowerStation powerStation = new BusinessLayer.PowerStation.ClsPowerStation();
+
         private Regex regex = new Regex(@"^7[80137]\d{7}$");
         public frm_Suppliers()
         {
@@ -128,7 +130,8 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
                 {
                     if (CheckIfPhoneNumberTrueOrNot())
                     {
-                        int PoweStationID = 1;
+                        DataTable DataTable1 = powerStation.GetAllPowerStation();
+                        int PoweStationID = Convert.ToInt32(DataTable1.Rows[0][0].ToString());
 
                         supplier.AddNewSupplier(txt_SupplierName.Text , txt_SupplierPhone.Text , rich_SupplierDiscription.Text, PoweStationID);
                         MessageBox.Show("تم اضافة المورد بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);

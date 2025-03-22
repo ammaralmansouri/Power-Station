@@ -303,7 +303,7 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
                 if (CheckIfTextBoxesIsNull())
                 {
 
-                    if(dtp_PaymentVoucherDate.Value.Date == DateTime.Now.Date)
+                    if(dtp_PaymentVoucherDate.Value.Date <= DateTime.Now.Date)
                     {
                         
                         if(rad_Employee.Checked)
@@ -335,7 +335,7 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
                     }
                     else
                     {
-                        MessageBox.Show("التاريخ المدخل لا يساوي تاريخ اليوم..!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("التاريخ المدخل أكبر من تاريخ اليوم..!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
 

@@ -14,6 +14,8 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
     public partial class frm_Employee : Form
     {
         BusinessLayer.Employees.ClsEmployees employee = new BusinessLayer.Employees.ClsEmployees();
+        BusinessLayer.PowerStation.ClsPowerStation powerStation = new BusinessLayer.PowerStation.ClsPowerStation();
+
         private Regex regex = new Regex(@"^7[80137]\d{7}$");
 
         private string placeholderText = "ابحث هنا ..";
@@ -54,10 +56,11 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             dgv_Employees.Columns[2].HeaderText = "رقم الهاتف";
             dgv_Employees.Columns[3].HeaderText = "الراتب";
             dgv_Employees.Columns[4].Visible = false;
-            dgv_Employees.Columns[5].HeaderText = "النوع";
-            dgv_Employees.Columns[6].Visible = false;
-            dgv_Employees.Columns[7].HeaderText = "الحالة";
-            dgv_Employees.Columns[8].Visible = false;
+            dgv_Employees.Columns[5].HeaderText = "السُلف السابقة";
+            dgv_Employees.Columns[6].HeaderText = "النوع";
+            dgv_Employees.Columns[7].Visible = false;
+            dgv_Employees.Columns[8].HeaderText = "الحالة";
+            dgv_Employees.Columns[9].Visible = false;
         }
         void GetAllEmployees()
         {
@@ -199,7 +202,9 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
                 {
                     if (CheckIfPhoneNumberTrueOrNot())
                     {
-                        int PoweStationID = 1;
+                        DataTable DataTable1 = powerStation.GetAllPowerStation();
+                        int PoweStationID = Convert.ToInt32(DataTable1.Rows[0][0].ToString());
+
                         int EmployeePermission = 0;
                         int EmployeeType = 1;
                         int EmployeeState = 0;
@@ -458,10 +463,7 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
         {
             if (e.KeyCode == Keys.Enter)
             {
-                EnableAndDisEnableTextBoxesAndButtons(true);
-                btn_Save.Enabled = false;
-                btn_Edit.Enabled = true;
-                btn_Delete.Enabled = true;
+                
 
                 DataTable DataTable1 = new DataTable();
 
@@ -469,6 +471,11 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
 
                 if(DataTable1.Rows.Count > 0)
                 {
+                    EnableAndDisEnableTextBoxesAndButtons(true);
+                    btn_Save.Enabled = false;
+                    btn_Edit.Enabled = true;
+
+                    btn_Delete.Enabled = true;
                     txt_EmployeeID.Text = DataTable1.Rows[0][0].ToString();
                     txt_EmployeeName.Text = DataTable1.Rows[0][1].ToString();
                     txt_EmployeePhone.Text = DataTable1.Rows[0][2].ToString();
@@ -607,6 +614,7 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             {
                 txt_Search.Text = "";
                 txt_Search.ForeColor = Color.Black;
+                GetAllEmployees();
             }
         }
         
@@ -617,8 +625,10 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             {
                 txt_Search.Text = placeholderText;
                 txt_Search.ForeColor = Color.Gray;
+                GetAllEmployees();
             }
         }
 
+       
     }
 }

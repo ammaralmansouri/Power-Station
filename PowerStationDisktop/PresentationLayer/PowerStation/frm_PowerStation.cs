@@ -218,6 +218,6 @@ namespace PowerStationDisktop.PresentationLayer.PowerStation
             }
         }
 
-       
+      
     }
 }

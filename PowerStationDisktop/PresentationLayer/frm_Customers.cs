@@ -14,6 +14,7 @@ namespace PowerStationDisktop.PresentationLayer
     public partial class frm_Customers : Form
     {
         BusinessLayer.Customers.ClsCustomers customer = new BusinessLayer.Customers.ClsCustomers();
+        BusinessLayer.PowerStation.ClsPowerStation powerStation = new BusinessLayer.PowerStation.ClsPowerStation();
         private Regex regex = new Regex(@"^7[80137]\d{7}$");
 
         private string placeholderText = "ابحث هنا ..";
@@ -196,7 +197,8 @@ namespace PowerStationDisktop.PresentationLayer
                 {
                     if (CheckIfPhoneNumberTrueOrNot())
                     {
-                        int PoweStationID = 1;
+                        DataTable DataTable1 = powerStation.GetAllPowerStation();
+                        int PoweStationID = Convert.ToInt32(DataTable1.Rows[0][0].ToString());
 
                         customer.AddNewCustomer(txt_CustomerName.Text,txt_CustomerPhone.Text, txt_CustomerPassword.Text, Convert.ToDouble(txt_CustomerTotalDues.Text), Convert.ToDouble(cmb_ElectronicMeters.SelectedValue), Convert.ToInt32(cmb_AreaID.SelectedValue), PoweStationID);
                         MessageBox.Show("تم اضافة العميل بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
