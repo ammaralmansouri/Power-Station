@@ -102,6 +102,7 @@ namespace PowerStationDisktop.BusinessLayer.Customers
             para[0].Value = ElectronicMeterID;
 
             DataTable DataTable1 = new DataTable();
+            
 
             DataTable1 = con.SelectData("Get_Customer_Information", para);
             con.CloseConnection();
