@@ -10,18 +10,7 @@ namespace PowerStationDisktop.BusinessLayer.Customers
 {
     class ClsCustomers
     {
-        public DataTable GetAllAreas()
-        {
-            DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
-            con.OpenConnection();
-
-            DataTable DataTable1 = new DataTable();
-
-            DataTable1 = con.SelectData("Get_All_Areas");
-            con.CloseConnection();
-
-            return DataTable1;
-        }
+        
 
         public DataTable GetElectronicMeterswhichHaveNotBeenChoosen()
         {

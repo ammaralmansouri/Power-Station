@@ -15,6 +15,7 @@ namespace PowerStationDisktop.PresentationLayer
     {
         BusinessLayer.Customers.ClsCustomers customer = new BusinessLayer.Customers.ClsCustomers();
         BusinessLayer.PowerStation.ClsPowerStation powerStation = new BusinessLayer.PowerStation.ClsPowerStation();
+        BusinessLayer.Areas.ClsAreas areas = new BusinessLayer.Areas.ClsAreas();
         private Regex regex = new Regex(@"^7[80137]\d{7}$");
 
         private string placeholderText = "ابحث هنا ..";
@@ -56,7 +57,7 @@ namespace PowerStationDisktop.PresentationLayer
 
         void GetAllAreas()
         {
-            cmb_AreaID.DataSource = customer.GetAllAreas();
+            cmb_AreaID.DataSource = areas.GetAllAreas();
 
             cmb_AreaID.ValueMember = "AreaID";
             cmb_AreaID.DisplayMember = "AreaName";

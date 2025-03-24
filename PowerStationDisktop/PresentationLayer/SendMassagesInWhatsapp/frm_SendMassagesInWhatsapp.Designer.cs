@@ -29,6 +29,7 @@ namespace PowerStationDisktop.PresentationLayer.SendMassagesInWhatsapp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_SendMassagesInWhatsapp));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txt_PhoneNumber = new System.Windows.Forms.TextBox();
@@ -50,7 +51,7 @@ namespace PowerStationDisktop.PresentationLayer.SendMassagesInWhatsapp
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.tabControl1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeftLayout = true;
@@ -64,10 +65,10 @@ namespace PowerStationDisktop.PresentationLayer.SendMassagesInWhatsapp
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage1.Controls.Add(this.txt_PhoneNumber);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 30);
+            this.tabPage1.Location = new System.Drawing.Point(4, 37);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(403, 466);
+            this.tabPage1.Size = new System.Drawing.Size(403, 459);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ارسال لرقم محدد";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -75,10 +76,10 @@ namespace PowerStationDisktop.PresentationLayer.SendMassagesInWhatsapp
             // txt_PhoneNumber
             // 
             this.txt_PhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_PhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_PhoneNumber.Location = new System.Drawing.Point(64, 187);
+            this.txt_PhoneNumber.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PhoneNumber.Location = new System.Drawing.Point(53, 185);
             this.txt_PhoneNumber.Name = "txt_PhoneNumber";
-            this.txt_PhoneNumber.Size = new System.Drawing.Size(195, 30);
+            this.txt_PhoneNumber.Size = new System.Drawing.Size(206, 36);
             this.txt_PhoneNumber.TabIndex = 12;
             this.txt_PhoneNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_PhoneNumber.TextChanged += new System.EventHandler(this.txt_PhoneNumber_TextChanged);
@@ -87,10 +88,10 @@ namespace PowerStationDisktop.PresentationLayer.SendMassagesInWhatsapp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(265, 187);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 25);
+            this.label2.Size = new System.Drawing.Size(93, 28);
             this.label2.TabIndex = 13;
             this.label2.Text = " رقم الهاتف";
             // 
@@ -100,10 +101,10 @@ namespace PowerStationDisktop.PresentationLayer.SendMassagesInWhatsapp
             this.tabPage2.Controls.Add(this.chk_SendForAll);
             this.tabPage2.Controls.Add(this.cmb_AreaName);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 30);
+            this.tabPage2.Location = new System.Drawing.Point(4, 37);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(403, 466);
+            this.tabPage2.Size = new System.Drawing.Size(403, 459);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ارسال لأكثر من مستلم";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -113,7 +114,7 @@ namespace PowerStationDisktop.PresentationLayer.SendMassagesInWhatsapp
             this.chk_SendForAll.AutoSize = true;
             this.chk_SendForAll.Location = new System.Drawing.Point(40, 219);
             this.chk_SendForAll.Name = "chk_SendForAll";
-            this.chk_SendForAll.Size = new System.Drawing.Size(329, 25);
+            this.chk_SendForAll.Size = new System.Drawing.Size(311, 32);
             this.chk_SendForAll.TabIndex = 2;
             this.chk_SendForAll.Text = "ارسال الرسالة لكل العملاء في كل المناطق";
             this.chk_SendForAll.UseVisualStyleBackColor = true;
@@ -124,7 +125,7 @@ namespace PowerStationDisktop.PresentationLayer.SendMassagesInWhatsapp
             this.cmb_AreaName.FormattingEnabled = true;
             this.cmb_AreaName.Location = new System.Drawing.Point(64, 171);
             this.cmb_AreaName.Name = "cmb_AreaName";
-            this.cmb_AreaName.Size = new System.Drawing.Size(188, 29);
+            this.cmb_AreaName.Size = new System.Drawing.Size(188, 36);
             this.cmb_AreaName.TabIndex = 1;
             // 
             // label3
@@ -132,14 +133,14 @@ namespace PowerStationDisktop.PresentationLayer.SendMassagesInWhatsapp
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(258, 174);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 21);
+            this.label3.Size = new System.Drawing.Size(98, 28);
             this.label3.TabIndex = 0;
             this.label3.Text = "اسم المنطقة";
             // 
             // rich_MessageText
             // 
             this.rich_MessageText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rich_MessageText.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.rich_MessageText.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F);
             this.rich_MessageText.Location = new System.Drawing.Point(429, 42);
             this.rich_MessageText.Name = "rich_MessageText";
             this.rich_MessageText.Size = new System.Drawing.Size(482, 403);
@@ -149,16 +150,16 @@ namespace PowerStationDisktop.PresentationLayer.SendMassagesInWhatsapp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Droid Arabic Kufi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(435, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 25);
+            this.label1.Size = new System.Drawing.Size(98, 32);
             this.label1.TabIndex = 14;
             this.label1.Text = "نص الرسالة";
             // 
             // btn_Send
             // 
-            this.btn_Send.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Send.Font = new System.Drawing.Font("Droid Arabic Kufi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Send.Location = new System.Drawing.Point(553, 466);
             this.btn_Send.Name = "btn_Send";
             this.btn_Send.Size = new System.Drawing.Size(80, 42);
@@ -169,8 +170,7 @@ namespace PowerStationDisktop.PresentationLayer.SendMassagesInWhatsapp
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Enabled = false;
-            this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.Font = new System.Drawing.Font("Droid Arabic Kufi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel.Location = new System.Drawing.Point(715, 467);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(80, 41);
@@ -188,9 +188,13 @@ namespace PowerStationDisktop.PresentationLayer.SendMassagesInWhatsapp
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rich_MessageText);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_SendMassagesInWhatsapp";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ارسال الرسائل عبر الواتساب";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

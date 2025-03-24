@@ -10,7 +10,7 @@ namespace PowerStationDisktop.BusinessLayer.PowerStation
 {
     class ClsPowerStation
     {
-        public void AddPowerStation(string PowerStationArabicName,string PowerStationEnglishName , string PowerStatioArabicAddress , string PowerStatioEnglishAddress , string PowerStationPhoneNumber , string PowerStationEmail ,string PowerStationWebsite ,byte[] PowerStationLogo)
+        public void AddPowerStation(string PowerStationArabicName,string PowerStationEnglishName , string PowerStationArabicAddress , string PowerStationEnglishAddress , string PowerStationPhoneNumber , string PowerStationEmail ,string PowerStationWebsite ,byte[] PowerStationLogo)
         {
             DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
             con.OpenConnection();
@@ -23,11 +23,11 @@ namespace PowerStationDisktop.BusinessLayer.PowerStation
             para[1] = new SqlParameter("@PowerStationEnglishName", SqlDbType.NVarChar, 100);
             para[1].Value = PowerStationEnglishName;
 
-            para[2] = new SqlParameter("@PowerStatioArabicAddress", SqlDbType.NVarChar , 100);
-            para[2].Value = PowerStatioArabicAddress;
+            para[2] = new SqlParameter("@PowerStationArabicAddress", SqlDbType.NVarChar , 100);
+            para[2].Value = PowerStationArabicAddress;
 
-            para[3] = new SqlParameter("@PowerStatioEnglishAddress", SqlDbType.NVarChar , 100);
-            para[3].Value = PowerStatioEnglishAddress;
+            para[3] = new SqlParameter("@PowerStationEnglishAddress", SqlDbType.NVarChar , 100);
+            para[3].Value = PowerStationEnglishAddress;
 
             para[4] = new SqlParameter("@PowerStationPhoneNumber", SqlDbType.NVarChar , 15);
             para[4].Value = PowerStationPhoneNumber;
@@ -47,7 +47,7 @@ namespace PowerStationDisktop.BusinessLayer.PowerStation
         }
 
 
-        public void UpdatePowerStation(int PowerStationID ,string PowerStationArabicName, string PowerStationEnglishName, string PowerStatioArabicAddress, string PowerStatioEnglishAddress, string PowerStationPhoneNumber, string PowerStationEmail, string PowerStationWebsite, byte[] PowerStationLogo)
+        public void UpdatePowerStation(int PowerStationID ,string PowerStationArabicName, string PowerStationEnglishName, string PowerStationArabicAddress, string PowerStationEnglishAddress, string PowerStationPhoneNumber, string PowerStationEmail, string PowerStationWebsite, byte[] PowerStationLogo)
         {
             DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
             con.OpenConnection();
@@ -63,11 +63,11 @@ namespace PowerStationDisktop.BusinessLayer.PowerStation
             para[2] = new SqlParameter("@PowerStationEnglishName", SqlDbType.NVarChar, 100);
             para[2].Value = PowerStationEnglishName;
 
-            para[3] = new SqlParameter("@PowerStatioArabicAddress", SqlDbType.NVarChar, 100);
-            para[3].Value = PowerStatioArabicAddress;
+            para[3] = new SqlParameter("@PowerStationArabicAddress", SqlDbType.NVarChar, 100);
+            para[3].Value = PowerStationArabicAddress;
 
-            para[4] = new SqlParameter("@PowerStatioEnglishAddress", SqlDbType.NVarChar, 100);
-            para[4].Value = PowerStatioEnglishAddress;
+            para[4] = new SqlParameter("@PowerStationEnglishAddress", SqlDbType.NVarChar, 100);
+            para[4].Value = PowerStationEnglishAddress;
 
             para[5] = new SqlParameter("@PowerStationPhoneNumber", SqlDbType.NVarChar, 15);
             para[5].Value = PowerStationPhoneNumber;
