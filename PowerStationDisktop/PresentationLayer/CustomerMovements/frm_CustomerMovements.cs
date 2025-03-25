@@ -92,6 +92,8 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
 
             if (e.KeyCode == Keys.Enter)
             {
+               
+
                 DataTable DataTable1 = new DataTable();
 
                 DataTable1 = customer.SearchForCustomer(txt_ElectricityMeterIDOrPhoneNumber.Text);
@@ -119,6 +121,8 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
                     MessageBox.Show("رقم العداد الذي ادخلته غير صحيح أو أنه غير مرتبط بعميل ..!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     
                     txt_ElectricityMeterIDOrPhoneNumber.Text = string.Empty;
+                    EmptyTextBoxes();
+                    
                 }
             }
                 
@@ -139,20 +143,25 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
             String TotalDuesBeforePaying;
             DataTable DataTable1 = new DataTable();
 
-            DataTable1 = reading.GetCustomerTotalDues(Convert.ToDouble(txt_ElectricityMeterIDOrPhoneNumber.Text));
-            TotalDuesBeforePaying = DataTable1.Rows[0][0].ToString();
-
             if(txt_CustomerMovementPaiedAmount.Text != string.Empty)
             {
-                double TotalDues = Convert.ToDouble(TotalDuesBeforePaying) - Convert.ToDouble(txt_CustomerMovementPaiedAmount.Text);
+                DataTable1 = reading.GetCustomerTotalDues(Convert.ToDouble(txt_ElectricityMeterIDOrPhoneNumber.Text));
+                TotalDuesBeforePaying = DataTable1.Rows[0][0].ToString();
 
-                txt_TotalDuesAfterPaying.Text = TotalDues.ToString();
-            }
-            else
-            {
-                txt_TotalDuesAfterPaying.Text = DataTable1.Rows[0][0].ToString();
+                if (txt_CustomerMovementPaiedAmount.Text != string.Empty)
+                {
+                    double TotalDues = Convert.ToDouble(TotalDuesBeforePaying) - Convert.ToDouble(txt_CustomerMovementPaiedAmount.Text);
 
+                    txt_TotalDuesAfterPaying.Text = TotalDues.ToString();
+                }
+                else
+                {
+                    txt_TotalDuesAfterPaying.Text = DataTable1.Rows[0][0].ToString();
+
+                }
             }
+
+            
 
 
 

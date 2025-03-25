@@ -38,6 +38,7 @@ namespace PowerStationDisktop.PresentationLayer.ElectronicMeters
         {
             txt_ElectronicMeterID.Text = string.Empty;
             cmb_ElectronicMeterType.Text = string.Empty;
+            txt_ElectronicMeterIDForUpdating.Text = string.Empty;
         }
 
         bool CheckIfFiledsEmptyOrNot()
@@ -68,6 +69,7 @@ namespace PowerStationDisktop.PresentationLayer.ElectronicMeters
             btn_Save.Enabled = value;
 
             
+            btn_New.Enabled = !value;
             btn_Delete.Enabled = !value;
         }
 
@@ -133,6 +135,8 @@ namespace PowerStationDisktop.PresentationLayer.ElectronicMeters
                         GetAllElectronicMeter();
 
                         EnableAndDisEnableTextBoxesAndButtons(false);
+                        EmptyTextBoxes();
+                        
                         
                         btn_Delete.Enabled = false;
 
@@ -152,8 +156,8 @@ namespace PowerStationDisktop.PresentationLayer.ElectronicMeters
             }
             catch(Exception ex)
             {
-                    MessageBox.Show("تأكد من :"+ex, "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                //MessageBox.Show("تأكد من :"+ex, "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An Error Occurred: {ex.Message}\n\nSource: {ex.Source}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -174,6 +178,7 @@ namespace PowerStationDisktop.PresentationLayer.ElectronicMeters
 
             btn_Save.Enabled = false;
             
+            btn_New.Enabled = true;
             btn_Delete.Enabled = true;
         }
 
@@ -231,8 +236,8 @@ namespace PowerStationDisktop.PresentationLayer.ElectronicMeters
             }
             catch (Exception ex)
             {
-                MessageBox.Show("تأكد من: " + ex, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                //MessageBox.Show("تأكد من: " + ex, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An Error Occurred: {ex.Message}\n\nSource: {ex.Source}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

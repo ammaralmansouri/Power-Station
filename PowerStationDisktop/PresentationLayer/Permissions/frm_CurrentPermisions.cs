@@ -51,7 +51,7 @@ namespace PowerStationDisktop.PresentationLayer.Permissions
 
         void EmptyTextBoxes()
         {
-            foreach (var c in groupBox1.Controls)
+            foreach (var c in groupBox3.Controls)
             {
                 if (c is TextBox)
                 {
@@ -114,6 +114,7 @@ namespace PowerStationDisktop.PresentationLayer.Permissions
                         permissions.SetExpiredDateLikeEndOfCollectionDateForSpecificEmployee(dtp_EndOfCollectionDate.Value , Convert.ToInt32(txt_PermissionID.Text));
                         MessageBox.Show("تم حفظ التعديلات بنجاح    ", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         GetAllPermissions();
+                        EmptyTextBoxes();
                     }
 
                 }
