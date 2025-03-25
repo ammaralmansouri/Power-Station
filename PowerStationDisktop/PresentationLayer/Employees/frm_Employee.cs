@@ -148,6 +148,8 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
 
             cmb_EmployeeState.SelectedIndex = 0;
             cmb_EmployeeType.SelectedIndex = 1;
+
+            txt_EmployeeName.Focus();
         }
 
 
@@ -250,8 +252,7 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             }
             catch (Exception ex)
             {
-                MessageBox.Show("تأكد من: " + ex, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show($"An Error Occurred: {ex.Message}\n\nSource: {ex.Source}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -446,7 +447,9 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             }
             catch (Exception ex)
             {
-                MessageBox.Show("تأكد من: " + ex, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("تأكد من: " + ex, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An Error Occurred: {ex.Message}\n\nSource: {ex.Source}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 
             }
         }
