@@ -82,6 +82,7 @@
     <Compile Include="BusinessLayer\Customers\ClsCustomers.cs" />
     <Compile Include="BusinessLayer\ElectronicMeters\ClsElectronicMeter.cs" />
     <Compile Include="BusinessLayer\Employees\ClsEmployees.cs" />
+    <Compile Include="BusinessLayer\Normalization\ClsNormalize.cs" />
     <Compile Include="BusinessLayer\PaymentVouchers\ClsPaymentVouchers.cs" />
     <Compile Include="BusinessLayer\Permissions\ClsPermissions.cs" />
     <Compile Include="BusinessLayer\PowerStation\ClsPowerStation.cs" />

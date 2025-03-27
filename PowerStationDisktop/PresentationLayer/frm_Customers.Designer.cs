@@ -77,7 +77,7 @@ namespace PowerStationDisktop.PresentationLayer
             this.groupBox1.Controls.Add(this.txt_CustomerTotalDues);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txt_CustomerName);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Droid Arabic Kufi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(11, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(805, 200);
@@ -89,11 +89,11 @@ namespace PowerStationDisktop.PresentationLayer
             // 
             this.txt_CustomerPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_CustomerPhone.Enabled = false;
-            this.txt_CustomerPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_CustomerPhone.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CustomerPhone.Location = new System.Drawing.Point(429, 89);
             this.txt_CustomerPhone.MaxLength = 9;
             this.txt_CustomerPhone.Name = "txt_CustomerPhone";
-            this.txt_CustomerPhone.Size = new System.Drawing.Size(227, 24);
+            this.txt_CustomerPhone.Size = new System.Drawing.Size(227, 36);
             this.txt_CustomerPhone.TabIndex = 3;
             this.txt_CustomerPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_CustomerPhone.TextChanged += new System.EventHandler(this.txt_CustomerPhone_TextChanged);
@@ -110,50 +110,50 @@ namespace PowerStationDisktop.PresentationLayer
             // 
             // cmb_ElectronicMeters
             // 
-            this.cmb_ElectronicMeters.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_ElectronicMeters.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_ElectronicMeters.FormattingEnabled = true;
             this.cmb_ElectronicMeters.Location = new System.Drawing.Point(62, 141);
             this.cmb_ElectronicMeters.Name = "cmb_ElectronicMeters";
-            this.cmb_ElectronicMeters.Size = new System.Drawing.Size(195, 26);
+            this.cmb_ElectronicMeters.Size = new System.Drawing.Size(195, 36);
             this.cmb_ElectronicMeters.TabIndex = 6;
             // 
             // cmb_AreaID
             // 
             this.cmb_AreaID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_AreaID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_AreaID.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_AreaID.FormattingEnabled = true;
             this.cmb_AreaID.Location = new System.Drawing.Point(59, 38);
             this.cmb_AreaID.Name = "cmb_AreaID";
-            this.cmb_AreaID.Size = new System.Drawing.Size(197, 26);
+            this.cmb_AreaID.Size = new System.Drawing.Size(197, 36);
             this.cmb_AreaID.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(311, 45);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 20);
+            this.label6.Size = new System.Drawing.Size(66, 28);
             this.label6.TabIndex = 9;
             this.label6.Text = "المنطقة";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(663, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.Size = new System.Drawing.Size(88, 28);
             this.label1.TabIndex = 10;
             this.label1.Text = "رقم الهاتف";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(713, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 20);
+            this.label2.Size = new System.Drawing.Size(49, 28);
             this.label2.TabIndex = 11;
             this.label2.Text = "الإسم";
             // 
@@ -161,31 +161,31 @@ namespace PowerStationDisktop.PresentationLayer
             // 
             this.txt_CustomerPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_CustomerPassword.Enabled = false;
-            this.txt_CustomerPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_CustomerPassword.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CustomerPassword.Location = new System.Drawing.Point(59, 90);
             this.txt_CustomerPassword.Name = "txt_CustomerPassword";
             this.txt_CustomerPassword.PasswordChar = '*';
-            this.txt_CustomerPassword.Size = new System.Drawing.Size(197, 24);
+            this.txt_CustomerPassword.Size = new System.Drawing.Size(197, 36);
             this.txt_CustomerPassword.TabIndex = 4;
             this.txt_CustomerPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(290, 141);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 20);
+            this.label3.Size = new System.Drawing.Size(80, 28);
             this.label3.TabIndex = 12;
             this.label3.Text = "رقم العداد";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(687, 136);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 20);
+            this.label4.Size = new System.Drawing.Size(71, 28);
             this.label4.TabIndex = 13;
             this.label4.Text = "المتأخرات";
             // 
@@ -193,10 +193,10 @@ namespace PowerStationDisktop.PresentationLayer
             // 
             this.txt_CustomerTotalDues.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_CustomerTotalDues.Enabled = false;
-            this.txt_CustomerTotalDues.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_CustomerTotalDues.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CustomerTotalDues.Location = new System.Drawing.Point(429, 137);
             this.txt_CustomerTotalDues.Name = "txt_CustomerTotalDues";
-            this.txt_CustomerTotalDues.Size = new System.Drawing.Size(227, 24);
+            this.txt_CustomerTotalDues.Size = new System.Drawing.Size(227, 36);
             this.txt_CustomerTotalDues.TabIndex = 5;
             this.txt_CustomerTotalDues.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_CustomerTotalDues.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CustomerTotalDues_KeyPress);
@@ -204,10 +204,10 @@ namespace PowerStationDisktop.PresentationLayer
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(283, 89);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 20);
+            this.label5.Size = new System.Drawing.Size(85, 28);
             this.label5.TabIndex = 14;
             this.label5.Text = "كلمة المرور";
             // 
@@ -215,10 +215,10 @@ namespace PowerStationDisktop.PresentationLayer
             // 
             this.txt_CustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_CustomerName.Enabled = false;
-            this.txt_CustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_CustomerName.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CustomerName.Location = new System.Drawing.Point(429, 38);
             this.txt_CustomerName.Name = "txt_CustomerName";
-            this.txt_CustomerName.Size = new System.Drawing.Size(227, 24);
+            this.txt_CustomerName.Size = new System.Drawing.Size(227, 36);
             this.txt_CustomerName.TabIndex = 1;
             this.txt_CustomerName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -235,11 +235,11 @@ namespace PowerStationDisktop.PresentationLayer
             // txt_Search
             // 
             this.txt_Search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Search.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Search.ForeColor = System.Drawing.Color.Gray;
             this.txt_Search.Location = new System.Drawing.Point(66, 34);
             this.txt_Search.Name = "txt_Search";
-            this.txt_Search.Size = new System.Drawing.Size(737, 27);
+            this.txt_Search.Size = new System.Drawing.Size(737, 40);
             this.txt_Search.TabIndex = 24;
             this.txt_Search.Text = "ابحث هنا ..";
             this.txt_Search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -253,7 +253,7 @@ namespace PowerStationDisktop.PresentationLayer
             this.groupBox3.Controls.Add(this.btn_Search);
             this.groupBox3.Controls.Add(this.dgv_Customers);
             this.groupBox3.Controls.Add(this.txt_Search);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(11, 218);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(811, 407);
@@ -266,12 +266,12 @@ namespace PowerStationDisktop.PresentationLayer
             this.dgv_Customers.AllowUserToAddRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.5F);
             this.dgv_Customers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Customers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.5F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -280,7 +280,7 @@ namespace PowerStationDisktop.PresentationLayer
             this.dgv_Customers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.5F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;

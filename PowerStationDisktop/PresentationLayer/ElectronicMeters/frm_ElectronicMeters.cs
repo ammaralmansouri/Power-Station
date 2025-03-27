@@ -77,10 +77,10 @@ namespace PowerStationDisktop.PresentationLayer.ElectronicMeters
 
         private void txt_ElectronicMeterID_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)  // e.KeyChar == 8    => this for backspace button..
-                e.Handled = false;
-            else
-                e.Handled = true;
+            //if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)  // e.KeyChar == 8    => this for backspace button..
+            //    e.Handled = false;
+            //else
+            //    e.Handled = true;
         }
 
         private void btn_New_Click(object sender, EventArgs e)

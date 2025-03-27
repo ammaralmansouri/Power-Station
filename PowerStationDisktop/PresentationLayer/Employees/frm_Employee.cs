@@ -15,6 +15,7 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
     {
         BusinessLayer.Employees.ClsEmployees employee = new BusinessLayer.Employees.ClsEmployees();
         BusinessLayer.PowerStation.ClsPowerStation powerStation = new BusinessLayer.PowerStation.ClsPowerStation();
+        BusinessLayer.Normalization.ClsNormalize normalize = new BusinessLayer.Normalization.ClsNormalize();
 
         private Regex regex = new Regex(@"^7[80137]\d{7}$");
 
@@ -231,6 +232,7 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
                         }
 
                         employee.AddNewEmployee(txt_EmployeeName.Text, txt_EmployeePhone.Text, Convert.ToDouble(txt_EmployeeSalary.Text), txt_EmployeePassword.Text, EmployeeType, EmployeePermission  , EmployeeState, PoweStationID);
+                        normalize.ChangeLettersToStandardLettersToMakeItEasyWhenSearchForEmployee();
                         MessageBox.Show("تم اضافة الموظف بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
@@ -419,7 +421,9 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             }
             catch (Exception ex)
             {
-                MessageBox.Show("تأكد من: " + ex, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("تأكد من: " + ex, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An Error Occurred: {ex.Message}\n\nSource: {ex.Source}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 
             }
         }

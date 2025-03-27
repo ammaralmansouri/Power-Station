@@ -138,7 +138,7 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
                 EnableAndDisEnableTextBoxesAndButtons(true);
 
                 btn_Save.Enabled = false;
-                btn_Edit.Enabled = true;
+                
 
                 DataTable DataTable1 = new DataTable();
 
