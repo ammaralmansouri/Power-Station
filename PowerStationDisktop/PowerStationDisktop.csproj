@@ -33,6 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.3\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -66,6 +71,8 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -88,6 +95,7 @@
     <Compile Include="BusinessLayer\PowerStation\ClsPowerStation.cs" />
     <Compile Include="BusinessLayer\Prices\ClsPrices.cs" />
     <Compile Include="BusinessLayer\Readings\ClsReadings.cs" />
+    <Compile Include="BusinessLayer\Reports\ClsReports.cs" />
     <Compile Include="BusinessLayer\SendMassagesInWhatsapp\ClsSendMassagesInWhatsapp.cs" />
     <Compile Include="BusinessLayer\Suppliers\ClsSuppliers.cs" />
     <Compile Include="DataAccessLayer\ClsConnection.cs" />
@@ -175,6 +183,25 @@
     <Compile Include="PresentationLayer\Readings\frm_Readings.Designer.cs">
       <DependentUpon>frm_Readings.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\Reports\CustomerMonements\CustomerMovementWhenPaying.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerMovementWhenPaying.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Reports\DatasetForAllReports.cs">
+      <DependentUpon>DatasetForAllReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Reports\DatasetForAllReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatasetForAllReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Reports\frm_ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Reports\frm_ReportViewer.Designer.cs">
+      <DependentUpon>frm_ReportViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\SendMassagesInWhatsapp\frm_SendMassagesInWhatsapp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +258,13 @@
     <EmbeddedResource Include="PresentationLayer\Readings\frm_Readings.resx">
       <DependentUpon>frm_Readings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Reports\CustomerMonements\CustomerMovementWhenPaying.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CustomerMovementWhenPaying.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Reports\frm_ReportViewer.resx">
+      <DependentUpon>frm_ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\SendMassagesInWhatsapp\frm_SendMassagesInWhatsapp.resx">
       <DependentUpon>frm_SendMassagesInWhatsapp.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +281,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="PresentationLayer\Reports\DatasetForAllReports.xsc">
+      <DependentUpon>DatasetForAllReports.xsd</DependentUpon>
+    </None>
+    <None Include="PresentationLayer\Reports\DatasetForAllReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatasetForAllReports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="PresentationLayer\Reports\DatasetForAllReports.xss">
+      <DependentUpon>DatasetForAllReports.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -261,5 +306,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

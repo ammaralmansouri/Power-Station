@@ -16,6 +16,7 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
         BusinessLayer.CustomerMovement.ClsCustomerMovement customerMovement = new BusinessLayer.CustomerMovement.ClsCustomerMovement();
         BusinessLayer.Customers.ClsCustomers customer = new BusinessLayer.Customers.ClsCustomers();
         BusinessLayer.Readings.ClsReadings reading = new BusinessLayer.Readings.ClsReadings();
+        BusinessLayer.Reports.ClsReports reports = new BusinessLayer.Reports.ClsReports();
 
         public frm_CustomerMovements()
         {
@@ -208,6 +209,7 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
 
                         }
 
+                        int CustomerMovementID = Convert.ToInt32(txt_CustomerMovementID.Text);
 
                         customerMovement.AddNewCustomerMovement(Convert.ToInt32(txt_CustomerMovementID.Text) , dtp_CustomerMovementDate.Value , Convert.ToDouble(txt_CustomerMovementPaiedAmount.Text) , TotalDuesAfterPaying , rich_CustomerMovementNote.Text , CustomerMovementType,Convert.ToInt32(txt_CustomerID.Text) , Convert.ToInt32(txt_EmployeeID.Text));
                         MessageBox.Show("تم اضافة سند القبض بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -220,6 +222,20 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
 
                         btn_Edit.Enabled = false;
 
+                        DataTable DataTable1 = reports.ReportForCustomerMovementWhenPaying(CustomerMovementID);
+
+                        DataSet DataSet1 = new DataSet();
+
+                        DataSet1.Tables.Add(DataTable1);
+
+                        PresentationLayer.Reports.CustomerMonements.CustomerMovementWhenPaying customerMovementWhenPaying = new Reports.CustomerMonements.CustomerMovementWhenPaying();
+                        customerMovementWhenPaying.SetDataSource(DataTable1);
+
+                        PresentationLayer.Reports.frm_ReportViewer reportViewer = new Reports.frm_ReportViewer();
+
+                        reportViewer.CRV.ReportSource = customerMovementWhenPaying;
+                        reportViewer.CRV.RefreshReport();
+                        reportViewer.Show();
 
                     }
                     else
