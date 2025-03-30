@@ -53,6 +53,7 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
             this.txt_SupplierIDWhoTake = new System.Windows.Forms.TextBox();
             this.txt_EmployeeIDWhoGive = new System.Windows.Forms.TextBox();
             this.txt_EmployeeIDWhoTake = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -330,6 +331,13 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
             this.txt_EmployeeIDWhoTake.TabIndex = 21;
             this.txt_EmployeeIDWhoTake.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
             // frm_PaymentVoucher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -376,5 +384,6 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
         private System.Windows.Forms.TextBox txt_EmployeeIDWhoTake;
         private System.Windows.Forms.TextBox txt_EmployeeTotalCredit;
         private System.Windows.Forms.Label label6;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

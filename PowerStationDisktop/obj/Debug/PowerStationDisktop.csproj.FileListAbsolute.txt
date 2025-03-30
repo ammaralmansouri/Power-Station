@@ -64,3 +64,4 @@ E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\bin\Debug\Ax
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\bin\Debug\CrystalDecisions.Windows.Forms.dll
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\bin\Debug\ShockwaveFlashObjects.dll
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Reports.frm_ReportViewer.resources
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Extensions.frm_Loading.resources

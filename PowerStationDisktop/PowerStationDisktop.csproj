@@ -141,6 +141,12 @@
     <Compile Include="PresentationLayer\Employees\frm_StartAndEndOfCollection.Designer.cs">
       <DependentUpon>frm_StartAndEndOfCollection.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\Extensions\frm_Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Extensions\frm_Loading.Designer.cs">
+      <DependentUpon>frm_Loading.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\frm_Customers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,11 @@
     <Compile Include="PresentationLayer\Reports\frm_ReportViewer.Designer.cs">
       <DependentUpon>frm_ReportViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\Reports\PaymentVoucher\PaymentVoucherForEmployee.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentVoucherForEmployee.rpt</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\SendMassagesInWhatsapp\frm_SendMassagesInWhatsapp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +248,9 @@
     <EmbeddedResource Include="PresentationLayer\Employees\frm_StartAndEndOfCollection.resx">
       <DependentUpon>frm_StartAndEndOfCollection.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Extensions\frm_Loading.resx">
+      <DependentUpon>frm_Loading.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\frm_Customers.resx">
       <DependentUpon>frm_Customers.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +278,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Reports\frm_ReportViewer.resx">
       <DependentUpon>frm_ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Reports\PaymentVoucher\PaymentVoucherForEmployee.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PaymentVoucherForEmployee.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\SendMassagesInWhatsapp\frm_SendMassagesInWhatsapp.resx">
       <DependentUpon>frm_SendMassagesInWhatsapp.cs</DependentUpon>

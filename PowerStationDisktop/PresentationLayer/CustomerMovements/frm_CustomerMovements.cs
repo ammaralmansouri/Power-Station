@@ -17,7 +17,9 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
         BusinessLayer.Customers.ClsCustomers customer = new BusinessLayer.Customers.ClsCustomers();
         BusinessLayer.Readings.ClsReadings reading = new BusinessLayer.Readings.ClsReadings();
         BusinessLayer.Reports.ClsReports reports = new BusinessLayer.Reports.ClsReports();
+        BusinessLayer.PowerStation.ClsPowerStation powerStation = new BusinessLayer.PowerStation.ClsPowerStation();
 
+        int CustomerMovementID;
         public frm_CustomerMovements()
         {
             InitializeComponent();
@@ -186,9 +188,13 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
 
         }
 
+        // تعريف نافذة التحميل كمتحول عام داخل الفورم
+        private PresentationLayer.Extensions.frm_Loading loadingForm;
+
+
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            if (CheckIfTextBoxesIsNull())
+                if (CheckIfTextBoxesIsNull())
             {
                 if(cmb_CustomerMovementType.SelectedIndex != -1)
                 {
@@ -209,10 +215,11 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
 
                         }
 
-                        int CustomerMovementID = Convert.ToInt32(txt_CustomerMovementID.Text);
+                        CustomerMovementID = Convert.ToInt32(txt_CustomerMovementID.Text);
 
                         customerMovement.AddNewCustomerMovement(Convert.ToInt32(txt_CustomerMovementID.Text) , dtp_CustomerMovementDate.Value , Convert.ToDouble(txt_CustomerMovementPaiedAmount.Text) , TotalDuesAfterPaying , rich_CustomerMovementNote.Text , CustomerMovementType,Convert.ToInt32(txt_CustomerID.Text) , Convert.ToInt32(txt_EmployeeID.Text));
                         MessageBox.Show("تم اضافة سند القبض بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
 
                         EmptyTextBoxes();
@@ -220,22 +227,28 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
                         EnableAndDisEnableTextBoxesAndButtons(false);
 
 
-                        btn_Edit.Enabled = false;
+                        // إنشاء نافذة تحميل وإظهارها
+                        loadingForm = new Extensions.frm_Loading();
+                        loadingForm.Show();
 
-                        DataTable DataTable1 = reports.ReportForCustomerMovementWhenPaying(CustomerMovementID);
+                        // تشغيل المهمة في الخلفية لتحميل التقرير
+                        backgroundWorker1.RunWorkerAsync();
 
-                        DataSet DataSet1 = new DataSet();
+                        //DataTable DataTable1 = reports.ReportForCustomerMovementWhenPaying(CustomerMovementID);
 
-                        DataSet1.Tables.Add(DataTable1);
 
-                        PresentationLayer.Reports.CustomerMonements.CustomerMovementWhenPaying customerMovementWhenPaying = new Reports.CustomerMonements.CustomerMovementWhenPaying();
-                        customerMovementWhenPaying.SetDataSource(DataTable1);
+                        //DataSet DataSet1 = new DataSet();
 
-                        PresentationLayer.Reports.frm_ReportViewer reportViewer = new Reports.frm_ReportViewer();
+                        //DataSet1.Tables.Add(DataTable1);
 
-                        reportViewer.CRV.ReportSource = customerMovementWhenPaying;
-                        reportViewer.CRV.RefreshReport();
-                        reportViewer.Show();
+                        //PresentationLayer.Reports.CustomerMonements.CustomerMovementWhenPaying customerMovementWhenPaying = new Reports.CustomerMonements.CustomerMovementWhenPaying();
+                        //customerMovementWhenPaying.SetDataSource(DataTable1);
+
+                        //PresentationLayer.Reports.frm_ReportViewer reportViewer = new Reports.frm_ReportViewer();
+
+                        //reportViewer.CRV.ReportSource = customerMovementWhenPaying;
+                        //reportViewer.CRV.RefreshReport();
+                        //reportViewer.Show();
 
                     }
                     else
@@ -248,6 +261,48 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
                     MessageBox.Show("اختر نوع الدفع", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
+            }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+            // جلب التقرير من قاعدة البيانات
+            DataTable DataTable1 = reports.ReportForCustomerMovementWhenPaying(CustomerMovementID);
+            DataSet DataSet1 = new DataSet();
+            DataSet1.Tables.Add(DataTable1);
+
+            // تجهيز التقرير
+            PresentationLayer.Reports.CustomerMonements.CustomerMovementWhenPaying customerMovementWhenPaying =
+                new Reports.CustomerMonements.CustomerMovementWhenPaying();
+            customerMovementWhenPaying.SetDataSource(DataTable1);
+
+            // تمرير التقرير كـ نتيجة
+            e.Result = customerMovementWhenPaying;
+
+
+
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            // إغلاق نافذة التحميل
+            loadingForm.Close();
+
+            if (e.Error == null)
+            {
+                // استخراج التقرير
+                var customerMovementWhenPaying = (PresentationLayer.Reports.CustomerMonements.CustomerMovementWhenPaying)e.Result;
+
+                // عرض التقرير
+                PresentationLayer.Reports.frm_ReportViewer reportViewer = new Reports.frm_ReportViewer();
+                reportViewer.CRV.ReportSource = customerMovementWhenPaying;
+                reportViewer.CRV.RefreshReport();
+                reportViewer.Show();
+            }
+            else
+            {
+                MessageBox.Show("حدث خطأ أثناء تحميل التقرير: " + e.Error.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

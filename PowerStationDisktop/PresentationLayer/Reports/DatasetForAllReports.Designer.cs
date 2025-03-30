@@ -26,6 +26,8 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
         
         private CustomerMovementWhenPayingDataTable tableCustomerMovementWhenPaying;
         
+        private PaymentVoucherForEmployeeDataTable tablePaymentVoucherForEmployee;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57,6 +59,9 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
                 if ((ds.Tables["CustomerMovementWhenPaying"] != null)) {
                     base.Tables.Add(new CustomerMovementWhenPayingDataTable(ds.Tables["CustomerMovementWhenPaying"]));
                 }
+                if ((ds.Tables["PaymentVoucherForEmployee"] != null)) {
+                    base.Tables.Add(new PaymentVoucherForEmployeeDataTable(ds.Tables["PaymentVoucherForEmployee"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -82,6 +87,16 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
         public CustomerMovementWhenPayingDataTable CustomerMovementWhenPaying {
             get {
                 return this.tableCustomerMovementWhenPaying;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public PaymentVoucherForEmployeeDataTable PaymentVoucherForEmployee {
+            get {
+                return this.tablePaymentVoucherForEmployee;
             }
         }
         
@@ -155,6 +170,9 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
                 if ((ds.Tables["CustomerMovementWhenPaying"] != null)) {
                     base.Tables.Add(new CustomerMovementWhenPayingDataTable(ds.Tables["CustomerMovementWhenPaying"]));
                 }
+                if ((ds.Tables["PaymentVoucherForEmployee"] != null)) {
+                    base.Tables.Add(new PaymentVoucherForEmployeeDataTable(ds.Tables["PaymentVoucherForEmployee"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -194,6 +212,12 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
                     this.tableCustomerMovementWhenPaying.InitVars();
                 }
             }
+            this.tablePaymentVoucherForEmployee = ((PaymentVoucherForEmployeeDataTable)(base.Tables["PaymentVoucherForEmployee"]));
+            if ((initTable == true)) {
+                if ((this.tablePaymentVoucherForEmployee != null)) {
+                    this.tablePaymentVoucherForEmployee.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -206,11 +230,19 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableCustomerMovementWhenPaying = new CustomerMovementWhenPayingDataTable();
             base.Tables.Add(this.tableCustomerMovementWhenPaying);
+            this.tablePaymentVoucherForEmployee = new PaymentVoucherForEmployeeDataTable();
+            base.Tables.Add(this.tablePaymentVoucherForEmployee);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeCustomerMovementWhenPaying() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializePaymentVoucherForEmployee() {
             return false;
         }
         
@@ -271,6 +303,9 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void CustomerMovementWhenPayingRowChangeEventHandler(object sender, CustomerMovementWhenPayingRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void PaymentVoucherForEmployeeRowChangeEventHandler(object sender, PaymentVoucherForEmployeeRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -429,7 +464,7 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CustomerMovementWhenPayingRow AddCustomerMovementWhenPayingRow(string CustomerMovementID, string CustomerMovementDate, string CustomerMovementPaiedAmount, string TotalDuesAfterPaying, string CustomerMovementNote, string CustomerMovementType, string CustomerName, string EmployeeName) {
+            public CustomerMovementWhenPayingRow AddCustomerMovementWhenPayingRow(int CustomerMovementID, string CustomerMovementDate, string CustomerMovementPaiedAmount, string TotalDuesAfterPaying, string CustomerMovementNote, string CustomerMovementType, string CustomerName, string EmployeeName) {
                 CustomerMovementWhenPayingRow rowCustomerMovementWhenPayingRow = ((CustomerMovementWhenPayingRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CustomerMovementID,
@@ -475,7 +510,7 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnCustomerMovementID = new global::System.Data.DataColumn("CustomerMovementID", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCustomerMovementID = new global::System.Data.DataColumn("CustomerMovementID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCustomerMovementID);
                 this.columnCustomerMovementDate = new global::System.Data.DataColumn("CustomerMovementDate", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCustomerMovementDate);
@@ -618,6 +653,323 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class PaymentVoucherForEmployeeDataTable : global::System.Data.TypedTableBase<PaymentVoucherForEmployeeRow> {
+            
+            private global::System.Data.DataColumn columnPaymentVoucherID;
+            
+            private global::System.Data.DataColumn columnPaymentVoucherNote;
+            
+            private global::System.Data.DataColumn columnPaymentVoucherDate;
+            
+            private global::System.Data.DataColumn columnPaymentVoucherAmount;
+            
+            private global::System.Data.DataColumn columnEmployeeNameWhoTake;
+            
+            private global::System.Data.DataColumn columnEmployeeNameWhoGive;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PaymentVoucherForEmployeeDataTable() {
+                this.TableName = "PaymentVoucherForEmployee";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal PaymentVoucherForEmployeeDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected PaymentVoucherForEmployeeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PaymentVoucherIDColumn {
+                get {
+                    return this.columnPaymentVoucherID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PaymentVoucherNoteColumn {
+                get {
+                    return this.columnPaymentVoucherNote;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PaymentVoucherDateColumn {
+                get {
+                    return this.columnPaymentVoucherDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PaymentVoucherAmountColumn {
+                get {
+                    return this.columnPaymentVoucherAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EmployeeNameWhoTakeColumn {
+                get {
+                    return this.columnEmployeeNameWhoTake;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EmployeeNameWhoGiveColumn {
+                get {
+                    return this.columnEmployeeNameWhoGive;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PaymentVoucherForEmployeeRow this[int index] {
+                get {
+                    return ((PaymentVoucherForEmployeeRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event PaymentVoucherForEmployeeRowChangeEventHandler PaymentVoucherForEmployeeRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event PaymentVoucherForEmployeeRowChangeEventHandler PaymentVoucherForEmployeeRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event PaymentVoucherForEmployeeRowChangeEventHandler PaymentVoucherForEmployeeRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event PaymentVoucherForEmployeeRowChangeEventHandler PaymentVoucherForEmployeeRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddPaymentVoucherForEmployeeRow(PaymentVoucherForEmployeeRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PaymentVoucherForEmployeeRow AddPaymentVoucherForEmployeeRow(int PaymentVoucherID, string PaymentVoucherNote, string PaymentVoucherDate, string PaymentVoucherAmount, string EmployeeNameWhoTake, string EmployeeNameWhoGive) {
+                PaymentVoucherForEmployeeRow rowPaymentVoucherForEmployeeRow = ((PaymentVoucherForEmployeeRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        PaymentVoucherID,
+                        PaymentVoucherNote,
+                        PaymentVoucherDate,
+                        PaymentVoucherAmount,
+                        EmployeeNameWhoTake,
+                        EmployeeNameWhoGive};
+                rowPaymentVoucherForEmployeeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPaymentVoucherForEmployeeRow);
+                return rowPaymentVoucherForEmployeeRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                PaymentVoucherForEmployeeDataTable cln = ((PaymentVoucherForEmployeeDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new PaymentVoucherForEmployeeDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnPaymentVoucherID = base.Columns["PaymentVoucherID"];
+                this.columnPaymentVoucherNote = base.Columns["PaymentVoucherNote"];
+                this.columnPaymentVoucherDate = base.Columns["PaymentVoucherDate"];
+                this.columnPaymentVoucherAmount = base.Columns["PaymentVoucherAmount"];
+                this.columnEmployeeNameWhoTake = base.Columns["EmployeeNameWhoTake"];
+                this.columnEmployeeNameWhoGive = base.Columns["EmployeeNameWhoGive"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnPaymentVoucherID = new global::System.Data.DataColumn("PaymentVoucherID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaymentVoucherID);
+                this.columnPaymentVoucherNote = new global::System.Data.DataColumn("PaymentVoucherNote", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaymentVoucherNote);
+                this.columnPaymentVoucherDate = new global::System.Data.DataColumn("PaymentVoucherDate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaymentVoucherDate);
+                this.columnPaymentVoucherAmount = new global::System.Data.DataColumn("PaymentVoucherAmount", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaymentVoucherAmount);
+                this.columnEmployeeNameWhoTake = new global::System.Data.DataColumn("EmployeeNameWhoTake", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmployeeNameWhoTake);
+                this.columnEmployeeNameWhoGive = new global::System.Data.DataColumn("EmployeeNameWhoGive", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmployeeNameWhoGive);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PaymentVoucherForEmployeeRow NewPaymentVoucherForEmployeeRow() {
+                return ((PaymentVoucherForEmployeeRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new PaymentVoucherForEmployeeRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(PaymentVoucherForEmployeeRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.PaymentVoucherForEmployeeRowChanged != null)) {
+                    this.PaymentVoucherForEmployeeRowChanged(this, new PaymentVoucherForEmployeeRowChangeEvent(((PaymentVoucherForEmployeeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.PaymentVoucherForEmployeeRowChanging != null)) {
+                    this.PaymentVoucherForEmployeeRowChanging(this, new PaymentVoucherForEmployeeRowChangeEvent(((PaymentVoucherForEmployeeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.PaymentVoucherForEmployeeRowDeleted != null)) {
+                    this.PaymentVoucherForEmployeeRowDeleted(this, new PaymentVoucherForEmployeeRowChangeEvent(((PaymentVoucherForEmployeeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.PaymentVoucherForEmployeeRowDeleting != null)) {
+                    this.PaymentVoucherForEmployeeRowDeleting(this, new PaymentVoucherForEmployeeRowChangeEvent(((PaymentVoucherForEmployeeRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemovePaymentVoucherForEmployeeRow(PaymentVoucherForEmployeeRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DatasetForAllReports ds = new DatasetForAllReports();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "PaymentVoucherForEmployeeDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class CustomerMovementWhenPayingRow : global::System.Data.DataRow {
@@ -633,10 +985,10 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CustomerMovementID {
+            public int CustomerMovementID {
                 get {
                     try {
-                        return ((string)(this[this.tableCustomerMovementWhenPaying.CustomerMovementIDColumn]));
+                        return ((int)(this[this.tableCustomerMovementWhenPaying.CustomerMovementIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'CustomerMovementID\' in table \'CustomerMovementWhenPaying\' i" +
@@ -865,6 +1217,195 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class PaymentVoucherForEmployeeRow : global::System.Data.DataRow {
+            
+            private PaymentVoucherForEmployeeDataTable tablePaymentVoucherForEmployee;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal PaymentVoucherForEmployeeRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablePaymentVoucherForEmployee = ((PaymentVoucherForEmployeeDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int PaymentVoucherID {
+                get {
+                    try {
+                        return ((int)(this[this.tablePaymentVoucherForEmployee.PaymentVoucherIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PaymentVoucherID\' in table \'PaymentVoucherForEmployee\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePaymentVoucherForEmployee.PaymentVoucherIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PaymentVoucherNote {
+                get {
+                    try {
+                        return ((string)(this[this.tablePaymentVoucherForEmployee.PaymentVoucherNoteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PaymentVoucherNote\' in table \'PaymentVoucherForEmployee\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePaymentVoucherForEmployee.PaymentVoucherNoteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PaymentVoucherDate {
+                get {
+                    try {
+                        return ((string)(this[this.tablePaymentVoucherForEmployee.PaymentVoucherDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PaymentVoucherDate\' in table \'PaymentVoucherForEmployee\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePaymentVoucherForEmployee.PaymentVoucherDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PaymentVoucherAmount {
+                get {
+                    try {
+                        return ((string)(this[this.tablePaymentVoucherForEmployee.PaymentVoucherAmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PaymentVoucherAmount\' in table \'PaymentVoucherForEmployee\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePaymentVoucherForEmployee.PaymentVoucherAmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string EmployeeNameWhoTake {
+                get {
+                    try {
+                        return ((string)(this[this.tablePaymentVoucherForEmployee.EmployeeNameWhoTakeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeNameWhoTake\' in table \'PaymentVoucherForEmployee\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePaymentVoucherForEmployee.EmployeeNameWhoTakeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string EmployeeNameWhoGive {
+                get {
+                    try {
+                        return ((string)(this[this.tablePaymentVoucherForEmployee.EmployeeNameWhoGiveColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeNameWhoGive\' in table \'PaymentVoucherForEmployee\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePaymentVoucherForEmployee.EmployeeNameWhoGiveColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPaymentVoucherIDNull() {
+                return this.IsNull(this.tablePaymentVoucherForEmployee.PaymentVoucherIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPaymentVoucherIDNull() {
+                this[this.tablePaymentVoucherForEmployee.PaymentVoucherIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPaymentVoucherNoteNull() {
+                return this.IsNull(this.tablePaymentVoucherForEmployee.PaymentVoucherNoteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPaymentVoucherNoteNull() {
+                this[this.tablePaymentVoucherForEmployee.PaymentVoucherNoteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPaymentVoucherDateNull() {
+                return this.IsNull(this.tablePaymentVoucherForEmployee.PaymentVoucherDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPaymentVoucherDateNull() {
+                this[this.tablePaymentVoucherForEmployee.PaymentVoucherDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPaymentVoucherAmountNull() {
+                return this.IsNull(this.tablePaymentVoucherForEmployee.PaymentVoucherAmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPaymentVoucherAmountNull() {
+                this[this.tablePaymentVoucherForEmployee.PaymentVoucherAmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEmployeeNameWhoTakeNull() {
+                return this.IsNull(this.tablePaymentVoucherForEmployee.EmployeeNameWhoTakeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEmployeeNameWhoTakeNull() {
+                this[this.tablePaymentVoucherForEmployee.EmployeeNameWhoTakeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEmployeeNameWhoGiveNull() {
+                return this.IsNull(this.tablePaymentVoucherForEmployee.EmployeeNameWhoGiveColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEmployeeNameWhoGiveNull() {
+                this[this.tablePaymentVoucherForEmployee.EmployeeNameWhoGiveColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -884,6 +1425,40 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CustomerMovementWhenPayingRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class PaymentVoucherForEmployeeRowChangeEvent : global::System.EventArgs {
+            
+            private PaymentVoucherForEmployeeRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PaymentVoucherForEmployeeRowChangeEvent(PaymentVoucherForEmployeeRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PaymentVoucherForEmployeeRow Row {
                 get {
                     return this.eventRow;
                 }

@@ -110,5 +110,11 @@ namespace PowerStationDisktop
             PresentationLayer.Permissions.frm_CurrentPermisions currentPermisions = new PresentationLayer.Permissions.frm_CurrentPermisions();
             currentPermisions.Show();
         }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            PresentationLayer.Extensions.frm_Loading loadingForm = new PresentationLayer.Extensions.frm_Loading();
+            loadingForm.Show();
+        }
     }
 }

@@ -18,6 +18,9 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
         BusinessLayer.PaymentVouchers.ClsPaymentVouchers paymentVouchers = new BusinessLayer.PaymentVouchers.ClsPaymentVouchers();
         BusinessLayer.Suppliers.ClsSuppliers supplier = new BusinessLayer.Suppliers.ClsSuppliers();
         BusinessLayer.Employees.ClsEmployees employee = new BusinessLayer.Employees.ClsEmployees();
+        BusinessLayer.Reports.ClsReports reports = new BusinessLayer.Reports.ClsReports();
+
+        int PaymentVoucherID;
 
         private Regex regex = new Regex(@"^7[80137]\d{7}$");
 
@@ -290,7 +293,9 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
             }
         }
 
-      
+
+        // تعريف نافذة التحميل كمتحول عام داخل الفورم
+        private PresentationLayer.Extensions.frm_Loading loadingForm;
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
@@ -304,6 +309,11 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
                         
                         if(rad_Employee.Checked)
                         {
+                            // PaymentVoucherID => for report ..
+                            PaymentVoucherID = Convert.ToInt32(txt_PaymentVoucherID.Text);
+
+                            MessageBox.Show("fdg: " + PaymentVoucherID);
+
                             double EmployeeTotalCredit = Convert.ToDouble(txt_EmployeeTotalCredit.Text) + Convert.ToDouble(txt_PaymentVoucherAmount.Text);
                             employee.UpdateEmployeeTotalCredit(Convert.ToInt32(txt_EmployeeIDWhoTake.Text), EmployeeTotalCredit);
 
@@ -317,6 +327,13 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
                         }
 
                         MessageBox.Show("تم حفظ سند الصرف بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // إنشاء نافذة تحميل وإظهارها
+                        loadingForm = new Extensions.frm_Loading();
+                        loadingForm.Show();
+
+                        // تشغيل المهمة في الخلفية لتحميل التقرير
+                        backgroundWorker1.RunWorkerAsync();
 
 
                         EmptyTextBoxes();
@@ -344,6 +361,56 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
                 //MessageBox.Show("تأكد من: " + ex, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MessageBox.Show($"An Error Occurred: {ex.Message}\n\nSource: {ex.Source}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+            if (rad_Employee.Checked)
+            {
+                // جلب التقرير من قاعدة البيانات
+                DataTable DataTable1 = reports.ReportForPaymentVoucherForEmployee(PaymentVoucherID);
+                DataSet DataSet1 = new DataSet();
+                DataSet1.Tables.Add(DataTable1);
+
+                // تجهيز التقرير
+                PresentationLayer.Reports.PaymentVoucher.PaymentVoucherForEmployee paymentVoucherForEmployee =
+                    new Reports.PaymentVoucher.PaymentVoucherForEmployee();
+                paymentVoucherForEmployee.SetDataSource(DataTable1);
+
+                // تمرير التقرير كـ نتيجة
+                e.Result = paymentVoucherForEmployee;
+            }
+
+
+                
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+            if (rad_Employee.Checked)
+            {
+                // إغلاق نافذة التحميل
+                loadingForm.Close();
+
+                if (e.Error == null)
+                {
+                    // استخراج التقرير
+                    var paymentVoucherForEmployee = (PresentationLayer.Reports.PaymentVoucher.PaymentVoucherForEmployee)e.Result;
+
+                    // عرض التقرير
+                    PresentationLayer.Reports.frm_ReportViewer reportViewer = new Reports.frm_ReportViewer();
+                    reportViewer.CRV.ReportSource = paymentVoucherForEmployee;
+                    reportViewer.CRV.RefreshReport();
+                    reportViewer.Show();
+                }
+                else
+                {
+                    MessageBox.Show("حدث خطأ أثناء تحميل التقرير: " + e.Error.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+               
         }
     }
 }
