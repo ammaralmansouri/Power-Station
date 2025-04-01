@@ -28,6 +28,8 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
         
         private PaymentVoucherForEmployeeDataTable tablePaymentVoucherForEmployee;
         
+        private AccountStatementForCustomerDataTable tableAccountStatementForCustomer;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -61,6 +63,9 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
                 }
                 if ((ds.Tables["PaymentVoucherForEmployee"] != null)) {
                     base.Tables.Add(new PaymentVoucherForEmployeeDataTable(ds.Tables["PaymentVoucherForEmployee"]));
+                }
+                if ((ds.Tables["AccountStatementForCustomer"] != null)) {
+                    base.Tables.Add(new AccountStatementForCustomerDataTable(ds.Tables["AccountStatementForCustomer"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -97,6 +102,16 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
         public PaymentVoucherForEmployeeDataTable PaymentVoucherForEmployee {
             get {
                 return this.tablePaymentVoucherForEmployee;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public AccountStatementForCustomerDataTable AccountStatementForCustomer {
+            get {
+                return this.tableAccountStatementForCustomer;
             }
         }
         
@@ -173,6 +188,9 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
                 if ((ds.Tables["PaymentVoucherForEmployee"] != null)) {
                     base.Tables.Add(new PaymentVoucherForEmployeeDataTable(ds.Tables["PaymentVoucherForEmployee"]));
                 }
+                if ((ds.Tables["AccountStatementForCustomer"] != null)) {
+                    base.Tables.Add(new AccountStatementForCustomerDataTable(ds.Tables["AccountStatementForCustomer"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -218,6 +236,12 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
                     this.tablePaymentVoucherForEmployee.InitVars();
                 }
             }
+            this.tableAccountStatementForCustomer = ((AccountStatementForCustomerDataTable)(base.Tables["AccountStatementForCustomer"]));
+            if ((initTable == true)) {
+                if ((this.tableAccountStatementForCustomer != null)) {
+                    this.tableAccountStatementForCustomer.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -232,6 +256,8 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
             base.Tables.Add(this.tableCustomerMovementWhenPaying);
             this.tablePaymentVoucherForEmployee = new PaymentVoucherForEmployeeDataTable();
             base.Tables.Add(this.tablePaymentVoucherForEmployee);
+            this.tableAccountStatementForCustomer = new AccountStatementForCustomerDataTable();
+            base.Tables.Add(this.tableAccountStatementForCustomer);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -243,6 +269,12 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializePaymentVoucherForEmployee() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeAccountStatementForCustomer() {
             return false;
         }
         
@@ -306,6 +338,9 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void PaymentVoucherForEmployeeRowChangeEventHandler(object sender, PaymentVoucherForEmployeeRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void AccountStatementForCustomerRowChangeEventHandler(object sender, AccountStatementForCustomerRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -970,6 +1005,379 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class AccountStatementForCustomerDataTable : global::System.Data.TypedTableBase<AccountStatementForCustomerRow> {
+            
+            private global::System.Data.DataColumn columnOperationID;
+            
+            private global::System.Data.DataColumn columnOperationDate;
+            
+            private global::System.Data.DataColumn columnOperationNote;
+            
+            private global::System.Data.DataColumn columnOperationPreviousReading;
+            
+            private global::System.Data.DataColumn columnOperationCurrentReading;
+            
+            private global::System.Data.DataColumn columnOperationNumberOfTakingKilos;
+            
+            private global::System.Data.DataColumn columnOperationPriceOfKilo;
+            
+            private global::System.Data.DataColumn columnOperationAmount;
+            
+            private global::System.Data.DataColumn columnOperationBalance;
+            
+            private global::System.Data.DataColumn columnOperationCustomerName;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AccountStatementForCustomerDataTable() {
+                this.TableName = "AccountStatementForCustomer";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal AccountStatementForCustomerDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected AccountStatementForCustomerDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OperationIDColumn {
+                get {
+                    return this.columnOperationID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OperationDateColumn {
+                get {
+                    return this.columnOperationDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OperationNoteColumn {
+                get {
+                    return this.columnOperationNote;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OperationPreviousReadingColumn {
+                get {
+                    return this.columnOperationPreviousReading;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OperationCurrentReadingColumn {
+                get {
+                    return this.columnOperationCurrentReading;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OperationNumberOfTakingKilosColumn {
+                get {
+                    return this.columnOperationNumberOfTakingKilos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OperationPriceOfKiloColumn {
+                get {
+                    return this.columnOperationPriceOfKilo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OperationAmountColumn {
+                get {
+                    return this.columnOperationAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OperationBalanceColumn {
+                get {
+                    return this.columnOperationBalance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OperationCustomerNameColumn {
+                get {
+                    return this.columnOperationCustomerName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AccountStatementForCustomerRow this[int index] {
+                get {
+                    return ((AccountStatementForCustomerRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AccountStatementForCustomerRowChangeEventHandler AccountStatementForCustomerRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AccountStatementForCustomerRowChangeEventHandler AccountStatementForCustomerRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AccountStatementForCustomerRowChangeEventHandler AccountStatementForCustomerRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event AccountStatementForCustomerRowChangeEventHandler AccountStatementForCustomerRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddAccountStatementForCustomerRow(AccountStatementForCustomerRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AccountStatementForCustomerRow AddAccountStatementForCustomerRow(uint OperationID, System.DateTime OperationDate, string OperationNote, uint OperationPreviousReading, uint OperationCurrentReading, uint OperationNumberOfTakingKilos, double OperationPriceOfKilo, double OperationAmount, double OperationBalance, string OperationCustomerName) {
+                AccountStatementForCustomerRow rowAccountStatementForCustomerRow = ((AccountStatementForCustomerRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        OperationID,
+                        OperationDate,
+                        OperationNote,
+                        OperationPreviousReading,
+                        OperationCurrentReading,
+                        OperationNumberOfTakingKilos,
+                        OperationPriceOfKilo,
+                        OperationAmount,
+                        OperationBalance,
+                        OperationCustomerName};
+                rowAccountStatementForCustomerRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAccountStatementForCustomerRow);
+                return rowAccountStatementForCustomerRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                AccountStatementForCustomerDataTable cln = ((AccountStatementForCustomerDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new AccountStatementForCustomerDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnOperationID = base.Columns["OperationID"];
+                this.columnOperationDate = base.Columns["OperationDate"];
+                this.columnOperationNote = base.Columns["OperationNote"];
+                this.columnOperationPreviousReading = base.Columns["OperationPreviousReading"];
+                this.columnOperationCurrentReading = base.Columns["OperationCurrentReading"];
+                this.columnOperationNumberOfTakingKilos = base.Columns["OperationNumberOfTakingKilos"];
+                this.columnOperationPriceOfKilo = base.Columns["OperationPriceOfKilo"];
+                this.columnOperationAmount = base.Columns["OperationAmount"];
+                this.columnOperationBalance = base.Columns["OperationBalance"];
+                this.columnOperationCustomerName = base.Columns["OperationCustomerName"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnOperationID = new global::System.Data.DataColumn("OperationID", typeof(uint), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOperationID);
+                this.columnOperationDate = new global::System.Data.DataColumn("OperationDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOperationDate);
+                this.columnOperationNote = new global::System.Data.DataColumn("OperationNote", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOperationNote);
+                this.columnOperationPreviousReading = new global::System.Data.DataColumn("OperationPreviousReading", typeof(uint), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOperationPreviousReading);
+                this.columnOperationCurrentReading = new global::System.Data.DataColumn("OperationCurrentReading", typeof(uint), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOperationCurrentReading);
+                this.columnOperationNumberOfTakingKilos = new global::System.Data.DataColumn("OperationNumberOfTakingKilos", typeof(uint), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOperationNumberOfTakingKilos);
+                this.columnOperationPriceOfKilo = new global::System.Data.DataColumn("OperationPriceOfKilo", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOperationPriceOfKilo);
+                this.columnOperationAmount = new global::System.Data.DataColumn("OperationAmount", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOperationAmount);
+                this.columnOperationBalance = new global::System.Data.DataColumn("OperationBalance", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOperationBalance);
+                this.columnOperationCustomerName = new global::System.Data.DataColumn("OperationCustomerName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOperationCustomerName);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AccountStatementForCustomerRow NewAccountStatementForCustomerRow() {
+                return ((AccountStatementForCustomerRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new AccountStatementForCustomerRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(AccountStatementForCustomerRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.AccountStatementForCustomerRowChanged != null)) {
+                    this.AccountStatementForCustomerRowChanged(this, new AccountStatementForCustomerRowChangeEvent(((AccountStatementForCustomerRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.AccountStatementForCustomerRowChanging != null)) {
+                    this.AccountStatementForCustomerRowChanging(this, new AccountStatementForCustomerRowChangeEvent(((AccountStatementForCustomerRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.AccountStatementForCustomerRowDeleted != null)) {
+                    this.AccountStatementForCustomerRowDeleted(this, new AccountStatementForCustomerRowChangeEvent(((AccountStatementForCustomerRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.AccountStatementForCustomerRowDeleting != null)) {
+                    this.AccountStatementForCustomerRowDeleting(this, new AccountStatementForCustomerRowChangeEvent(((AccountStatementForCustomerRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveAccountStatementForCustomerRow(AccountStatementForCustomerRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DatasetForAllReports ds = new DatasetForAllReports();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "AccountStatementForCustomerDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class CustomerMovementWhenPayingRow : global::System.Data.DataRow {
@@ -1406,6 +1814,311 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class AccountStatementForCustomerRow : global::System.Data.DataRow {
+            
+            private AccountStatementForCustomerDataTable tableAccountStatementForCustomer;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal AccountStatementForCustomerRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableAccountStatementForCustomer = ((AccountStatementForCustomerDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public uint OperationID {
+                get {
+                    try {
+                        return ((uint)(this[this.tableAccountStatementForCustomer.OperationIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OperationID\' in table \'AccountStatementForCustomer\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountStatementForCustomer.OperationIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime OperationDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableAccountStatementForCustomer.OperationDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OperationDate\' in table \'AccountStatementForCustomer\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountStatementForCustomer.OperationDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string OperationNote {
+                get {
+                    try {
+                        return ((string)(this[this.tableAccountStatementForCustomer.OperationNoteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OperationNote\' in table \'AccountStatementForCustomer\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountStatementForCustomer.OperationNoteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public uint OperationPreviousReading {
+                get {
+                    try {
+                        return ((uint)(this[this.tableAccountStatementForCustomer.OperationPreviousReadingColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OperationPreviousReading\' in table \'AccountStatementForCust" +
+                                "omer\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountStatementForCustomer.OperationPreviousReadingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public uint OperationCurrentReading {
+                get {
+                    try {
+                        return ((uint)(this[this.tableAccountStatementForCustomer.OperationCurrentReadingColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OperationCurrentReading\' in table \'AccountStatementForCusto" +
+                                "mer\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountStatementForCustomer.OperationCurrentReadingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public uint OperationNumberOfTakingKilos {
+                get {
+                    try {
+                        return ((uint)(this[this.tableAccountStatementForCustomer.OperationNumberOfTakingKilosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OperationNumberOfTakingKilos\' in table \'AccountStatementFor" +
+                                "Customer\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountStatementForCustomer.OperationNumberOfTakingKilosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double OperationPriceOfKilo {
+                get {
+                    try {
+                        return ((double)(this[this.tableAccountStatementForCustomer.OperationPriceOfKiloColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OperationPriceOfKilo\' in table \'AccountStatementForCustomer" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountStatementForCustomer.OperationPriceOfKiloColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double OperationAmount {
+                get {
+                    try {
+                        return ((double)(this[this.tableAccountStatementForCustomer.OperationAmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OperationAmount\' in table \'AccountStatementForCustomer\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountStatementForCustomer.OperationAmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double OperationBalance {
+                get {
+                    try {
+                        return ((double)(this[this.tableAccountStatementForCustomer.OperationBalanceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OperationBalance\' in table \'AccountStatementForCustomer\' is" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountStatementForCustomer.OperationBalanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string OperationCustomerName {
+                get {
+                    try {
+                        return ((string)(this[this.tableAccountStatementForCustomer.OperationCustomerNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OperationCustomerName\' in table \'AccountStatementForCustome" +
+                                "r\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountStatementForCustomer.OperationCustomerNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOperationIDNull() {
+                return this.IsNull(this.tableAccountStatementForCustomer.OperationIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOperationIDNull() {
+                this[this.tableAccountStatementForCustomer.OperationIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOperationDateNull() {
+                return this.IsNull(this.tableAccountStatementForCustomer.OperationDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOperationDateNull() {
+                this[this.tableAccountStatementForCustomer.OperationDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOperationNoteNull() {
+                return this.IsNull(this.tableAccountStatementForCustomer.OperationNoteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOperationNoteNull() {
+                this[this.tableAccountStatementForCustomer.OperationNoteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOperationPreviousReadingNull() {
+                return this.IsNull(this.tableAccountStatementForCustomer.OperationPreviousReadingColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOperationPreviousReadingNull() {
+                this[this.tableAccountStatementForCustomer.OperationPreviousReadingColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOperationCurrentReadingNull() {
+                return this.IsNull(this.tableAccountStatementForCustomer.OperationCurrentReadingColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOperationCurrentReadingNull() {
+                this[this.tableAccountStatementForCustomer.OperationCurrentReadingColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOperationNumberOfTakingKilosNull() {
+                return this.IsNull(this.tableAccountStatementForCustomer.OperationNumberOfTakingKilosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOperationNumberOfTakingKilosNull() {
+                this[this.tableAccountStatementForCustomer.OperationNumberOfTakingKilosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOperationPriceOfKiloNull() {
+                return this.IsNull(this.tableAccountStatementForCustomer.OperationPriceOfKiloColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOperationPriceOfKiloNull() {
+                this[this.tableAccountStatementForCustomer.OperationPriceOfKiloColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOperationAmountNull() {
+                return this.IsNull(this.tableAccountStatementForCustomer.OperationAmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOperationAmountNull() {
+                this[this.tableAccountStatementForCustomer.OperationAmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOperationBalanceNull() {
+                return this.IsNull(this.tableAccountStatementForCustomer.OperationBalanceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOperationBalanceNull() {
+                this[this.tableAccountStatementForCustomer.OperationBalanceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOperationCustomerNameNull() {
+                return this.IsNull(this.tableAccountStatementForCustomer.OperationCustomerNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOperationCustomerNameNull() {
+                this[this.tableAccountStatementForCustomer.OperationCustomerNameColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1459,6 +2172,40 @@ namespace PowerStationDisktop.PresentationLayer.Reports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PaymentVoucherForEmployeeRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class AccountStatementForCustomerRowChangeEvent : global::System.EventArgs {
+            
+            private AccountStatementForCustomerRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AccountStatementForCustomerRowChangeEvent(AccountStatementForCustomerRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AccountStatementForCustomerRow Row {
                 get {
                     return this.eventRow;
                 }

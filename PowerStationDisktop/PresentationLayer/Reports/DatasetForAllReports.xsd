@@ -38,6 +38,22 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="AccountStatementForCustomer" msprop:Generator_TableClassName="AccountStatementForCustomerDataTable" msprop:Generator_TableVarName="tableAccountStatementForCustomer" msprop:Generator_RowChangedName="AccountStatementForCustomerRowChanged" msprop:Generator_TablePropName="AccountStatementForCustomer" msprop:Generator_RowDeletingName="AccountStatementForCustomerRowDeleting" msprop:Generator_RowChangingName="AccountStatementForCustomerRowChanging" msprop:Generator_RowEvHandlerName="AccountStatementForCustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="AccountStatementForCustomerRowDeleted" msprop:Generator_RowClassName="AccountStatementForCustomerRow" msprop:Generator_UserTableName="AccountStatementForCustomer" msprop:Generator_RowEvArgName="AccountStatementForCustomerRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OperationID" msprop:Generator_ColumnVarNameInTable="columnOperationID" msprop:Generator_ColumnPropNameInRow="OperationID" msprop:Generator_ColumnPropNameInTable="OperationIDColumn" msprop:Generator_UserColumnName="OperationID" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="OperationDate" msprop:Generator_ColumnVarNameInTable="columnOperationDate" msprop:Generator_ColumnPropNameInRow="OperationDate" msprop:Generator_ColumnPropNameInTable="OperationDateColumn" msprop:Generator_UserColumnName="OperationDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OperationNote" msprop:Generator_ColumnVarNameInTable="columnOperationNote" msprop:Generator_ColumnPropNameInRow="OperationNote" msprop:Generator_ColumnPropNameInTable="OperationNoteColumn" msprop:Generator_UserColumnName="OperationNote" type="xs:string" minOccurs="0" />
+              <xs:element name="OperationPreviousReading" msprop:Generator_ColumnVarNameInTable="columnOperationPreviousReading" msprop:Generator_ColumnPropNameInRow="OperationPreviousReading" msprop:Generator_ColumnPropNameInTable="OperationPreviousReadingColumn" msprop:Generator_UserColumnName="OperationPreviousReading" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="OperationCurrentReading" msprop:Generator_ColumnVarNameInTable="columnOperationCurrentReading" msprop:Generator_ColumnPropNameInRow="OperationCurrentReading" msprop:Generator_ColumnPropNameInTable="OperationCurrentReadingColumn" msprop:Generator_UserColumnName="OperationCurrentReading" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="OperationNumberOfTakingKilos" msprop:Generator_ColumnVarNameInTable="columnOperationNumberOfTakingKilos" msprop:Generator_ColumnPropNameInRow="OperationNumberOfTakingKilos" msprop:Generator_ColumnPropNameInTable="OperationNumberOfTakingKilosColumn" msprop:Generator_UserColumnName="OperationNumberOfTakingKilos" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="OperationPriceOfKilo" msprop:Generator_ColumnVarNameInTable="columnOperationPriceOfKilo" msprop:Generator_ColumnPropNameInRow="OperationPriceOfKilo" msprop:Generator_ColumnPropNameInTable="OperationPriceOfKiloColumn" msprop:Generator_UserColumnName="OperationPriceOfKilo" type="xs:double" minOccurs="0" />
+              <xs:element name="OperationAmount" msprop:Generator_ColumnVarNameInTable="columnOperationAmount" msprop:Generator_ColumnPropNameInRow="OperationAmount" msprop:Generator_ColumnPropNameInTable="OperationAmountColumn" msprop:Generator_UserColumnName="OperationAmount" type="xs:double" minOccurs="0" />
+              <xs:element name="OperationBalance" msprop:Generator_ColumnVarNameInTable="columnOperationBalance" msprop:Generator_ColumnPropNameInRow="OperationBalance" msprop:Generator_ColumnPropNameInTable="OperationBalanceColumn" msprop:Generator_UserColumnName="OperationBalance" type="xs:double" minOccurs="0" />
+              <xs:element name="OperationCustomerName" msprop:Generator_ColumnVarNameInTable="columnOperationCustomerName" msprop:Generator_ColumnPropNameInRow="OperationCustomerName" msprop:Generator_ColumnPropNameInTable="OperationCustomerNameColumn" msprop:Generator_UserColumnName="OperationCustomerName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

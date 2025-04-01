@@ -44,7 +44,7 @@ namespace PowerStationDisktop.PresentationLayer.ElectronicMeters
         bool CheckIfFiledsEmptyOrNot()
         {
             if(txt_ElectronicMeterID.Text != string.Empty)
-            {
+            { 
                 if (cmb_ElectronicMeterType.Text != string.Empty)
                 {
                     return true;

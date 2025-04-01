@@ -116,5 +116,12 @@ namespace PowerStationDisktop
             PresentationLayer.Extensions.frm_Loading loadingForm = new PresentationLayer.Extensions.frm_Loading();
             loadingForm.Show();
         }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            PresentationLayer.frm_AccountStatementForCustomer accountStatementForCustomer = new PresentationLayer.frm_AccountStatementForCustomer();
+            accountStatementForCustomer.Show();
+
+        }
     }
 }

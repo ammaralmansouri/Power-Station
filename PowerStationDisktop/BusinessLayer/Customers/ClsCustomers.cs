@@ -213,6 +213,24 @@ namespace PowerStationDisktop.BusinessLayer.Customers
 
         }
 
+        public DataTable GetCustomerName(int CustomerID)
+        {
+            DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
+            con.OpenConnection();
+
+            SqlParameter[] para = new SqlParameter[1];
+
+            para[0] = new SqlParameter("@CustomerID", SqlDbType.Int);
+            para[0].Value = CustomerID;
+
+            DataTable DataTable1 = new DataTable();
+
+            DataTable1 = con.SelectData("Get_Customer_Name", para);
+            con.CloseConnection();
+
+            return DataTable1;
+        }
+
 
 
     }

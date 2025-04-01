@@ -65,3 +65,5 @@ E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\bin\Debug\Cr
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\bin\Debug\ShockwaveFlashObjects.dll
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Reports.frm_ReportViewer.resources
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Extensions.frm_Loading.resources
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.frm_AccountStatementForCustomer.resources
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Extensions.frm_SearchForCustomer.resources

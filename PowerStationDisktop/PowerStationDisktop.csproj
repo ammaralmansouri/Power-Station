@@ -147,6 +147,18 @@
     <Compile Include="PresentationLayer\Extensions\frm_Loading.Designer.cs">
       <DependentUpon>frm_Loading.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\Extensions\frm_SearchForCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Extensions\frm_SearchForCustomer.Designer.cs">
+      <DependentUpon>frm_SearchForCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\frm_AccountStatementForCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\frm_AccountStatementForCustomer.Designer.cs">
+      <DependentUpon>frm_AccountStatementForCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\frm_Customers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +200,11 @@
     </Compile>
     <Compile Include="PresentationLayer\Readings\frm_Readings.Designer.cs">
       <DependentUpon>frm_Readings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Reports\AccountStatement\AccountStatementForCustomer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountStatementForCustomer.rpt</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\Reports\CustomerMonements\CustomerMovementWhenPaying.cs">
       <AutoGen>True</AutoGen>
@@ -251,6 +268,12 @@
     <EmbeddedResource Include="PresentationLayer\Extensions\frm_Loading.resx">
       <DependentUpon>frm_Loading.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Extensions\frm_SearchForCustomer.resx">
+      <DependentUpon>frm_SearchForCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\frm_AccountStatementForCustomer.resx">
+      <DependentUpon>frm_AccountStatementForCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\frm_Customers.resx">
       <DependentUpon>frm_Customers.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,6 +294,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Readings\frm_Readings.resx">
       <DependentUpon>frm_Readings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Reports\AccountStatement\AccountStatementForCustomer.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AccountStatementForCustomer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Reports\CustomerMonements\CustomerMovementWhenPaying.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

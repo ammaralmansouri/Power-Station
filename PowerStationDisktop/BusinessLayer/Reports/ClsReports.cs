@@ -45,5 +45,32 @@ namespace PowerStationDisktop.BusinessLayer.Reports
 
             return DataTable1;
         }
+
+        public DataTable ReportForAccountStatementForCustomer(double ElectronicMeterID , DateTime StartDate , DateTime EndDate, int CustomerID)
+        {
+            DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
+            con.OpenConnection();
+
+            DataTable DataTable1 = new DataTable();
+
+            SqlParameter[] para = new SqlParameter[4];
+
+            para[0] = new SqlParameter("@ElectronicMeterID", SqlDbType.Float);
+            para[0].Value = ElectronicMeterID;
+
+            para[1] = new SqlParameter("@StartDate", SqlDbType.Date);
+            para[1].Value = StartDate;
+
+            para[2] = new SqlParameter("@EndDate", SqlDbType.Date);
+            para[2].Value = EndDate;
+
+            para[3] = new SqlParameter("@CustomerID", SqlDbType.Int);
+            para[3].Value = CustomerID;
+
+            DataTable1 = con.SelectData("Report_For_Account_Statement_For_Customer", para);
+            con.CloseConnection();
+
+            return DataTable1;
+        }
     }
 }
