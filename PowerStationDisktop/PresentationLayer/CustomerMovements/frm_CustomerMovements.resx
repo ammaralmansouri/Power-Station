@@ -118,6 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_Save.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAdgAAAHYAfpcpnIAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAADLklEQVR4Xu2Z70sTcRzH7Q/ocQ+iJxKmIUg/TBJ1ijILJHoWRT0Kwl/9ACscpqvRtPJX5IMeFP0O
+        i0JD6KGGKKkPJGy57dRNne4Hk2nOuZuafLrveRvTfQfq7s4b+7zhxWC33ff9eY077nZJGAwGg8FgMNtJ
+        SYv/YFFrIDmckzr3sUyNU0XjzlvXher39otS0PLNVq75MF1y7jHsF+pJlzNNbE5xE2vjgK1kauyQfM1A
+        xWx1gsPpkgSjmYHOXivp8K+4ma0VqkoQgH3cItThCQoQEEQvNBY3hU99B8IWiUBKAV/6HHC5bQYuPdsg
+        v3Ycnnyd5rdRBBDEl0CO+y2LbEJKAZWvZiGr1hYi7YYZirRj/LYoAqDwkfe1UF2cxJuAfP085D1wDwj1
+        Y0+8CShoWOA/m6Nz9wgjxJZ4FZBVZwNy/hLG2H3iVgBHgW7uhDDG7oMCUAAKUIyA1EQTcL7BAkdvMjzk
+        1yf7VN9n+G0JIeD592nIq2EgV7OB6h4DH3tm+G1GUwIIiMas3QGGUSN0KEFAtnaOOjyhf9gCYxZxYSYm
+        +OFHDH+grcsW0Ud2AWqOUzVOyKiajOBKqxW6h8ahb5gRnfbuSTjbGNlHdgFKAwWgABSAAlCA3ALK3vhB
+        2yEf73oXoanrL7WL7AKqPy/D4tIS+P3+HbPMsej1gs/n41+3C7kaNHH3Au297og+sgt48WMZAoEArK+v
+        w+ra2s5YXQUvJ4/lvk9eacPSIALIzdCgQQFXgi8FAYGVFWpZKQgKGEIBKCCiDwpAASgABaAAFIAC5BXA
+        siwPrawUKE4AraSUoIC9EpB2nQn9559SbuTfU4KAlDJjqFdqpVk6AUcqNp7PEQ6XjipGAOkS7JVSYZJO
+        wPG7Nki/ZeHJuD2lGAGkS6hXlVU6ATSUdA5QN/ohW2sXV4C62XOooH4eovGpfx48HnkJChj8PRXqodJ7
+        Ng1PyNa70oUxYstprX0tfMfh9PxywsysXXaMJjMMjExSOxFIZ6F+7Ml9OFcaTQIpQZ7U7gXRBJCupLNQ
+        X7yQYyq3fkEVTmOX62rnT4duLyBrb+0jynGPwWAwGAwmAZKU9B+Mh8XLBa+3qwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btn_New.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB

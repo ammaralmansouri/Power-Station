@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\Areas\ClsAreas.cs" />
+    <Compile Include="BusinessLayer\Colors\ClsAppColors.cs" />
     <Compile Include="BusinessLayer\CustomerMovement\ClsCustomerMovement.cs" />
     <Compile Include="BusinessLayer\Customers\ClsCustomers.cs" />
     <Compile Include="BusinessLayer\ElectronicMeters\ClsElectronicMeter.cs" />

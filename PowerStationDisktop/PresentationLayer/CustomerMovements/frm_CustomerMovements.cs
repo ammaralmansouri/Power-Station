@@ -85,7 +85,7 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
 
             txt_CustomerMovementID.Text = DataTable1.Rows[0][0].ToString();
 
-            rich_CustomerMovementNote.Text = "سداد فاتورة";
+            rich_CustomerMovementNote.Text = "سند قبض .. سداد فاتورة";
 
 
         }

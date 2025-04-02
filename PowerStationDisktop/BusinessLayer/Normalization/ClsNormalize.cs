@@ -30,5 +30,16 @@ namespace PowerStationDisktop.BusinessLayer.Normalization
             con.ExecuteCommands("Change_Letters_To_Standard_Letters_To_Make_It_Easy_When_Search_For_Customer");
             con.CloseConnection();
         }
+
+        public void ChangeLettersToStandardLettersToMakeItEasyWhenSearchForArea()
+        {
+
+            DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
+            con.OpenConnection();
+
+
+            con.ExecuteCommands("Change_Letters_To_Standard_Letters_To_Make_It_Easy_When_Search_For_Area");
+            con.CloseConnection();
+        }
     }
 }

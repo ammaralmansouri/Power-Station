@@ -81,7 +81,7 @@ namespace PowerStationDisktop
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(611, 238);
+            this.button4.Location = new System.Drawing.Point(1056, 217);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(110, 45);
             this.button4.TabIndex = 3;
@@ -219,11 +219,11 @@ namespace PowerStationDisktop
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(363, 444);
+            this.button16.Location = new System.Drawing.Point(969, 438);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(232, 45);
             this.button16.TabIndex = 17;
-            this.button16.Text = "كشف حساب";
+            this.button16.Text = "كشف حساب العملاء";
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
@@ -231,7 +231,7 @@ namespace PowerStationDisktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 495);
+            this.ClientSize = new System.Drawing.Size(1213, 495);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.button14);

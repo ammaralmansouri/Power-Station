@@ -122,10 +122,10 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
             // 
             this.txt_CustomerMovementID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_CustomerMovementID.Enabled = false;
-            this.txt_CustomerMovementID.Font = new System.Drawing.Font("Droid Arabic Kufi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_CustomerMovementID.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CustomerMovementID.Location = new System.Drawing.Point(697, 47);
             this.txt_CustomerMovementID.Name = "txt_CustomerMovementID";
-            this.txt_CustomerMovementID.Size = new System.Drawing.Size(138, 39);
+            this.txt_CustomerMovementID.Size = new System.Drawing.Size(138, 36);
             this.txt_CustomerMovementID.TabIndex = 26;
             this.txt_CustomerMovementID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -230,10 +230,11 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
             // 
             this.txt_CustomerMovementPaiedAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_CustomerMovementPaiedAmount.Enabled = false;
+            this.txt_CustomerMovementPaiedAmount.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CustomerMovementPaiedAmount.Location = new System.Drawing.Point(21, 157);
             this.txt_CustomerMovementPaiedAmount.MaxLength = 9;
             this.txt_CustomerMovementPaiedAmount.Name = "txt_CustomerMovementPaiedAmount";
-            this.txt_CustomerMovementPaiedAmount.Size = new System.Drawing.Size(325, 39);
+            this.txt_CustomerMovementPaiedAmount.Size = new System.Drawing.Size(325, 36);
             this.txt_CustomerMovementPaiedAmount.TabIndex = 3;
             this.txt_CustomerMovementPaiedAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_CustomerMovementPaiedAmount.TextChanged += new System.EventHandler(this.txt_CustomerMovementPaiedAmount_TextChanged);
@@ -273,9 +274,10 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
             // 
             this.txt_TotalDuesAfterPaying.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_TotalDuesAfterPaying.Enabled = false;
+            this.txt_TotalDuesAfterPaying.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TotalDuesAfterPaying.Location = new System.Drawing.Point(477, 157);
             this.txt_TotalDuesAfterPaying.Name = "txt_TotalDuesAfterPaying";
-            this.txt_TotalDuesAfterPaying.Size = new System.Drawing.Size(274, 39);
+            this.txt_TotalDuesAfterPaying.Size = new System.Drawing.Size(274, 36);
             this.txt_TotalDuesAfterPaying.TabIndex = 5;
             this.txt_TotalDuesAfterPaying.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -283,9 +285,10 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
             // 
             this.txt_ElectricityMeterIDOrPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_ElectricityMeterIDOrPhoneNumber.Enabled = false;
+            this.txt_ElectricityMeterIDOrPhoneNumber.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ElectricityMeterIDOrPhoneNumber.Location = new System.Drawing.Point(477, 101);
             this.txt_ElectricityMeterIDOrPhoneNumber.Name = "txt_ElectricityMeterIDOrPhoneNumber";
-            this.txt_ElectricityMeterIDOrPhoneNumber.Size = new System.Drawing.Size(274, 39);
+            this.txt_ElectricityMeterIDOrPhoneNumber.Size = new System.Drawing.Size(274, 36);
             this.txt_ElectricityMeterIDOrPhoneNumber.TabIndex = 1;
             this.txt_ElectricityMeterIDOrPhoneNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_ElectricityMeterIDOrPhoneNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_ElectricityMeterIDOrPhoneNumber_KeyDown);
@@ -304,12 +307,14 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
             // btn_Save
             // 
             this.btn_Save.Enabled = false;
+            this.btn_Save.FlatAppearance.BorderSize = 0;
+            this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Save.Location = new System.Drawing.Point(403, 396);
+            this.btn_Save.Image = ((System.Drawing.Image)(resources.GetObject("btn_Save.Image")));
+            this.btn_Save.Location = new System.Drawing.Point(405, 380);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(91, 41);
+            this.btn_Save.Size = new System.Drawing.Size(91, 69);
             this.btn_Save.TabIndex = 11;
-            this.btn_Save.Text = "حفظ";
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 

@@ -204,24 +204,34 @@ namespace PowerStationDisktop.PresentationLayer
 
         private void btn_print_Click(object sender, EventArgs e)
         {
-            DataTable DataTable1 = reports.ReportForAccountStatementForCustomer(Convert.ToDouble(txt_ElectronicMeterID.Text), dtp_StartDate.Value, dtp_EndDate.Value, Convert.ToInt32(txt_CustomerID.Text));
-
-            if (DataTable1.Rows.Count > 0)
+            if (dtp_StartDate.Value.Date > dtp_EndDate.Value.Date)
             {
-                // إنشاء نافذة تحميل وإظهارها
-                loadingForm = new Extensions.frm_Loading();
-                loadingForm.Show();
+                MessageBox.Show("لا يمكن أن يكون تاريخ البداية أكبر من تاريخ النهاية", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                // تشغيل المهمة في الخلفية لتحميل التقرير
-                backgroundWorker1.RunWorkerAsync();
 
-                    
             }
             else
             {
-                MessageBox.Show("لا توجد اية بيانات خاصة بهذا العميل في هذا التاريخ ", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DataTable DataTable1 = reports.ReportForAccountStatementForCustomer(Convert.ToDouble(txt_ElectronicMeterID.Text), dtp_StartDate.Value, dtp_EndDate.Value, Convert.ToInt32(txt_CustomerID.Text));
 
-            }   
+                if (DataTable1.Rows.Count > 0)
+                {
+                    // إنشاء نافذة تحميل وإظهارها
+                    loadingForm = new Extensions.frm_Loading();
+                    loadingForm.Show();
+
+                    // تشغيل المهمة في الخلفية لتحميل التقرير
+                    backgroundWorker1.RunWorkerAsync();
+
+
+                }
+                else
+                {
+                    MessageBox.Show("لا توجد اية بيانات خاصة بهذا العميل في هذا التاريخ ", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+            }
+              
         }
 
         private void txt_CustomerPhone_Enter(object sender, EventArgs e)

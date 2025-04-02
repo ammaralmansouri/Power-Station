@@ -104,5 +104,24 @@ namespace PowerStationDisktop.BusinessLayer.Areas
 
             return DataTable1;
         }
+        public DataTable SearchForAreaByName(string AreaName)
+        {
+            DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
+            con.OpenConnection();
+
+            DataTable DataTable1 = new DataTable();
+
+            SqlParameter[] para = new SqlParameter[1];
+
+            para[0] = new SqlParameter("@AreaName", SqlDbType.NVarChar , 50);
+            para[0].Value = AreaName;
+
+
+            DataTable1 = con.SelectData("Search_For_Area_By_Name", para);
+            con.CloseConnection();
+
+            return DataTable1;
+        }
+
     }
 }

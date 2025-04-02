@@ -54,11 +54,11 @@ namespace PowerStationDisktop.PresentationLayer.Extensions
 
         private void txt_Search_Leave(object sender, EventArgs e)
         {
-            if (txt_Search.Text == "")
-            {
-                txt_Search.Text = placeholderText;
-                txt_Search.ForeColor = Color.Gray;
-            }
+            //if (txt_Search.Text == "")
+            //{
+            //    txt_Search.Text = placeholderText;
+            //    txt_Search.ForeColor = Color.Gray;
+            //}
         }
 
         private void txt_Search_Enter(object sender, EventArgs e)
@@ -68,9 +68,11 @@ namespace PowerStationDisktop.PresentationLayer.Extensions
                 txt_Search.Text = "";
                 txt_Search.ForeColor = Color.Black;
 
-                dgv_Result.DataSource = null;
-                dgv_Result.Rows.Clear();
-                dgv_Result.Refresh();
+                //dgv_Result.DataSource = null;
+                //dgv_Result.Rows.Clear();
+                //dgv_Result.Refresh();
+
+                dgv_Result.DataSource = customer.SearchForCustomer(txt_Search.Text);
 
             }
         }

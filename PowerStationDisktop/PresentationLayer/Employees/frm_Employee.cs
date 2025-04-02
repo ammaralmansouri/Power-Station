@@ -400,6 +400,7 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
                         }
 
                         employee.UpdateEmployee(Convert.ToInt32(txt_EmployeeID.Text),txt_EmployeeName.Text, txt_EmployeePhone.Text, Convert.ToDouble(txt_EmployeeSalary.Text), txt_EmployeePassword.Text, EmployeeType, EmployeePermission, EmployeeState, PoweStationID);
+                        normalize.ChangeLettersToStandardLettersToMakeItEasyWhenSearchForEmployee();
                         MessageBox.Show("تم تعديل الموظف بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
