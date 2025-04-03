@@ -133,7 +133,7 @@ namespace PowerStationDisktop.PresentationLayer
             this.txt_CustomerPhone.Name = "txt_CustomerPhone";
             this.txt_CustomerPhone.Size = new System.Drawing.Size(275, 36);
             this.txt_CustomerPhone.TabIndex = 15;
-            this.txt_CustomerPhone.Text = "اضغط F5 للبحث";
+            this.txt_CustomerPhone.Text = "اضغط F9 للبحث";
             this.txt_CustomerPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_CustomerPhone.TextChanged += new System.EventHandler(this.txt_CustomerPhone_TextChanged);
             this.txt_CustomerPhone.Enter += new System.EventHandler(this.txt_CustomerPhone_Enter);

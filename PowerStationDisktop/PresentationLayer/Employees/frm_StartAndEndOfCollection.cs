@@ -36,7 +36,7 @@ namespace PowerStationDisktop.PresentationLayer.Employees
                 try
                 {
                     
-                    DialogResult result = MessageBox.Show("هل أنت متأكد من السماح بالتحصيل..؟", "تأكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show("هل أنت متأكد من السماح بالتحصيل حسب التاريخ المُدخل..؟", "تأكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                     if (result == DialogResult.Yes)
                     {

@@ -51,7 +51,7 @@ namespace PowerStationDisktop
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(611, 33);
+            this.button1.Location = new System.Drawing.Point(1042, 60);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 45);
             this.button1.TabIndex = 0;
@@ -61,7 +61,7 @@ namespace PowerStationDisktop
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(611, 102);
+            this.button2.Location = new System.Drawing.Point(1042, 115);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 45);
             this.button2.TabIndex = 1;
@@ -71,7 +71,7 @@ namespace PowerStationDisktop
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(611, 166);
+            this.button3.Location = new System.Drawing.Point(1042, 181);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(110, 45);
             this.button3.TabIndex = 2;
@@ -81,7 +81,7 @@ namespace PowerStationDisktop
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1056, 217);
+            this.button4.Location = new System.Drawing.Point(1042, 246);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(110, 45);
             this.button4.TabIndex = 3;
@@ -91,7 +91,7 @@ namespace PowerStationDisktop
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(611, 308);
+            this.button5.Location = new System.Drawing.Point(1042, 309);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(110, 45);
             this.button5.TabIndex = 4;
@@ -101,7 +101,7 @@ namespace PowerStationDisktop
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(611, 377);
+            this.button6.Location = new System.Drawing.Point(1042, 373);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(110, 45);
             this.button6.TabIndex = 5;
@@ -151,7 +151,7 @@ namespace PowerStationDisktop
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(328, 201);
+            this.button11.Location = new System.Drawing.Point(813, 201);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(110, 45);
             this.button11.TabIndex = 10;

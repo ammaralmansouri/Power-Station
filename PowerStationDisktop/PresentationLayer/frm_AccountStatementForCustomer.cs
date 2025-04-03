@@ -118,7 +118,10 @@ namespace PowerStationDisktop.PresentationLayer
             else
             {
                 MessageBox.Show("لا توجد اية بيانات خاصة بهذا العميل في هذا التاريخ ", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                
+                dgv_AccountStatementForCustomer.DataSource = null;
+                dgv_AccountStatementForCustomer.Rows.Clear();
+                dgv_AccountStatementForCustomer.Refresh();
             }
 
         }
@@ -126,7 +129,7 @@ namespace PowerStationDisktop.PresentationLayer
         private void txt_CustomerPhone_KeyDown(object sender, KeyEventArgs e)
         {
 
-            if (e.KeyCode == Keys.F5) // إذا تم الضغط على F5
+            if (e.KeyCode == Keys.F9) // إذا تم الضغط على F9
             {
                 //e.SuppressKeyPress = true; // لمنع الصوت الافتراضي لـ F5
                 Extensions.frm_SearchForCustomer searchForCustomer = new Extensions.frm_SearchForCustomer();
@@ -229,6 +232,9 @@ namespace PowerStationDisktop.PresentationLayer
                 {
                     MessageBox.Show("لا توجد اية بيانات خاصة بهذا العميل في هذا التاريخ ", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                    dgv_AccountStatementForCustomer.DataSource = null;
+                    dgv_AccountStatementForCustomer.Rows.Clear();
+                    dgv_AccountStatementForCustomer.Refresh();
                 }
             }
               

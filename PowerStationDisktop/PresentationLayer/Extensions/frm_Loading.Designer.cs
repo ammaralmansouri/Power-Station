@@ -38,9 +38,9 @@ namespace PowerStationDisktop.PresentationLayer.Extensions
             this.label1.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(171, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 38);
+            this.label1.Size = new System.Drawing.Size(211, 38);
             this.label1.TabIndex = 0;
-            this.label1.Text = "جارِ التجهيز ...";
+            this.label1.Text = "جارِ التجهيز للطباعة ...";
             // 
             // frm_Loading
             // 

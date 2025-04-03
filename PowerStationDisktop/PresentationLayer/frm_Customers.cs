@@ -104,6 +104,7 @@ namespace PowerStationDisktop.PresentationLayer
         private void btn_New_Click(object sender, EventArgs e)
         {
             EnableAndDisEnableTextBoxesAndButtons(true);
+            cmb_ElectronicMeters.Text = string.Empty;
             GetElectronicMeterswhichHaveNotBeenChoosen();
             EmptyTextBoxes();
 
@@ -200,28 +201,32 @@ namespace PowerStationDisktop.PresentationLayer
                 {
                     if (CheckIfPhoneNumberTrueOrNot())
                     {
-                        DataTable DataTable1 = powerStation.GetAllPowerStation();
-                        int PoweStationID = Convert.ToInt32(DataTable1.Rows[0][0].ToString());
+                        DialogResult result = MessageBox.Show("هل أنت متأكد من البيانات المُدخلة..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                        customer.AddNewCustomer(txt_CustomerName.Text,txt_CustomerPhone.Text, txt_CustomerPassword.Text, Convert.ToDouble(txt_CustomerTotalDues.Text), Convert.ToDouble(cmb_ElectronicMeters.SelectedValue), Convert.ToInt32(cmb_AreaID.SelectedValue), PoweStationID);
-                        normalize.ChangeLettersToStandardLettersToMakeItEasyWhenSearchForCustomer();
-                        MessageBox.Show("تم اضافة العميل بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (result == DialogResult.Yes)
+                        {
+                            DataTable DataTable1 = powerStation.GetAllPowerStation();
+                            int PoweStationID = Convert.ToInt32(DataTable1.Rows[0][0].ToString());
 
-
-                        EmptyTextBoxes();
-
-                        EnableAndDisEnableTextBoxesAndButtons(false);
-
-                        GetElectronicMeterswhichHaveNotBeenChoosen();
-
-                        GetAllCustomers();
-
-                        txt_CustomerPhone.Text = string.Empty;
+                            customer.AddNewCustomer(txt_CustomerName.Text, txt_CustomerPhone.Text, txt_CustomerPassword.Text, Convert.ToDouble(txt_CustomerTotalDues.Text), Convert.ToDouble(cmb_ElectronicMeters.SelectedValue), Convert.ToInt32(cmb_AreaID.SelectedValue), PoweStationID);
+                            normalize.ChangeLettersToStandardLettersToMakeItEasyWhenSearchForCustomer();
+                            MessageBox.Show("تم اضافة العميل بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                        btn_Edit.Enabled = false;
-                        btn_Delete.Enabled = false;
+                            EmptyTextBoxes();
 
+                            EnableAndDisEnableTextBoxesAndButtons(false);
+
+                            GetElectronicMeterswhichHaveNotBeenChoosen();
+
+                            GetAllCustomers();
+
+                            txt_CustomerPhone.Text = string.Empty;
+
+
+                            btn_Edit.Enabled = false;
+                            btn_Delete.Enabled = false;
+                        }
                     }
                 }
 
@@ -230,8 +235,6 @@ namespace PowerStationDisktop.PresentationLayer
             {
                 //MessageBox.Show("تأكد من: "+ex, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MessageBox.Show($"An Error Occurred: {ex.Message}\n\nSource: {ex.Source}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
             }
         }
 
@@ -295,7 +298,7 @@ namespace PowerStationDisktop.PresentationLayer
 
             try
             {
-                DialogResult result = MessageBox.Show("هل أنت متأكد من عملية الحذف..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show(". هل تريد بالتأكيد حذف هذه المنطقة؟ هذه العملية لا يمكن التراجع عنها", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
                 {
@@ -303,6 +306,8 @@ namespace PowerStationDisktop.PresentationLayer
                     MessageBox.Show("تمت علمية الحذف بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     EmptyTextBoxes();
+                    cmb_ElectronicMeters.Text = string.Empty;
+                    cmb_AreaID.Text = string.Empty;
                     EnableAndDisEnableTextBoxesAndButtons(false);
                     GetAllCustomers();
 
@@ -328,25 +333,36 @@ namespace PowerStationDisktop.PresentationLayer
                 {
                     if (CheckIfPhoneNumberTrueOrNot())
                     {
-                        int PoweStationID = 1;
 
-                        customer.UpdateCustomer( Convert.ToInt32(txt_CustomerID.Text), txt_CustomerName.Text, txt_CustomerPhone.Text, txt_CustomerPassword.Text, Convert.ToDouble(txt_CustomerTotalDues.Text), Convert.ToDouble(cmb_ElectronicMeters.SelectedValue), Convert.ToInt32(cmb_AreaID.SelectedValue), PoweStationID);
-                        MessageBox.Show("تم تعديل العميل بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult result = MessageBox.Show("هل أنت متأكد من التعديلات..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
+                        if (result == DialogResult.Yes)
+                        {
+                            DataTable DataTable1 = powerStation.GetAllPowerStation();
+                            int PoweStationID = Convert.ToInt32(DataTable1.Rows[0][0].ToString());
 
-                        EmptyTextBoxes();
+                            //MessageBox.Show("fgfd "+cmb_ElectronicMeters.Text);
 
-                        EnableAndDisEnableTextBoxesAndButtons(false);
-
-                        GetElectronicMeterswhichHaveNotBeenChoosen();
-
-                        GetAllCustomers();
-
-                        txt_CustomerPhone.Text = string.Empty;
+                            customer.UpdateCustomer(Convert.ToInt32(txt_CustomerID.Text), txt_CustomerName.Text, txt_CustomerPhone.Text, txt_CustomerPassword.Text, Convert.ToDouble(txt_CustomerTotalDues.Text), Convert.ToDouble(cmb_ElectronicMeters.Text), Convert.ToInt32(cmb_AreaID.SelectedValue), PoweStationID);
+                            MessageBox.Show("تم تعديل العميل بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                        btn_Edit.Enabled = false;
-                        btn_Delete.Enabled = false;
+                            EmptyTextBoxes();
+
+                            cmb_ElectronicMeters.Text = string.Empty;
+
+                            EnableAndDisEnableTextBoxesAndButtons(false);
+
+                            GetElectronicMeterswhichHaveNotBeenChoosen();
+
+                            GetAllCustomers();
+
+                            txt_CustomerPhone.Text = string.Empty;
+
+
+                            btn_Edit.Enabled = false;
+                            btn_Delete.Enabled = false;
+                        }
 
                     }
                 }
@@ -378,21 +394,33 @@ namespace PowerStationDisktop.PresentationLayer
 
         private void txt_CustomerPhone_TextChanged(object sender, EventArgs e)
         {
-
-
-            string input = txt_CustomerPhone.Text;
-            if (!regex.IsMatch(input))
+            if (txt_CustomerPhone.Text != String.Empty)
             {
-                //MessageBox.Show("لطفا ادخل رقم هاتف صحيح", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string input = txt_CustomerPhone.Text;
+                if (!regex.IsMatch(input))
+                {
+                    //MessageBox.Show("لطفا ادخل رقم هاتف صحيح", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                txt_CustomerPhone.BackColor = Color.Red;
-               
-                //txt_CustomerPhone.Clear();
+                    txt_CustomerPhone.BackColor = Color.Red;
+                    txt_CustomerPhone.ForeColor = Color.Black;
+
+
+                    //txt_CustomerPhone.Clear();
+                }
+                else
+                {
+                    txt_CustomerPhone.BackColor = Color.White;
+                    txt_CustomerPhone.ForeColor = Color.Black;
+
+                }
             }
             else
             {
                 txt_CustomerPhone.BackColor = Color.White;
+                txt_CustomerPhone.ForeColor = Color.Black;
             }
+
+            
         }
 
         private void txt_Search_TextChanged(object sender, EventArgs e)

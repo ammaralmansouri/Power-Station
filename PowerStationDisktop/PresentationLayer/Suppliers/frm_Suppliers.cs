@@ -50,19 +50,33 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
 
         private void txt_SupplierPhone_TextChanged(object sender, EventArgs e)
         {
-            string input = txt_SupplierPhone.Text;
-            if (!regex.IsMatch(input))
+            if (txt_SupplierPhone.Text != String.Empty)
             {
-                //MessageBox.Show("لطفا ادخل رقم هاتف صحيح", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string input = txt_SupplierPhone.Text;
+                if (!regex.IsMatch(input))
+                {
+                    //MessageBox.Show("لطفا ادخل رقم هاتف صحيح", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                txt_SupplierPhone.BackColor = Color.Red;
+                    txt_SupplierPhone.BackColor = Color.Red;
+                    txt_SupplierPhone.ForeColor = Color.Black;
 
-                //txt_CustomerPhone.Clear();
+
+                    //txt_CustomerPhone.Clear();
+                }
+                else
+                {
+                    txt_SupplierPhone.BackColor = Color.White;
+                    txt_SupplierPhone.ForeColor = Color.Black;
+
+                }
             }
             else
             {
                 txt_SupplierPhone.BackColor = Color.White;
+                txt_SupplierPhone.ForeColor = Color.Black;
             }
+
+           
         }
 
         bool CheckIfTextBoxesIsNull()
@@ -130,24 +144,29 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
                 {
                     if (CheckIfPhoneNumberTrueOrNot())
                     {
-                        DataTable DataTable1 = powerStation.GetAllPowerStation();
-                        int PoweStationID = Convert.ToInt32(DataTable1.Rows[0][0].ToString());
+                        DialogResult result = MessageBox.Show("هل أنت متأكد من البيانات المُدخلة..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                        supplier.AddNewSupplier(txt_SupplierName.Text , txt_SupplierPhone.Text , rich_SupplierDiscription.Text, PoweStationID);
-                        MessageBox.Show("تم اضافة المورد بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (result == DialogResult.Yes)
+                        {
+                            DataTable DataTable1 = powerStation.GetAllPowerStation();
+                            int PoweStationID = Convert.ToInt32(DataTable1.Rows[0][0].ToString());
 
-
-                        EmptyTextBoxes();
-
-                        EnableAndDisEnableTextBoxesAndButtons(false);
-
-                       GetAllSuppliers();
-
-                        rich_SupplierDiscription.Text = string.Empty;
+                            supplier.AddNewSupplier(txt_SupplierName.Text, txt_SupplierPhone.Text, rich_SupplierDiscription.Text, PoweStationID);
+                            MessageBox.Show("تم اضافة المورد بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                        btn_Edit.Enabled = false;
-                        btn_Delete.Enabled = false;
+                            EmptyTextBoxes();
+
+                            EnableAndDisEnableTextBoxesAndButtons(false);
+
+                            GetAllSuppliers();
+
+                            rich_SupplierDiscription.Text = string.Empty;
+
+
+                            btn_Edit.Enabled = false;
+                            btn_Delete.Enabled = false;
+                        }
 
                     }
                 }
@@ -184,23 +203,30 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
                 {
                     if (CheckIfPhoneNumberTrueOrNot())
                     {
-                        int PoweStationID = 1;
+                        DialogResult result = MessageBox.Show("هل أنت متأكد من التعديلات..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                        supplier.UpdateSupplier(Convert.ToInt32(txt_SupplierID.Text), txt_SupplierName.Text, txt_SupplierPhone.Text, rich_SupplierDiscription.Text,  PoweStationID);
-                        MessageBox.Show("تم تعديل العميل بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (result == DialogResult.Yes)
+                        {
+                            DataTable DataTable1 = powerStation.GetAllPowerStation();
+                            int PoweStationID = Convert.ToInt32(DataTable1.Rows[0][0].ToString());
 
-
-                        EmptyTextBoxes();
-
-                        EnableAndDisEnableTextBoxesAndButtons(false);
-
-                        GetAllSuppliers();
-
-                        rich_SupplierDiscription.Text = string.Empty;
+                            supplier.UpdateSupplier(Convert.ToInt32(txt_SupplierID.Text), txt_SupplierName.Text, txt_SupplierPhone.Text, rich_SupplierDiscription.Text, PoweStationID);
+                            MessageBox.Show("تم تعديل العميل بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                        btn_Edit.Enabled = false;
-                        btn_Delete.Enabled = false;
+                            EmptyTextBoxes();
+
+                            EnableAndDisEnableTextBoxesAndButtons(false);
+
+                            GetAllSuppliers();
+
+                            rich_SupplierDiscription.Text = string.Empty;
+
+
+                            btn_Edit.Enabled = false;
+                            btn_Delete.Enabled = false;
+                        }
+                            
 
                     }
                 }
@@ -240,7 +266,7 @@ namespace PowerStationDisktop.PresentationLayer.Suppliers
         {
             try
             {
-                DialogResult result = MessageBox.Show("هل أنت متأكد من عملية الحذف..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show(". هل تريد بالتأكيد حذف هذه المنطقة؟ هذه العملية لا يمكن التراجع عنها", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
                 {

@@ -46,23 +46,35 @@ namespace PowerStationDisktop.PresentationLayer.Employees
 
                 if (DataTable1.Rows.Count > 0)
                 {
+                    DialogResult result = MessageBox.Show("هل أنت متأكد من البيانات المُدخلة..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                    // The ExpireDate will set to NULL but there are start and end of collection date ..
-                    permissions.AddNewPermissionWithStartAndEndCollectionDateWithNullExpireDate(Convert.ToDateTime(DataTable1.Rows[0][2].ToString()), Convert.ToDateTime(DataTable1.Rows[0][3].ToString()), Convert.ToInt32(txt_EmployeeID.Text), Convert.ToInt32(cmb_AreaName.SelectedValue));
+                    if (result == DialogResult.Yes)
+                    {
+                        // The ExpireDate will set to NULL but there are start and end of collection date ..
+                        permissions.AddNewPermissionWithStartAndEndCollectionDateWithNullExpireDate(Convert.ToDateTime(DataTable1.Rows[0][2].ToString()), Convert.ToDateTime(DataTable1.Rows[0][3].ToString()), Convert.ToInt32(txt_EmployeeID.Text), Convert.ToInt32(cmb_AreaName.SelectedValue));
 
-                    MessageBox.Show("تم إضافة الصلاحيات بنحاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("تم إضافة الصلاحيات بنحاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.Close();
+                        this.Close();
+                    }
+
+                        
                 }
                 else
                 {
-                    // The ExpireDate will set to NULL and start, end of collection will set to Null too ..
+                    DialogResult result = MessageBox.Show("هل أنت متأكد من البيانات المُدخلة..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                    permissions.AddNewPermissionWithNullExpireDate( Convert.ToInt32(txt_EmployeeID.Text), Convert.ToInt32(cmb_AreaName.SelectedValue));
+                    if (result == DialogResult.Yes)
+                    {
+                        // The ExpireDate will set to NULL and start, end of collection will set to Null too ..
 
-                    MessageBox.Show("تم إضافة الصلاحيات بنحاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        permissions.AddNewPermissionWithNullExpireDate(Convert.ToInt32(txt_EmployeeID.Text), Convert.ToInt32(cmb_AreaName.SelectedValue));
 
-                    this.Close();
+                        MessageBox.Show("تم إضافة الصلاحيات بنحاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        this.Close();
+                    }
+                        
                 }
 
             }
@@ -83,7 +95,74 @@ namespace PowerStationDisktop.PresentationLayer.Employees
                         // this condition to make sure if there is  StartDateOfCollection in Last Permission or it is null ..
                         if (DataTable1.Rows[0][2].ToString() == string.Empty)
                         {
-                            // here the StartDateOfCollection and EndDateOfCollection are null ..
+                            DialogResult result = MessageBox.Show("هل أنت متأكد من البيانات المُدخلة..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                            if (result == DialogResult.Yes)
+                            {
+                                // here the StartDateOfCollection and EndDateOfCollection are null ..
+                                DateTime today = DateTime.Now; // تاريخ اليوم
+                                DateTime newDate = today.AddDays(Convert.ToDouble(num_NumberOfAllowedDaysForTakingReading.Value)); // إضافة الأيام المحددة
+
+                                permissions.AddNewPermisson(newDate, Convert.ToInt32(txt_EmployeeID.Text), Convert.ToInt32(cmb_AreaName.SelectedValue));
+
+                                MessageBox.Show("تم إضافة الصلاحيات بنحاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                this.Close();
+                            }
+                                
+                        }
+                        else if(Convert.ToDateTime(DataTable1.Rows[0][3].ToString()) < DateTime.Now.Date)
+                        {
+                            DialogResult result = MessageBox.Show("هل أنت متأكد من البيانات المُدخلة..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                            if (result == DialogResult.Yes)
+                            {
+                                // here the StartDateOfCollection and EndDateOfCollection are not null ..
+                                // here the StartDateOfCollection and EndDateOfCollection are like last Permission .. but expireDate is like what admin has put..
+                                // يعني هذا لما عاد التحصيل مابدا فاخلي بداية ونهاية التحصيل مثل اخر واحد عشان مانسمح له يحصل
+                                // لكن تاريخ مصادرة الصلاحية عيكون مثل ماحدد الادمن بالايام
+                                // عشان ماتنحذف الصلاحية
+                                // ولما الادمن يسمح للكل بالتحصيل عيتعدل تاريخ انتهاء الصلاحية حسب ماعيحددة الادمن
+
+                                DateTime today = DateTime.Now; // تاريخ اليوم
+                                DateTime newDate = today.AddDays(Convert.ToDouble(num_NumberOfAllowedDaysForTakingReading.Value)); // إضافة الأيام المحددة
+
+                                permissions.AddNewPermissionWithStartAndEndCollectionDate(newDate, Convert.ToDateTime(DataTable1.Rows[0][2].ToString()), Convert.ToDateTime(DataTable1.Rows[0][3].ToString()), Convert.ToInt32(txt_EmployeeID.Text), Convert.ToInt32(cmb_AreaName.SelectedValue));
+
+
+                                MessageBox.Show("تم إضافة الصلاحيات بنحاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                this.Close();
+                            }
+                                
+                        }
+                        else
+                        {
+                            DialogResult result = MessageBox.Show("هل أنت متأكد من البيانات المُدخلة..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                            if (result == DialogResult.Yes)
+                            {
+                                // here the StartDateOfCollection and EndDateOfCollection are like last Permission ..
+                                // this one when I add permission to some one after he declare StartDateOfCollection and EndDateOfCollection
+                                // يعني قد سمحت للكل يحصل وبعدين ذكرت انه باقي واحد .. فأضيفه وبيشل نفس تاريخ البداية والنهاية حق اللي قبله
+
+                                permissions.AddNewPermissionWithStartAndEndCollectionDate(Convert.ToDateTime(DataTable1.Rows[0][3].ToString()), Convert.ToDateTime(DataTable1.Rows[0][2].ToString()), Convert.ToDateTime(DataTable1.Rows[0][3].ToString()), Convert.ToInt32(txt_EmployeeID.Text), Convert.ToInt32(cmb_AreaName.SelectedValue));
+
+                                MessageBox.Show("تم إضافة الصلاحيات بنحاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                this.Close();
+                            }                       
+                        }                
+                    }
+                    else
+                    {
+
+                        DialogResult result = MessageBox.Show("هل أنت متأكد من البيانات المُدخلة..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            // The ExpireDate will not set to NULL and start, end of collection will set to Null too ..
+
                             DateTime today = DateTime.Now; // تاريخ اليوم
                             DateTime newDate = today.AddDays(Convert.ToDouble(num_NumberOfAllowedDaysForTakingReading.Value)); // إضافة الأيام المحددة
 
@@ -93,51 +172,7 @@ namespace PowerStationDisktop.PresentationLayer.Employees
 
                             this.Close();
                         }
-                        else if(Convert.ToDateTime(DataTable1.Rows[0][3].ToString()) < DateTime.Now.Date)
-                        {
-                            // here the StartDateOfCollection and EndDateOfCollection are not null ..
-                            // here the StartDateOfCollection and EndDateOfCollection are like last Permission .. but expireDate is like what admin has put..
-                            // يعني هذا لما عاد التحصيل مابدا فاخلي بداية ونهاية التحصيل مثل اخر واحد عشان مانسمح له يحصل
-                            // لكن تاريخ مصادرة الصلاحية عيكون مثل ماحدد الادمن بالايام
-                            // عشان ماتنحذف الصلاحية
-                            // ولما الادمن يسمح للكل بالتحصيل عيتعدل تاريخ انتهاء الصلاحية حسب ماعيحددة الادمن
-
-                            DateTime today = DateTime.Now; // تاريخ اليوم
-                            DateTime newDate = today.AddDays(Convert.ToDouble(num_NumberOfAllowedDaysForTakingReading.Value)); // إضافة الأيام المحددة
-
-                            permissions.AddNewPermissionWithStartAndEndCollectionDate(newDate, Convert.ToDateTime(DataTable1.Rows[0][2].ToString()), Convert.ToDateTime(DataTable1.Rows[0][3].ToString()), Convert.ToInt32(txt_EmployeeID.Text), Convert.ToInt32(cmb_AreaName.SelectedValue));
-
-
-                            MessageBox.Show("تم إضافة الصلاحيات بنحاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            this.Close();
-                        }
-                        else
-                        {
-                            // here the StartDateOfCollection and EndDateOfCollection are like last Permission ..
-                            // this one when I add permission to some one after he declare StartDateOfCollection and EndDateOfCollection
-                            // يعني قد سمحت للكل يحصل وبعدين ذكرت انه باقي واحد .. فأضيفه وبيشل نفس تاريخ البداية والنهاية حق اللي قبله
-
-                            permissions.AddNewPermissionWithStartAndEndCollectionDate(Convert.ToDateTime(DataTable1.Rows[0][3].ToString()), Convert.ToDateTime(DataTable1.Rows[0][2].ToString()), Convert.ToDateTime(DataTable1.Rows[0][3].ToString()), Convert.ToInt32(txt_EmployeeID.Text), Convert.ToInt32(cmb_AreaName.SelectedValue));
-
-                            MessageBox.Show("تم إضافة الصلاحيات بنحاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            this.Close();
-                        }
-                        
-                    }
-                    else
-                    {
-                        // The ExpireDate will not set to NULL and start, end of collection will set to Null too ..
-
-                        DateTime today = DateTime.Now; // تاريخ اليوم
-                        DateTime newDate = today.AddDays(Convert.ToDouble(num_NumberOfAllowedDaysForTakingReading.Value)); // إضافة الأيام المحددة
-
-                        permissions.AddNewPermisson(newDate, Convert.ToInt32(txt_EmployeeID.Text), Convert.ToInt32(cmb_AreaName.SelectedValue));
-
-                        MessageBox.Show("تم إضافة الصلاحيات بنحاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        this.Close();
+                            
                     }
                 }
                 else

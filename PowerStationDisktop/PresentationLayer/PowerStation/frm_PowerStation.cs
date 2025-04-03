@@ -185,13 +185,19 @@ namespace PowerStationDisktop.PresentationLayer.PowerStation
                 MessageBox.Show("يجب عليك ادخال صورة", "تنبية", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                MemoryStream ms = new MemoryStream(); // Lcate space in memory to store image in it befor send it to database..
-                pb_PowerStationLogo.Image.Save(ms, pb_PowerStationLogo.Image.RawFormat); // save in lacted space..
-                BImage = ms.ToArray(); // image now stored as bytes
+                DialogResult result = MessageBox.Show("هل أنت متأكد من التعديلات..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                powerStation.UpdatePowerStation(Convert.ToInt32(txt_PowerStationID.Text), txt_PowerStationArabicName.Text, txt_PowerStationEnglishName.Text, txt_PowerStationArabicAddress.Text, txt_PowerStationEnglishAddress.Text, txt_PowerStationPhoneNumber.Text, txt_PowerStationEmail.Text, txt_PowerStationWebsite.Text, BImage);
+                if (result == DialogResult.Yes)
+                {
+                    MemoryStream ms = new MemoryStream(); // Lcate space in memory to store image in it befor send it to database..
+                    pb_PowerStationLogo.Image.Save(ms, pb_PowerStationLogo.Image.RawFormat); // save in lacted space..
+                    BImage = ms.ToArray(); // image now stored as bytes
 
-                MessageBox.Show("تمت عملية التعديل بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    powerStation.UpdatePowerStation(Convert.ToInt32(txt_PowerStationID.Text), txt_PowerStationArabicName.Text, txt_PowerStationEnglishName.Text, txt_PowerStationArabicAddress.Text, txt_PowerStationEnglishAddress.Text, txt_PowerStationPhoneNumber.Text, txt_PowerStationEmail.Text, txt_PowerStationWebsite.Text, BImage);
+
+                    MessageBox.Show("تمت عملية التعديل بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                    
             }
 
             
@@ -205,13 +211,19 @@ namespace PowerStationDisktop.PresentationLayer.PowerStation
                 MessageBox.Show("يجب عليك ادخال صورة", "تنبية", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                MemoryStream ms = new MemoryStream(); // Lcate space in memory to store image in it befor send it to database..
-                pb_PowerStationLogo.Image.Save(ms, pb_PowerStationLogo.Image.RawFormat); // save in lacted space..
-                BImage = ms.ToArray(); // image now stored as bytes
+                DialogResult result = MessageBox.Show("هل أنت متأكد من البيانات المُدخلة..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                powerStation.AddPowerStation(txt_PowerStationArabicName.Text, txt_PowerStationEnglishName.Text, txt_PowerStationArabicAddress.Text, txt_PowerStationEnglishAddress.Text, txt_PowerStationPhoneNumber.Text, txt_PowerStationEmail.Text, txt_PowerStationWebsite.Text, BImage);
+                if (result == DialogResult.Yes)
+                {
+                    MemoryStream ms = new MemoryStream(); // Lcate space in memory to store image in it befor send it to database..
+                    pb_PowerStationLogo.Image.Save(ms, pb_PowerStationLogo.Image.RawFormat); // save in lacted space..
+                    BImage = ms.ToArray(); // image now stored as bytes
 
-                MessageBox.Show("تمت عملية الحفظ بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    powerStation.AddPowerStation(txt_PowerStationArabicName.Text, txt_PowerStationEnglishName.Text, txt_PowerStationArabicAddress.Text, txt_PowerStationEnglishAddress.Text, txt_PowerStationPhoneNumber.Text, txt_PowerStationEmail.Text, txt_PowerStationWebsite.Text, BImage);
+
+                    MessageBox.Show("تمت عملية الحفظ بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                    
 
                 
 

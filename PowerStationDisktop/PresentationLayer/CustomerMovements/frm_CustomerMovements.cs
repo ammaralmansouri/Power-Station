@@ -200,55 +200,63 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
                 {
                     if (dtp_CustomerMovementDate.Value.Date == DateTime.Now.Date)
                     {
-                        double TotalDuesAfterPaying = (Convert.ToDouble(txt_TotalDuesAfterPaying.Text)) ;
-                        customerMovement.UpdateCustomerTotalDuesWhenPaying(Convert.ToDouble(txt_ElectricityMeterID.Text), TotalDuesAfterPaying);
 
-                        int CustomerMovementType=0;
+                        DialogResult result = MessageBox.Show("هل أنت متأكد من البيانات المُدخلة..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                        if(cmb_CustomerMovementType.Text == "كاش")
+                        if (result == DialogResult.Yes)
                         {
-                            CustomerMovementType = 1;
+                            double TotalDuesAfterPaying = (Convert.ToDouble(txt_TotalDuesAfterPaying.Text));
+                            customerMovement.UpdateCustomerTotalDuesWhenPaying(Convert.ToDouble(txt_ElectricityMeterID.Text), TotalDuesAfterPaying);
+
+                            int CustomerMovementType = 0;
+
+                            if (cmb_CustomerMovementType.Text == "كاش")
+                            {
+                                CustomerMovementType = 1;
+                            }
+                            else if (cmb_CustomerMovementType.Text == "دفع الكتروني")
+                            {
+                                CustomerMovementType = 2;
+
+                            }
+
+                            CustomerMovementID = Convert.ToInt32(txt_CustomerMovementID.Text);
+
+                            customerMovement.AddNewCustomerMovement(Convert.ToInt32(txt_CustomerMovementID.Text), dtp_CustomerMovementDate.Value, Convert.ToDouble(txt_CustomerMovementPaiedAmount.Text), TotalDuesAfterPaying, rich_CustomerMovementNote.Text, CustomerMovementType, Convert.ToInt32(txt_CustomerID.Text), Convert.ToInt32(txt_EmployeeID.Text));
+                            MessageBox.Show("تم حفظ سند القبض بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+                            EmptyTextBoxes();
+
+                            EnableAndDisEnableTextBoxesAndButtons(false);
+
+
+                            // إنشاء نافذة تحميل وإظهارها
+                            loadingForm = new Extensions.frm_Loading();
+                            loadingForm.Show();
+
+                            // تشغيل المهمة في الخلفية لتحميل التقرير
+                            backgroundWorker1.RunWorkerAsync();
+
+                            //DataTable DataTable1 = reports.ReportForCustomerMovementWhenPaying(CustomerMovementID);
+
+
+                            //DataSet DataSet1 = new DataSet();
+
+                            //DataSet1.Tables.Add(DataTable1);
+
+                            //PresentationLayer.Reports.CustomerMonements.CustomerMovementWhenPaying customerMovementWhenPaying = new Reports.CustomerMonements.CustomerMovementWhenPaying();
+                            //customerMovementWhenPaying.SetDataSource(DataTable1);
+
+                            //PresentationLayer.Reports.frm_ReportViewer reportViewer = new Reports.frm_ReportViewer();
+
+                            //reportViewer.CRV.ReportSource = customerMovementWhenPaying;
+                            //reportViewer.CRV.RefreshReport();
+                            //reportViewer.Show();
                         }
-                        else if (cmb_CustomerMovementType.Text == "دفع الكتروني")
-                        {
-                            CustomerMovementType = 2;
-
-                        }
-
-                        CustomerMovementID = Convert.ToInt32(txt_CustomerMovementID.Text);
-
-                        customerMovement.AddNewCustomerMovement(Convert.ToInt32(txt_CustomerMovementID.Text) , dtp_CustomerMovementDate.Value , Convert.ToDouble(txt_CustomerMovementPaiedAmount.Text) , TotalDuesAfterPaying , rich_CustomerMovementNote.Text , CustomerMovementType,Convert.ToInt32(txt_CustomerID.Text) , Convert.ToInt32(txt_EmployeeID.Text));
-                        MessageBox.Show("تم اضافة سند القبض بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-
-                        EmptyTextBoxes();
-
-                        EnableAndDisEnableTextBoxesAndButtons(false);
-
-
-                        // إنشاء نافذة تحميل وإظهارها
-                        loadingForm = new Extensions.frm_Loading();
-                        loadingForm.Show();
-
-                        // تشغيل المهمة في الخلفية لتحميل التقرير
-                        backgroundWorker1.RunWorkerAsync();
-
-                        //DataTable DataTable1 = reports.ReportForCustomerMovementWhenPaying(CustomerMovementID);
-
-
-                        //DataSet DataSet1 = new DataSet();
-
-                        //DataSet1.Tables.Add(DataTable1);
-
-                        //PresentationLayer.Reports.CustomerMonements.CustomerMovementWhenPaying customerMovementWhenPaying = new Reports.CustomerMonements.CustomerMovementWhenPaying();
-                        //customerMovementWhenPaying.SetDataSource(DataTable1);
-
-                        //PresentationLayer.Reports.frm_ReportViewer reportViewer = new Reports.frm_ReportViewer();
-
-                        //reportViewer.CRV.ReportSource = customerMovementWhenPaying;
-                        //reportViewer.CRV.RefreshReport();
-                        //reportViewer.Show();
 
                     }
                     else

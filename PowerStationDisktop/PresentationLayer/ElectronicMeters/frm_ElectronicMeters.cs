@@ -118,28 +118,31 @@ namespace PowerStationDisktop.PresentationLayer.ElectronicMeters
                 {
                     int ElectronicMeterType;
 
-
                     if (CheckIfFiledsEmptyOrNot())
                     {
-                        if (cmb_ElectronicMeterType.Text == "الكتروني")
+                        DialogResult result = MessageBox.Show("هل أنت متأكد من البيانات المُدخلة..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (result == DialogResult.Yes)
                         {
-                            ElectronicMeterType = 1;
+                            if (cmb_ElectronicMeterType.Text == "الكتروني")
+                            {
+                                ElectronicMeterType = 1;
+                            }
+                            else
+                            {
+                                ElectronicMeterType = 2;
+                            }
+
+                            electronicMeter.AddNewElectronicMeter(Convert.ToDouble(txt_ElectronicMeterID.Text), ElectronicMeterType, DateTime.Now);
+                            MessageBox.Show("تمت اضافة العداد بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            GetAllElectronicMeter();
+
+                            EnableAndDisEnableTextBoxesAndButtons(false);
+                            EmptyTextBoxes();
+
+
+                            btn_Delete.Enabled = false;
                         }
-                        else
-                        {
-                            ElectronicMeterType = 2;
-                        }
-
-                        electronicMeter.AddNewElectronicMeter(Convert.ToDouble(txt_ElectronicMeterID.Text), ElectronicMeterType, DateTime.Now);
-                        MessageBox.Show("تمت اضافة العداد بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        GetAllElectronicMeter();
-
-                        EnableAndDisEnableTextBoxesAndButtons(false);
-                        EmptyTextBoxes();
-                        
-                        
-                        btn_Delete.Enabled = false;
-
                     }
                     else
                     {
@@ -151,8 +154,6 @@ namespace PowerStationDisktop.PresentationLayer.ElectronicMeters
                     MessageBox.Show("هذا العداد موجود بالفعل", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
-
-
             }
             catch(Exception ex)
             {

@@ -13,6 +13,8 @@ namespace PowerStationDisktop
     public partial class frm_Main : Form
     {
         BusinessLayer.PowerStation.ClsPowerStation PowerStation = new BusinessLayer.PowerStation.ClsPowerStation();
+        BusinessLayer.Permissions.ClsPermissions permissions = new BusinessLayer.Permissions.ClsPermissions();
+
         public frm_Main()
         {
             InitializeComponent();
@@ -107,8 +109,19 @@ namespace PowerStationDisktop
 
         private void button14_Click(object sender, EventArgs e)
         {
-            PresentationLayer.Permissions.frm_CurrentPermisions currentPermisions = new PresentationLayer.Permissions.frm_CurrentPermisions();
-            currentPermisions.Show();
+
+            DataTable DataTable1 = permissions.GetAllPermissions();
+
+            if (DataTable1.Rows.Count > 0)
+            {
+                PresentationLayer.Permissions.frm_CurrentPermisions currentPermisions = new PresentationLayer.Permissions.frm_CurrentPermisions();
+                currentPermisions.Show();
+            }
+            else
+            {
+                MessageBox.Show("لا توجد اي صلاحيات", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private void button15_Click(object sender, EventArgs e)

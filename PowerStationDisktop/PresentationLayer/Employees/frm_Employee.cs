@@ -205,48 +205,54 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
                 {
                     if (CheckIfPhoneNumberTrueOrNot())
                     {
-                        DataTable DataTable1 = powerStation.GetAllPowerStation();
-                        int PoweStationID = Convert.ToInt32(DataTable1.Rows[0][0].ToString());
+                        DialogResult result = MessageBox.Show("هل أنت متأكد من البيانات المُدخلة..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                        int EmployeePermission = 0;
-                        int EmployeeType = 1;
-                        int EmployeeState = 0;
-
-                        if (cmb_EmployeeType.Text == "موظف")
+                        if (result == DialogResult.Yes)
                         {
-                            EmployeeType = 1;
+                            DataTable DataTable1 = powerStation.GetAllPowerStation();
+                            int PoweStationID = Convert.ToInt32(DataTable1.Rows[0][0].ToString());
+
+                            int EmployeePermission = 0;
+                            int EmployeeType = 1;
+                            int EmployeeState = 0;
+
+                            if (cmb_EmployeeType.Text == "موظف")
+                            {
+                                EmployeeType = 1;
+                            }
+                            else if (cmb_EmployeeType.Text == "محصل")
+                            {
+                                EmployeeType = 2;
+                            }
+
+
+                            if (cmb_EmployeeState.Text == "فعال")
+                            {
+                                EmployeeState = 1;
+                            }
+                            else if (cmb_EmployeeType.Text == "غير فعال")
+                            {
+                                EmployeeState = 0;
+                            }
+
+                            employee.AddNewEmployee(txt_EmployeeName.Text, txt_EmployeePhone.Text, Convert.ToDouble(txt_EmployeeSalary.Text), txt_EmployeePassword.Text, EmployeeType, EmployeePermission, EmployeeState, PoweStationID);
+                            normalize.ChangeLettersToStandardLettersToMakeItEasyWhenSearchForEmployee();
+                            MessageBox.Show("تم اضافة الموظف بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                            EmptyTextBoxes();
+
+                            EnableAndDisEnableTextBoxesAndButtons(false);
+
+                            GetAllEmployees();
+
+                            txt_EmployeePhone.Text = string.Empty;
+
+
+                            btn_Edit.Enabled = false;
+                            btn_Delete.Enabled = false;
                         }
-                        else if (cmb_EmployeeType.Text == "محصل")
-                        {
-                            EmployeeType = 2;
-                        }
-
-
-                        if (cmb_EmployeeState.Text == "فعال")
-                        {
-                            EmployeeState = 1;
-                        }
-                        else if (cmb_EmployeeType.Text == "غير فعال")
-                        {
-                            EmployeeState = 0;
-                        }
-
-                        employee.AddNewEmployee(txt_EmployeeName.Text, txt_EmployeePhone.Text, Convert.ToDouble(txt_EmployeeSalary.Text), txt_EmployeePassword.Text, EmployeeType, EmployeePermission  , EmployeeState, PoweStationID);
-                        normalize.ChangeLettersToStandardLettersToMakeItEasyWhenSearchForEmployee();
-                        MessageBox.Show("تم اضافة الموظف بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-                        EmptyTextBoxes();
-
-                        EnableAndDisEnableTextBoxesAndButtons(false);
-
-                        GetAllEmployees();
-
-                        txt_EmployeePhone.Text = string.Empty;
-
-
-                        btn_Edit.Enabled = false;
-                        btn_Delete.Enabled = false;
+                            
 
                     }
                 }
@@ -375,46 +381,52 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
                 {
                     if (CheckIfPhoneNumberTrueOrNot())
                     {
-                        int PoweStationID = 1;
-                        int EmployeePermission = 0;
-                        int EmployeeType = 1;
-                        int EmployeeState = 0;
+                        DialogResult result = MessageBox.Show("هل أنت متأكد من التعديلات..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                        if (cmb_EmployeeType.Text == "موظف")
+                        if (result == DialogResult.Yes)
                         {
-                            EmployeeType = 1;
+                            int PoweStationID = 1;
+                            int EmployeePermission = 0;
+                            int EmployeeType = 1;
+                            int EmployeeState = 0;
+
+                            if (cmb_EmployeeType.Text == "موظف")
+                            {
+                                EmployeeType = 1;
+                            }
+                            else if (cmb_EmployeeType.Text == "محصل")
+                            {
+                                EmployeeType = 2;
+                            }
+
+
+                            if (cmb_EmployeeState.Text == "فعال")
+                            {
+                                EmployeeState = 1;
+                            }
+                            else if (cmb_EmployeeType.Text == "غير فعال")
+                            {
+                                EmployeeState = 0;
+                            }
+
+                            employee.UpdateEmployee(Convert.ToInt32(txt_EmployeeID.Text), txt_EmployeeName.Text, txt_EmployeePhone.Text, Convert.ToDouble(txt_EmployeeSalary.Text), txt_EmployeePassword.Text, EmployeeType, EmployeePermission, EmployeeState, PoweStationID);
+                            normalize.ChangeLettersToStandardLettersToMakeItEasyWhenSearchForEmployee();
+                            MessageBox.Show("تم تعديل الموظف بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                            EmptyTextBoxes();
+
+                            EnableAndDisEnableTextBoxesAndButtons(false);
+
+                            GetAllEmployees();
+
+                            txt_EmployeePhone.Text = string.Empty;
+
+
+                            btn_Edit.Enabled = false;
+                            btn_Delete.Enabled = false;
                         }
-                        else if (cmb_EmployeeType.Text == "محصل")
-                        {
-                            EmployeeType = 2;
-                        }
-
-
-                        if (cmb_EmployeeState.Text == "فعال")
-                        {
-                            EmployeeState = 1;
-                        }
-                        else if (cmb_EmployeeType.Text == "غير فعال")
-                        {
-                            EmployeeState = 0;
-                        }
-
-                        employee.UpdateEmployee(Convert.ToInt32(txt_EmployeeID.Text),txt_EmployeeName.Text, txt_EmployeePhone.Text, Convert.ToDouble(txt_EmployeeSalary.Text), txt_EmployeePassword.Text, EmployeeType, EmployeePermission, EmployeeState, PoweStationID);
-                        normalize.ChangeLettersToStandardLettersToMakeItEasyWhenSearchForEmployee();
-                        MessageBox.Show("تم تعديل الموظف بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-                        EmptyTextBoxes();
-
-                        EnableAndDisEnableTextBoxesAndButtons(false);
-
-                        GetAllEmployees();
-
-                        txt_EmployeePhone.Text = string.Empty;
-
-
-                        btn_Edit.Enabled = false;
-                        btn_Delete.Enabled = false;
+                            
 
                     }
                 }
@@ -433,7 +445,8 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
         {
             try
             {
-                DialogResult result = MessageBox.Show("هل أنت متأكد من عملية الحذف..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show(". هل تريد بالتأكيد حذف هذه المنطقة؟ هذه العملية لا يمكن التراجع عنها", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
 
                 if (result == DialogResult.Yes)
                 {
