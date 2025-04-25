@@ -34,6 +34,7 @@ namespace PowerStationDisktop.PresentationLayer
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.txt_CustomerPhone = new System.Windows.Forms.TextBox();
             this.txt_CustomerID = new System.Windows.Forms.TextBox();
             this.cmb_ElectronicMeters = new System.Windows.Forms.ComboBox();
@@ -64,6 +65,7 @@ namespace PowerStationDisktop.PresentationLayer
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txt_CustomerPhone);
             this.groupBox1.Controls.Add(this.txt_CustomerID);
             this.groupBox1.Controls.Add(this.cmb_ElectronicMeters);
@@ -84,6 +86,16 @@ namespace PowerStationDisktop.PresentationLayer
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات العميل";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(44, 36);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txt_CustomerPhone
             // 
@@ -110,6 +122,7 @@ namespace PowerStationDisktop.PresentationLayer
             // 
             // cmb_ElectronicMeters
             // 
+            this.cmb_ElectronicMeters.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_ElectronicMeters.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_ElectronicMeters.FormattingEnabled = true;
             this.cmb_ElectronicMeters.Location = new System.Drawing.Point(62, 141);
@@ -163,6 +176,7 @@ namespace PowerStationDisktop.PresentationLayer
             this.txt_CustomerPassword.Enabled = false;
             this.txt_CustomerPassword.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CustomerPassword.Location = new System.Drawing.Point(59, 90);
+            this.txt_CustomerPassword.MaxLength = 20;
             this.txt_CustomerPassword.Name = "txt_CustomerPassword";
             this.txt_CustomerPassword.PasswordChar = '*';
             this.txt_CustomerPassword.Size = new System.Drawing.Size(197, 36);
@@ -195,6 +209,7 @@ namespace PowerStationDisktop.PresentationLayer
             this.txt_CustomerTotalDues.Enabled = false;
             this.txt_CustomerTotalDues.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CustomerTotalDues.Location = new System.Drawing.Point(429, 137);
+            this.txt_CustomerTotalDues.MaxLength = 15;
             this.txt_CustomerTotalDues.Name = "txt_CustomerTotalDues";
             this.txt_CustomerTotalDues.Size = new System.Drawing.Size(227, 36);
             this.txt_CustomerTotalDues.TabIndex = 5;
@@ -416,5 +431,6 @@ namespace PowerStationDisktop.PresentationLayer
         private System.Windows.Forms.TextBox txt_CustomerID;
         private System.Windows.Forms.TextBox txt_CustomerPhone;
         private System.Windows.Forms.Button btn_New;
+        private System.Windows.Forms.Button button1;
     }
 }

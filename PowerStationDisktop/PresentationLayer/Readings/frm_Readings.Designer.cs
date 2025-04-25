@@ -270,6 +270,7 @@ namespace PowerStationDisktop.PresentationLayer.Readings
             this.txt_CurrentReading.Enabled = false;
             this.txt_CurrentReading.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CurrentReading.Location = new System.Drawing.Point(7, 81);
+            this.txt_CurrentReading.MaxLength = 10;
             this.txt_CurrentReading.Name = "txt_CurrentReading";
             this.txt_CurrentReading.Size = new System.Drawing.Size(188, 36);
             this.txt_CurrentReading.TabIndex = 5;
@@ -384,7 +385,7 @@ namespace PowerStationDisktop.PresentationLayer.Readings
             this.dgv_Readings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.5F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -393,7 +394,7 @@ namespace PowerStationDisktop.PresentationLayer.Readings
             this.dgv_Readings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.5F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;

@@ -85,7 +85,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\Areas\ClsAreas.cs" />
-    <Compile Include="BusinessLayer\Colors\ClsAppColors.cs" />
     <Compile Include="BusinessLayer\CustomerMovement\ClsCustomerMovement.cs" />
     <Compile Include="BusinessLayer\Customers\ClsCustomers.cs" />
     <Compile Include="BusinessLayer\ElectronicMeters\ClsElectronicMeter.cs" />
@@ -98,6 +97,9 @@
     <Compile Include="BusinessLayer\Readings\ClsReadings.cs" />
     <Compile Include="BusinessLayer\Reports\ClsReports.cs" />
     <Compile Include="BusinessLayer\SendMassagesInWhatsapp\ClsSendMassagesInWhatsapp.cs" />
+    <Compile Include="BusinessLayer\Settings\ClsAppColors.cs" />
+    <Compile Include="BusinessLayer\Settings\ClsAppFontSize.cs" />
+    <Compile Include="BusinessLayer\Settings\ClsFieldsRange.cs" />
     <Compile Include="BusinessLayer\Suppliers\ClsSuppliers.cs" />
     <Compile Include="DataAccessLayer\ClsConnection.cs" />
     <Compile Include="frm_Main.cs">
@@ -206,11 +208,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountStatementForCustomer.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="PresentationLayer\Reports\CustomerMonements\CustomerMovementWhenPaying.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomerMovementWhenPaying.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="PresentationLayer\Reports\DatasetForAllReports.cs">
       <DependentUpon>DatasetForAllReports.xsd</DependentUpon>
@@ -230,6 +234,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PaymentVoucherForEmployee.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="PresentationLayer\SendMassagesInWhatsapp\frm_SendMassagesInWhatsapp.cs">
       <SubType>Form</SubType>

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using PowerStationDisktop.BusinessLayer.Settings;
 
 namespace PowerStationDisktop.PresentationLayer
 {
@@ -33,6 +34,13 @@ namespace PowerStationDisktop.PresentationLayer
             GetAllCustomers();
             //AutocompeleteSearchText();
 
+            // This is for font size in DataGridView ..
+            dgv_Customers.DefaultCellStyle.Font = ClsAppFontSize.GetDefaultCellStyleFont(dgv_Customers.DefaultCellStyle.Font);
+            dgv_Customers.AlternatingRowsDefaultCellStyle.Font = ClsAppFontSize.GetAlternatingRowsDefaultCellStyleFont(dgv_Customers.AlternatingRowsDefaultCellStyle.Font);
+            dgv_Customers.ColumnHeadersDefaultCellStyle.Font = ClsAppFontSize.GetColumnHeaderDefaultCellStyleFont(dgv_Customers.ColumnHeadersDefaultCellStyle.Font);
+
+            // To set the max length from my settings ..
+            txt_CustomerTotalDues.MaxLength = ClsFieldsRange.TotalDuesMaxLength;
         }
 
 
@@ -67,10 +75,24 @@ namespace PowerStationDisktop.PresentationLayer
 
         void GetElectronicMeterswhichHaveNotBeenChoosen()
         {
-            cmb_ElectronicMeters.DataSource = customer.GetElectronicMeterswhichHaveNotBeenChoosen();
+            DataTable DataTable1 = customer.GetElectronicMeterswhichHaveNotBeenChoosen();
 
-            cmb_ElectronicMeters.ValueMember = "ElectronicMeterID";
-            cmb_ElectronicMeters.DisplayMember = "ElectronicMeterID";
+            if(DataTable1.Rows.Count >0)
+            {
+                cmb_ElectronicMeters.DataSource = DataTable1;
+
+                cmb_ElectronicMeters.ValueMember = "ElectronicMeterID";
+                cmb_ElectronicMeters.DisplayMember = "ElectronicMeterID";
+            }
+            else
+            {
+                cmb_ElectronicMeters.DataSource = null;
+                cmb_ElectronicMeters.Items.Clear();
+                cmb_ElectronicMeters.Items.Add("لا توجد عدادات متاحة");
+                cmb_ElectronicMeters.SelectedIndex = 0;
+
+            }
+
         }
 
 
@@ -86,6 +108,8 @@ namespace PowerStationDisktop.PresentationLayer
             dgv_Customers.Columns[4].HeaderText = "المتأخرات";
             dgv_Customers.Columns[5].HeaderText = "رقم العداد";
             dgv_Customers.Columns[6].HeaderText = "المنطقة";
+
+            dgv_Customers.Columns[4].DefaultCellStyle.Format = "N2"; // to show just to digits after decimal point .. 
 
         }
 
@@ -197,39 +221,50 @@ namespace PowerStationDisktop.PresentationLayer
 
             try
             {
+
+                
                 if (CheckIfTextBoxesIsNull())
                 {
                     if (CheckIfPhoneNumberTrueOrNot())
                     {
-                        DialogResult result = MessageBox.Show("هل أنت متأكد من البيانات المُدخلة..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        DataTable DataTable1 = customer.GetElectronicMeterswhichHaveNotBeenChoosen();
 
-                        if (result == DialogResult.Yes)
+                        if (DataTable1.Rows.Count > 0)
                         {
-                            DataTable DataTable1 = powerStation.GetAllPowerStation();
-                            int PoweStationID = Convert.ToInt32(DataTable1.Rows[0][0].ToString());
+                            DialogResult result = MessageBox.Show("هل أنت متأكد من البيانات المُدخلة..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                            customer.AddNewCustomer(txt_CustomerName.Text, txt_CustomerPhone.Text, txt_CustomerPassword.Text, Convert.ToDouble(txt_CustomerTotalDues.Text), Convert.ToDouble(cmb_ElectronicMeters.SelectedValue), Convert.ToInt32(cmb_AreaID.SelectedValue), PoweStationID);
-                            normalize.ChangeLettersToStandardLettersToMakeItEasyWhenSearchForCustomer();
-                            MessageBox.Show("تم اضافة العميل بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (result == DialogResult.Yes)
+                            {
+                                DataTable DataTable2 = powerStation.GetAllPowerStation();
+                                int PoweStationID = Convert.ToInt32(DataTable2.Rows[0][0].ToString());
 
-
-                            EmptyTextBoxes();
-
-                            EnableAndDisEnableTextBoxesAndButtons(false);
-
-                            GetElectronicMeterswhichHaveNotBeenChoosen();
-
-                            GetAllCustomers();
-
-                            txt_CustomerPhone.Text = string.Empty;
+                                customer.AddNewCustomer(txt_CustomerName.Text, txt_CustomerPhone.Text, txt_CustomerPassword.Text, Convert.ToDouble(txt_CustomerTotalDues.Text), Convert.ToDouble(cmb_ElectronicMeters.SelectedValue), Convert.ToInt32(cmb_AreaID.SelectedValue), PoweStationID);
+                                normalize.ChangeLettersToStandardLettersToMakeItEasyWhenSearchForCustomer();
+                                MessageBox.Show("تم اضافة العميل بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                            btn_Edit.Enabled = false;
-                            btn_Delete.Enabled = false;
+                                EmptyTextBoxes();
+
+                                EnableAndDisEnableTextBoxesAndButtons(false);
+
+                                GetElectronicMeterswhichHaveNotBeenChoosen();
+
+                                GetAllCustomers();
+
+                                txt_CustomerPhone.Text = string.Empty;
+
+
+                                btn_Edit.Enabled = false;
+                                btn_Delete.Enabled = false;
+                            }
                         }
+                        else
+                        {
+                            MessageBox.Show("يبدو أنه لا توجد عدادات متاحة .. تأكد من اختيار العداد", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                       
                     }
-                }
-
+                }    
             }
             catch (Exception ex)
             {
@@ -250,17 +285,25 @@ namespace PowerStationDisktop.PresentationLayer
                 DataTable DataTable1 = new DataTable();
 
                 DataTable1 = customer.SearchForCustomer(txt_Search.Text);
+                if(DataTable1.Rows.Count > 0)
+                {
+                    txt_CustomerID.Text = DataTable1.Rows[0][0].ToString();
+                    txt_CustomerName.Text = DataTable1.Rows[0][1].ToString();
+                    txt_CustomerPhone.Text = DataTable1.Rows[0][2].ToString();
+                    txt_CustomerPassword.Text = DataTable1.Rows[0][3].ToString();
+                    txt_CustomerTotalDues.Text = Convert.ToDecimal(DataTable1.Rows[0][4]).ToString("0.00");
+                    cmb_ElectronicMeters.Text = DataTable1.Rows[0][5].ToString();
+                    cmb_AreaID.Text = DataTable1.Rows[0][6].ToString();
 
-                txt_CustomerID.Text = DataTable1.Rows[0][0].ToString();
-                txt_CustomerName.Text = DataTable1.Rows[0][1].ToString();
-                txt_CustomerPhone.Text = DataTable1.Rows[0][2].ToString();
-                txt_CustomerPassword.Text = DataTable1.Rows[0][3].ToString();
-                txt_CustomerTotalDues.Text = DataTable1.Rows[0][4].ToString();
-                cmb_ElectronicMeters.Text = DataTable1.Rows[0][5].ToString();
-                cmb_AreaID.Text = DataTable1.Rows[0][6].ToString();
+                    txt_Search.Text = string.Empty;
+                    btn_New.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("لا توجد بيانات", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
 
-                txt_Search.Text = string.Empty;
-                btn_New.Enabled = true;
+                
             }
         }
 
@@ -279,11 +322,34 @@ namespace PowerStationDisktop.PresentationLayer
             txt_CustomerName.Text = DataTable1.Rows[0][1].ToString();
             txt_CustomerPhone.Text = DataTable1.Rows[0][2].ToString();
             txt_CustomerPassword.Text = DataTable1.Rows[0][3].ToString();
-            txt_CustomerTotalDues.Text = DataTable1.Rows[0][4].ToString();
-            cmb_ElectronicMeters.Text = DataTable1.Rows[0][5].ToString();
+            txt_CustomerTotalDues.Text = Convert.ToDecimal(DataTable1.Rows[0][4]).ToString("0.00");
+
+            // اجلب كل العدادات الغير مستخدمة
+            DataTable dt = customer.GetElectronicMeterswhichHaveNotBeenChoosen();
+
+            // تحقق إذا كان العداد المرتبط بالعميل غير موجود بالقائمة
+            string currentMeter = DataTable1.Rows[0][5].ToString();
+            bool meterExists = dt.AsEnumerable().Any(row => row["ElectronicMeterID"].ToString() == currentMeter);
+
+            // إذا لم يكن موجودًا، أضفه يدويًا
+            if (!meterExists)
+            {
+                DataRow dr = dt.NewRow();
+                dr["ElectronicMeterID"] = currentMeter;
+                dt.Rows.InsertAt(dr, 0); // أضفه في أول القائمة
+            }
+
+            cmb_ElectronicMeters.DataSource = dt;
+            cmb_ElectronicMeters.ValueMember = "ElectronicMeterID";
+            cmb_ElectronicMeters.DisplayMember = "ElectronicMeterID";
+
+            cmb_ElectronicMeters.SelectedValue = currentMeter;
+
+
+            //cmb_ElectronicMeters.Text = DataTable1.Rows[0][5].ToString();
             cmb_AreaID.Text = DataTable1.Rows[0][8].ToString();
 
-            
+
             btn_New.Enabled = true;
 
             txt_Search.Text = placeholderText;  
@@ -298,7 +364,7 @@ namespace PowerStationDisktop.PresentationLayer
 
             try
             {
-                DialogResult result = MessageBox.Show(". هل تريد بالتأكيد حذف هذه المنطقة؟ هذه العملية لا يمكن التراجع عنها", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show(". هل تريد بالتأكيد حذف هذا العميل؟ هذه العملية لا يمكن التراجع عنها", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
                 {
@@ -468,7 +534,7 @@ namespace PowerStationDisktop.PresentationLayer
                 txt_CustomerName.Text = DataTable1.Rows[0][1].ToString();
                 txt_CustomerPhone.Text = DataTable1.Rows[0][2].ToString();
                 txt_CustomerPassword.Text = DataTable1.Rows[0][3].ToString();
-                txt_CustomerTotalDues.Text = DataTable1.Rows[0][4].ToString();
+                txt_CustomerTotalDues.Text = Convert.ToDecimal(DataTable1.Rows[0][4]).ToString("0.00");
                 cmb_ElectronicMeters.Text = DataTable1.Rows[0][5].ToString();
                 cmb_AreaID.Text = DataTable1.Rows[0][8].ToString();
 
@@ -499,6 +565,21 @@ namespace PowerStationDisktop.PresentationLayer
             }
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // إذا كان الحقل يعرض كلمة المرور (مخفي)
+            if (txt_CustomerPassword.PasswordChar == '*')
+            {
+                // إظهار النص
+                txt_CustomerPassword.PasswordChar = '\0';
+                button1.Text = "إخفاء";
+            }
+            else
+            {
+                // إخفاء النص
+                txt_CustomerPassword.PasswordChar = '*';
+                button1.Text = "إظهار";
+            }
+        }
     }
 }

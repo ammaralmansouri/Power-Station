@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using PowerStationDisktop.BusinessLayer.Settings;
 
 namespace PowerStationDisktop.PresentationLayer.Emloyees
 {
@@ -27,7 +28,15 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
         {
             InitializeComponent();
             GetAllEmployees();
-           // AutocompeleteSearchText();
+            // AutocompeleteSearchText();
+
+            dgv_Employees.DefaultCellStyle.Font = ClsAppFontSize.GetDefaultCellStyleFont(dgv_Employees.DefaultCellStyle.Font);
+            dgv_Employees.AlternatingRowsDefaultCellStyle.Font = ClsAppFontSize.GetAlternatingRowsDefaultCellStyleFont(dgv_Employees.AlternatingRowsDefaultCellStyle.Font);
+            dgv_Employees.ColumnHeadersDefaultCellStyle.Font = ClsAppFontSize.GetColumnHeaderDefaultCellStyleFont(dgv_Employees.ColumnHeadersDefaultCellStyle.Font);
+
+            // To set the max length from my settings ..
+            txt_EmployeeSalary.MaxLength = ClsFieldsRange.SalaryMaxLength;
+
         }
 
         void AutocompeleteSearchText()
@@ -62,6 +71,10 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             dgv_Employees.Columns[7].Visible = false;
             dgv_Employees.Columns[8].HeaderText = "الحالة";
             dgv_Employees.Columns[9].Visible = false;
+
+            dgv_Employees.Columns[3].DefaultCellStyle.Format = "N2"; // to show just to digits after decimal point .. 
+            dgv_Employees.Columns[5].DefaultCellStyle.Format = "N2"; // to show just to digits after decimal point .. 
+
         }
         void GetAllEmployees()
         {
@@ -278,7 +291,7 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             txt_EmployeeID.Text = DataTable1.Rows[0][0].ToString();
             txt_EmployeeName.Text = DataTable1.Rows[0][1].ToString();
             txt_EmployeePhone.Text = DataTable1.Rows[0][2].ToString();
-            txt_EmployeeSalary.Text = DataTable1.Rows[0][3].ToString();
+            txt_EmployeeSalary.Text = Convert.ToDecimal(DataTable1.Rows[0][3]).ToString("0.00");
             txt_EmployeePassword.Text = DataTable1.Rows[0][4].ToString();
 
             if (DataTable1.Rows[0][6].ToString() == "1")
@@ -500,7 +513,7 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
                     txt_EmployeeID.Text = DataTable1.Rows[0][0].ToString();
                     txt_EmployeeName.Text = DataTable1.Rows[0][1].ToString();
                     txt_EmployeePhone.Text = DataTable1.Rows[0][2].ToString();
-                    txt_EmployeeSalary.Text = DataTable1.Rows[0][3].ToString();
+                    txt_EmployeeSalary.Text = Convert.ToDecimal(DataTable1.Rows[0][3]).ToString("0.00");
                     txt_EmployeePassword.Text = DataTable1.Rows[0][4].ToString();
 
 
@@ -598,7 +611,7 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
                 txt_EmployeeID.Text = DataTable1.Rows[0][0].ToString();
                 txt_EmployeeName.Text = DataTable1.Rows[0][1].ToString();
                 txt_EmployeePhone.Text = DataTable1.Rows[0][2].ToString();
-                txt_EmployeeSalary.Text = DataTable1.Rows[0][3].ToString();
+                txt_EmployeeSalary.Text = Convert.ToDecimal(DataTable1.Rows[0][3]).ToString("0.00");
                 txt_EmployeePassword.Text = DataTable1.Rows[0][4].ToString();
 
                 if (DataTable1.Rows[0][6].ToString() == "1")

@@ -89,7 +89,7 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
             // 
             this.rich_PaymentVoucherNote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rich_PaymentVoucherNote.Enabled = false;
-            this.rich_PaymentVoucherNote.Font = new System.Drawing.Font("Droid Arabic Kufi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rich_PaymentVoucherNote.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rich_PaymentVoucherNote.Location = new System.Drawing.Point(14, 177);
             this.rich_PaymentVoucherNote.Name = "rich_PaymentVoucherNote";
             this.rich_PaymentVoucherNote.Size = new System.Drawing.Size(287, 62);

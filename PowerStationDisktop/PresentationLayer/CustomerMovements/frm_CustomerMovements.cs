@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PowerStationDisktop.BusinessLayer.Settings;
 
 namespace PowerStationDisktop.PresentationLayer.CustomerMovements
 {
@@ -24,6 +25,8 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
         {
             InitializeComponent();
             AutocompeleteSearchText();
+
+            txt_ElectricityMeterIDOrPhoneNumber.MaxLength = ClsFieldsRange.ElectronicMeterIDMaxLength;
         }
 
         void AutocompeleteSearchText()

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PowerStationDisktop.BusinessLayer.Settings;
 
 namespace PowerStationDisktop.PresentationLayer.Prices
 {
@@ -19,6 +20,14 @@ namespace PowerStationDisktop.PresentationLayer.Prices
         {
             InitializeComponent();
             GetAllPrices();
+
+            // This is for font size in DataGridView ..
+            dgv_Prices.DefaultCellStyle.Font = ClsAppFontSize.GetDefaultCellStyleFont(dgv_Prices.DefaultCellStyle.Font);
+            dgv_Prices.AlternatingRowsDefaultCellStyle.Font = ClsAppFontSize.GetAlternatingRowsDefaultCellStyleFont(dgv_Prices.AlternatingRowsDefaultCellStyle.Font);
+            dgv_Prices.ColumnHeadersDefaultCellStyle.Font = ClsAppFontSize.GetColumnHeaderDefaultCellStyleFont(dgv_Prices.ColumnHeadersDefaultCellStyle.Font);
+
+            // To set the max length from my settings ..
+            txt_PriceOfKilo.MaxLength = ClsFieldsRange.PriceMaxLength;
         }
 
         void GetAllPrices()
@@ -32,14 +41,29 @@ namespace PowerStationDisktop.PresentationLayer.Prices
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            if(txt_PriceOfKilo.Text != String.Empty)
+            try
             {
-                price.AddNewPrice(Convert.ToDouble(txt_PriceOfKilo.Text),1);
-                txt_PriceOfKilo.Text = string.Empty;
-                GetAllPrices();
+                if (txt_PriceOfKilo.Text != String.Empty)
+                {
+                    price.AddNewPrice(Convert.ToDouble(txt_PriceOfKilo.Text), 1);
+                    MessageBox.Show("تم اضافة السعر بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                    txt_PriceOfKilo.Text = string.Empty;
+                    GetAllPrices();
+
+                    txt_PriceOfKilo.Enabled = false;
+                    btn_Save.Enabled = false;
+                }
+                else
+                    MessageBox.Show("تأكد من تعبئة جميع الحقول", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
-                MessageBox.Show("تأكد من تعبئة جميع الحقول", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            catch(Exception ex)
+            {
+                //MessageBox.Show("تأكد من: "+ex, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An Error Occurred: {ex.Message}\n\nSource: {ex.Source}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void txt_PriceOfKilo_KeyPress(object sender, KeyPressEventArgs e)
@@ -52,6 +76,16 @@ namespace PowerStationDisktop.PresentationLayer.Prices
 
 
 
+        }
+
+        private void btn_New_Click(object sender, EventArgs e)
+        {
+            txt_PriceOfKilo.Text = string.Empty;
+            txt_PriceOfKilo.Enabled = true;
+
+            btn_Save.Enabled = true;
+
+            txt_PriceOfKilo.Focus();
         }
     }
 }

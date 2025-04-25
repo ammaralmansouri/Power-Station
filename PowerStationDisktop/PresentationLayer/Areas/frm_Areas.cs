@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
-using PowerStationDisktop.BusinessLayer.Colors;
+using PowerStationDisktop.BusinessLayer.Settings;
 
 namespace PowerStationDisktop.PresentationLayer.Areas
 {
@@ -18,7 +18,7 @@ namespace PowerStationDisktop.PresentationLayer.Areas
         BusinessLayer.Customers.ClsCustomers customer = new BusinessLayer.Customers.ClsCustomers();
         BusinessLayer.Normalization.ClsNormalize normalize = new BusinessLayer.Normalization.ClsNormalize();
 
-        BusinessLayer.Colors.ClsAppColors color = new BusinessLayer.Colors.ClsAppColors();
+        
 
         public frm_Areas()
         {
@@ -29,6 +29,8 @@ namespace PowerStationDisktop.PresentationLayer.Areas
             // this => using PowerStationDisktop.BusinessLayer.Colors; .. is for below ..
             //dgv_Areas.DefaultCellStyle.BackColor = ClsAppColors.DefaultCellStyle;
             //dgv_Areas.AlternatingRowsDefaultCellStyle.BackColor = ClsAppColors.AlternatingRowsDefaultCellStyle;
+
+            //dgv_Areas.DefaultCellStyle.Font.Size = ClsAppFontSize.DefaultCellStyle; 
         }
 
         void GetAllAreas()

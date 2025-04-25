@@ -30,8 +30,8 @@ namespace PowerStationDisktop.PresentationLayer.PowerStation
                 txt_PowerStationID.Text = DataTable1.Rows[0][0].ToString();
                 txt_PowerStationArabicName.Text = DataTable1.Rows[0][1].ToString();
                 txt_PowerStationEnglishName.Text = DataTable1.Rows[0][2].ToString();
-                txt_PowerStationEnglishAddress.Text = DataTable1.Rows[0][3].ToString();
-                txt_PowerStationArabicAddress.Text = DataTable1.Rows[0][4].ToString();
+                txt_PowerStationArabicAddress.Text = DataTable1.Rows[0][3].ToString();
+                txt_PowerStationEnglishAddress.Text = DataTable1.Rows[0][4].ToString();
                 txt_PowerStationPhoneNumber.Text = DataTable1.Rows[0][5].ToString();
                 txt_PowerStationEmail.Text = DataTable1.Rows[0][6].ToString();
                 txt_PowerStationWebsite.Text = DataTable1.Rows[0][7].ToString();

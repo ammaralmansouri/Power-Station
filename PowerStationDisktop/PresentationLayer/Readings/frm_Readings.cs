@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PowerStationDisktop.BusinessLayer.Settings;
 
 namespace PowerStationDisktop.PresentationLayer.Readings
 {
@@ -20,6 +21,13 @@ namespace PowerStationDisktop.PresentationLayer.Readings
         {
             InitializeComponent();
             AutocompeleteSearchText();
+
+            dtp_DateOfCurrentReading.MaxDate = DateTime.Now.Date;
+
+            txt_ElectricityMeterID.MaxLength = ClsFieldsRange.ElectronicMeterIDMaxLength;
+
+            // To set the max length from my settings ..
+            txt_CurrentReading.MaxLength = ClsFieldsRange.CurrentReasingMaxLength;
         }
 
         void AutocompeleteSearchText()

@@ -141,8 +141,9 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
                 
 
                 DataTable DataTable1 = new DataTable();
+                rich_PaymentVoucherNote.Text = "تصفية الراتب لشهر " + DateTime.Now.Month.ToString();
 
-                
+
                 DataTable1 = employee.SearchForEmployee(txt_EmplyeePhoneNumber.Text);
 
 
