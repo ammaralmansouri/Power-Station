@@ -17,7 +17,7 @@ namespace PowerStationDisktop.PresentationLayer
         BusinessLayer.Reports.ClsReports reports = new BusinessLayer.Reports.ClsReports();
         
         private Regex regex = new Regex(@"^7[80137]\d{7}$");
-        private String placeholderText = "اضغط F5 للبحث";
+        private String placeholderText = "اضغط F9 للبحث";
 
         public frm_AccountStatementForCustomer()
         {
@@ -129,8 +129,14 @@ namespace PowerStationDisktop.PresentationLayer
         private void txt_CustomerPhone_KeyDown(object sender, KeyEventArgs e)
         {
 
-            if (e.KeyCode == Keys.F9) // إذا تم الضغط على F9
+            if (e.KeyCode == Keys.F9 ) // إذا تم الضغط على F9
             {
+                dgv_AccountStatementForCustomer.DataSource = null;
+                dgv_AccountStatementForCustomer.Rows.Clear();
+                dgv_AccountStatementForCustomer.Refresh();
+
+                EmptyTextBoxes();
+
                 //e.SuppressKeyPress = true; // لمنع الصوت الافتراضي لـ F5
                 Extensions.frm_SearchForCustomer searchForCustomer = new Extensions.frm_SearchForCustomer();
 
@@ -151,55 +157,81 @@ namespace PowerStationDisktop.PresentationLayer
                 }
 
             }
-            //if (e.KeyCode == Keys.Enter)
-            //{
-            //    DataTable DataTable1 = new DataTable();
+            if (e.KeyCode == Keys.Enter)
+            {
+                dgv_AccountStatementForCustomer.DataSource = null;
+                dgv_AccountStatementForCustomer.Rows.Clear();
+                dgv_AccountStatementForCustomer.Refresh();
 
-            //    DataTable1 = customers.SearchForCustomer(txt_CustomerPhone.Text);
+                DataTable DataTable1 = new DataTable();
 
-
-            //    if (DataTable1.Rows.Count > 0)
-            //    {
-
-            //        txt_CustomerID.Text = DataTable1.Rows[0][0].ToString();
-            //        txt_CustomerName.Text = DataTable1.Rows[0][1].ToString();
-            //        txt_ElectronicMeterID.Text = DataTable1.Rows[0][5].ToString(); 
+                DataTable1 = customers.SearchForCustomer(txt_CustomerPhone.Text);
 
 
-            //        btn_New.Enabled = true;
-            //        btn_Show.Enabled = true;
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("لا يوجد عميل يمتلك هذا الرقم .. تأكد من الرقم المدخل", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (DataTable1.Rows.Count > 0)
+                {
 
-            //        EmptyTextBoxes();
+                    txt_CustomerID.Text = DataTable1.Rows[0][0].ToString();
+                    txt_CustomerName.Text = DataTable1.Rows[0][1].ToString();
+                    txt_ElectronicMeterID.Text = DataTable1.Rows[0][5].ToString();
 
-            //    }
-            //}
+
+                    btn_New.Enabled = true;
+                    btn_Show.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("لا يوجد عميل يمتلك هذا الرقم .. تأكد من الرقم المدخل", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    EmptyTextBoxes();
+
+                }
+            }
+        }
+
+        bool CheckIfTextBoxesIsNull()
+        {
+            foreach (var c in groupBox1.Controls)
+            {
+                if (c is TextBox)
+                {
+                    if (((TextBox)c).Text == string.Empty)
+                    {
+                        MessageBox.Show("تأكد من تعبئة جميع الحقول", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+
+                }
+            }
+            return true;
+
         }
 
         private void btn_Show_Click(object sender, EventArgs e)
         {
-            if (dtp_StartDate.Value.Date > dtp_EndDate.Value.Date)
+            if(CheckIfTextBoxesIsNull())
             {
-                MessageBox.Show("لا يمكن أن يكون تاريخ البداية أكبر من تاريخ النهاية", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-            }
-            else
-            {
-                try
+                if (dtp_StartDate.Value.Date > dtp_EndDate.Value.Date)
                 {
-
-                    GetAccountStatementForThisCustomer();
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show("تأكد من: " + ex, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("لا يمكن أن يكون تاريخ البداية أكبر من تاريخ النهاية", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
+                else
+                {
+                    try
+                    {
+
+                        GetAccountStatementForThisCustomer();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("تأكد من: " + ex, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                }
             }
+           
         }
 
         // تعريف نافذة التحميل كمتحول عام داخل الفورم

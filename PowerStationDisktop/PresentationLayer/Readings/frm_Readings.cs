@@ -362,5 +362,23 @@ namespace PowerStationDisktop.PresentationLayer.Readings
                 e.Handled = true;
         }
 
+        private void btn_AddReadingImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OFD = new OpenFileDialog();
+
+            OFD.Filter = "All file| *.gif;*.jpg;*.png;*.bmp";
+
+
+            if (OFD.ShowDialog() == DialogResult.OK)
+            {
+                pb_ReadingPhoto.Image = Image.FromFile(OFD.FileName);
+            }
+        }
+
+        private void btn_DeleteReadingImage_Click(object sender, EventArgs e)
+        {
+            pb_ReadingPhoto.Image = null;
+
+        }
     }
 }
