@@ -43,33 +43,52 @@ namespace PowerStationDisktop.PresentationLayer.Prices
         {
             try
             {
-                if (txt_PriceOfKilo.Text != String.Empty)
+                if (!string.IsNullOrWhiteSpace(txt_PriceOfKilo.Text))
                 {
-                    price.AddNewPrice(Convert.ToDouble(txt_PriceOfKilo.Text), 1);
-                    MessageBox.Show("تم اضافة السعر بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string input = txt_PriceOfKilo.Text.Trim();
 
+                    // التحقق من أن الإدخال يحتوي على نقطة واحدة كحد أقصى
+                    int dotCount = input.Count(c => c == '.');
+                    if (dotCount > 1)
+                    {
+                        MessageBox.Show("لا يمكن إدخال أكثر من فاصلة عشرية ", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
 
-                    txt_PriceOfKilo.Text = string.Empty;
-                    GetAllPrices();
+                    // التحقق من أن القيمة رقمية وصحيحة
+                    if (double.TryParse(input, out double priceValue))
+                    {
+                        price.AddNewPrice(priceValue, 1);
+                        MessageBox.Show("تم إضافة السعر بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    txt_PriceOfKilo.Enabled = false;
-                    btn_Save.Enabled = false;
+                        txt_PriceOfKilo.Text = string.Empty;
+                        GetAllPrices();
+
+                        txt_PriceOfKilo.Enabled = false;
+                        btn_Save.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("الرجاء إدخال رقم صالح", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
+                {
                     MessageBox.Show("تأكد من تعبئة جميع الحقول", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                //MessageBox.Show("تأكد من: "+ex, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MessageBox.Show($"An Error Occurred: {ex.Message}\n\nSource: {ex.Source}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"حدث خطأ: {ex.Message}\n\nالمصدر: {ex.Source}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
+
         }
 
         private void txt_PriceOfKilo_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Allow only digits and backspace
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != 46    ) // => this for dot( . )..
             {
                 e.Handled = true;
             }

@@ -10,7 +10,7 @@ namespace PowerStationDisktop.BusinessLayer.Settings
     {
         public static int SalaryMaxLength = 15;
         public static int TotalDuesMaxLength = 15;
-        public static int PriceMaxLength = 4;
+        public static int PriceMaxLength = 7;
         public static int ElectronicMeterIDMaxLength = 20;
         public static int CurrentReasingMaxLength = 10;
 

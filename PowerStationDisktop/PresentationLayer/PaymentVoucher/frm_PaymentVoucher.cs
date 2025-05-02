@@ -158,19 +158,33 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
 
         private void txt_PhoneNumber_TextChanged(object sender, EventArgs e)
         {
-            string input = txt_EmplyeePhoneNumber.Text;
-            if (!regex.IsMatch(input))
+            if (txt_EmplyeePhoneNumber.Text != String.Empty)
             {
-                //MessageBox.Show("لطفا ادخل رقم هاتف صحيح", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string input = txt_EmplyeePhoneNumber.Text;
+                if (!regex.IsMatch(input))
+                {
+                    //MessageBox.Show("لطفا ادخل رقم هاتف صحيح", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                txt_EmplyeePhoneNumber.BackColor = Color.Red;
-               
-                //txt_CustomerPhone.Clear();
+                    txt_EmplyeePhoneNumber.BackColor = Color.Red;
+                    txt_EmplyeePhoneNumber.ForeColor = Color.Black;
+
+
+                    //txt_CustomerPhone.Clear();
+                }
+                else
+                {
+                    txt_EmplyeePhoneNumber.BackColor = Color.White;
+                    txt_EmplyeePhoneNumber.ForeColor = Color.Black;
+
+                }
             }
             else
             {
                 txt_EmplyeePhoneNumber.BackColor = Color.White;
+                txt_EmplyeePhoneNumber.ForeColor = Color.Black;
             }
+
+
         }
 
         private void txt_PhoneNumber_KeyDown(object sender, KeyEventArgs e)
@@ -299,6 +313,16 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
+            string input = txt_PaymentVoucherAmount.Text.Trim();
+
+            // التحقق من أن الإدخال يحتوي على نقطة واحدة كحد أقصى
+            int dotCount = input.Count(c => c == '.');
+            if (dotCount > 1)
+            {
+                MessageBox.Show("لا يمكن إدخال أكثر من فاصلة عشرية ", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 if (CheckIfTextBoxesIsNull())
@@ -306,45 +330,53 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
 
                     if(dtp_PaymentVoucherDate.Value.Date <= DateTime.Now.Date)
                     {
-                        
-                        if(rad_Employee.Checked)
+                        DialogResult result = MessageBox.Show("هل أنت متأكد من البيانات المُدخلة..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (result == DialogResult.Yes)
                         {
-                            // PaymentVoucherID => for report ..
-                            PaymentVoucherID = Convert.ToInt32(txt_PaymentVoucherID.Text);
+                            if (rad_Employee.Checked)
+                            {
+                                // PaymentVoucherID => for report ..
+                                PaymentVoucherID = Convert.ToInt32(txt_PaymentVoucherID.Text);
 
-                            MessageBox.Show("fdg: " + PaymentVoucherID);
+                                MessageBox.Show("fdg: " + PaymentVoucherID);
 
-                            double EmployeeTotalCredit = Convert.ToDouble(txt_EmployeeTotalCredit.Text) + Convert.ToDouble(txt_PaymentVoucherAmount.Text);
-                            employee.UpdateEmployeeTotalCredit(Convert.ToInt32(txt_EmployeeIDWhoTake.Text), EmployeeTotalCredit);
+                                double EmployeeTotalCredit = Convert.ToDouble(txt_EmployeeTotalCredit.Text) + Convert.ToDouble(txt_PaymentVoucherAmount.Text);
+                                employee.UpdateEmployeeTotalCredit(Convert.ToInt32(txt_EmployeeIDWhoTake.Text), EmployeeTotalCredit);
 
-                            paymentVouchers.AddNewPaymentVoucherForEmployee(Convert.ToInt32(txt_PaymentVoucherID.Text), rich_PaymentVoucherNote.Text, dtp_PaymentVoucherDate.Value, Convert.ToDouble(txt_PaymentVoucherAmount.Text), Convert.ToInt32(txt_EmployeeIDWhoTake.Text), Convert.ToInt32(txt_EmployeeIDWhoGive.Text));
+                                paymentVouchers.AddNewPaymentVoucherForEmployee(Convert.ToInt32(txt_PaymentVoucherID.Text), rich_PaymentVoucherNote.Text, dtp_PaymentVoucherDate.Value, Convert.ToDouble(txt_PaymentVoucherAmount.Text), Convert.ToInt32(txt_EmployeeIDWhoTake.Text), Convert.ToInt32(txt_EmployeeIDWhoGive.Text));
 
+                            }
+                            if (rad_Supplier.Checked)
+                            {
+                                paymentVouchers.AddNewPaymentVoucherForSupplier(Convert.ToInt32(txt_PaymentVoucherID.Text), rich_PaymentVoucherNote.Text, dtp_PaymentVoucherDate.Value, Convert.ToDouble(txt_PaymentVoucherAmount.Text), Convert.ToInt32(txt_EmployeeIDWhoGive.Text), Convert.ToInt32(txt_SupplierIDWhoTake.Text));
+
+                            }
+
+
+                            MessageBox.Show("تم حفظ سند الصرف بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // إنشاء نافذة تحميل وإظهارها
+                            loadingForm = new Extensions.frm_Loading();
+                            loadingForm.Show();
+
+                            // تشغيل المهمة في الخلفية لتحميل التقرير
+                            backgroundWorker1.RunWorkerAsync();
+
+
+                            EmptyTextBoxes();
+
+                            EnableAndDisEnableTextBoxesAndButtons(false);
+                            rich_PaymentVoucherNote.Text = string.Empty;
+
+
+
+                            btn_New.Enabled = true;
+                            btn_Save.Enabled = false;
                         }
-                        if (rad_Supplier.Checked)
-                        {
-                            paymentVouchers.AddNewPaymentVoucherForSupplier(Convert.ToInt32(txt_PaymentVoucherID.Text), rich_PaymentVoucherNote.Text, dtp_PaymentVoucherDate.Value, Convert.ToDouble(txt_PaymentVoucherAmount.Text), Convert.ToInt32(txt_EmployeeIDWhoGive.Text) , Convert.ToInt32(txt_SupplierIDWhoTake.Text));
-
-                        }
-
-                        MessageBox.Show("تم حفظ سند الصرف بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        // إنشاء نافذة تحميل وإظهارها
-                        loadingForm = new Extensions.frm_Loading();
-                        loadingForm.Show();
-
-                        // تشغيل المهمة في الخلفية لتحميل التقرير
-                        backgroundWorker1.RunWorkerAsync();
 
 
-                        EmptyTextBoxes();
-
-                        EnableAndDisEnableTextBoxesAndButtons(false);
-                        rich_PaymentVoucherNote.Text = string.Empty;
-
-
-
-                        btn_New.Enabled = true;
-                        btn_Save.Enabled = false;
+                           
                     }
                     else
                     {

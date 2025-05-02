@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\Areas\ClsAreas.cs" />
+    <Compile Include="BusinessLayer\Backups\ClsBackups.cs" />
     <Compile Include="BusinessLayer\CustomerMovement\ClsCustomerMovement.cs" />
     <Compile Include="BusinessLayer\Customers\ClsCustomers.cs" />
     <Compile Include="BusinessLayer\ElectronicMeters\ClsElectronicMeter.cs" />
@@ -102,6 +103,12 @@
     <Compile Include="BusinessLayer\Settings\ClsFieldsRange.cs" />
     <Compile Include="BusinessLayer\Suppliers\ClsSuppliers.cs" />
     <Compile Include="DataAccessLayer\ClsConnection.cs" />
+    <Compile Include="frm_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Home.Designer.cs">
+      <DependentUpon>frm_Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +257,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm_Home.resx">
+      <DependentUpon>frm_Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>

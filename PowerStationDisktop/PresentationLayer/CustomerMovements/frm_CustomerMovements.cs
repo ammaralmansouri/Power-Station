@@ -197,7 +197,18 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-                if (CheckIfTextBoxesIsNull())
+            string input = txt_CustomerMovementPaiedAmount.Text.Trim();
+
+            // التحقق من أن الإدخال يحتوي على نقطة واحدة كحد أقصى
+            int dotCount = input.Count(c => c == '.');
+            if (dotCount > 1)
+            {
+                MessageBox.Show("لا يمكن إدخال أكثر من فاصلة عشرية ", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            if (CheckIfTextBoxesIsNull())
             {
                 if(cmb_CustomerMovementType.SelectedIndex != -1)
                 {

@@ -356,19 +356,32 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
 
         private void txt_EmployeePhone_TextChanged(object sender, EventArgs e)
         {
-            string input = txt_EmployeePhone.Text;
-            if (!regex.IsMatch(input))
+            if (txt_EmployeePhone.Text != String.Empty)
             {
-                //MessageBox.Show("لطفا ادخل رقم هاتف صحيح", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string input = txt_EmployeePhone.Text;
+                if (!regex.IsMatch(input))
+                {
+                    //MessageBox.Show("لطفا ادخل رقم هاتف صحيح", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                txt_EmployeePhone.BackColor = Color.Red;
+                    txt_EmployeePhone.BackColor = Color.Red;
+                    txt_EmployeePhone.ForeColor = Color.Black;
 
-                //txt_CustomerPhone.Clear();
+
+                    //txt_CustomerPhone.Clear();
+                }
+                else
+                {
+                    txt_EmployeePhone.BackColor = Color.White;
+                    txt_EmployeePhone.ForeColor = Color.Black;
+                }
             }
             else
             {
                 txt_EmployeePhone.BackColor = Color.White;
+                txt_EmployeePhone.ForeColor = Color.Black;
             }
+
+                
         }
 
         private void txt_EmployeePhone_KeyPress(object sender, KeyPressEventArgs e)

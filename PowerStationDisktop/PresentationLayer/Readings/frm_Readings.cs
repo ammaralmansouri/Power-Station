@@ -176,7 +176,10 @@ namespace PowerStationDisktop.PresentationLayer.Readings
 
 
 
-                        txt_TotalDuesInThisReading.Text = "0";
+                        DataTable1.Clear();
+
+                        DataTable1 = reading.GetCustomerTotalDues(Convert.ToDouble(txt_ElectricityMeterID.Text));
+                        txt_TotalDuesInThisReading.Text = DataTable1.Rows[0][0].ToString();
 
                         DataTable1.Clear();
 
