@@ -121,6 +121,7 @@ namespace PowerStationDisktop.PresentationLayer
             this.txt_CustomerID.Name = "txt_CustomerID";
             this.txt_CustomerID.Size = new System.Drawing.Size(44, 23);
             this.txt_CustomerID.TabIndex = 20;
+            this.txt_CustomerID.Visible = false;
             // 
             // txt_CustomerPhone
             // 
