@@ -43,6 +43,10 @@ namespace PowerStationDisktop.PresentationLayer.SendMassagesInWhatsapp
             {
                 cmb_AreaName.Enabled = false;
             }
+            else
+            {
+                cmb_AreaName.Enabled = true;
+            }
 
         }
 

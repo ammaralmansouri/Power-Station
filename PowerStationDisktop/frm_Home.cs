@@ -14,6 +14,8 @@ namespace PowerStationDisktop
     {
         BusinessLayer.Backups.ClsBackups backups = new BusinessLayer.Backups.ClsBackups();
         BusinessLayer.PowerStation.ClsPowerStation PowerStation = new BusinessLayer.PowerStation.ClsPowerStation();
+        BusinessLayer.Reports.ClsReports reports = new BusinessLayer.Reports.ClsReports();
+
 
         public frm_Home()
         {
@@ -22,7 +24,7 @@ namespace PowerStationDisktop
             CurrentDate.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
 
             toolTip1.SetToolTip(btn_Information, "تم التصميم بواسطة طلاب جامعة الملكة أروى");
-            toolTip1.SetToolTip(btn_Lock, "قفل الشاشة");
+            toolTip1.SetToolTip(btn_ChangeUser, "قفل الشاشة");
 
             GetPowerStationINformation();
 
@@ -97,6 +99,31 @@ namespace PowerStationDisktop
                 //MessageBox.Show("تأكد من :" + ex, "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MessageBox.Show($"An Error Occurred: {ex.Message}\n\nSource: {ex.Source}", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            }
+        }
+
+
+        // تعريف نافذة التحميل كمتحول عام داخل الفورم
+        private PresentationLayer.Extensions.frm_Loading loadingForm;
+
+        private void GetAllCustomerTotalDues()
+        {
+            DataTable DataTable1 = reports.ReportForCustomersTotalDues();
+
+            if (DataTable1.Rows.Count > 0)
+            {
+                // إنشاء نافذة تحميل وإظهارها
+                loadingForm = new PresentationLayer.Extensions.frm_Loading();
+                loadingForm.Show();
+
+                // تشغيل المهمة في الخلفية لتحميل التقرير
+                backgroundWorker1.RunWorkerAsync();
+
+
+            }
+            else
+            {
+                MessageBox.Show("لا توجد اية بيانات..!!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -180,6 +207,17 @@ namespace PowerStationDisktop
                 case "RestoreBackup":
                     ResotreBackup();
                     break;
+                case "CustomerTotalDues":
+                    GetAllCustomerTotalDues();
+                    break;
+                case "SendMassagesInWhatsapp":
+                    PresentationLayer.SendMassagesInWhatsapp.frm_SendMassagesInWhatsapp sendMassagesInWhatsapp = new PresentationLayer.SendMassagesInWhatsapp.frm_SendMassagesInWhatsapp();
+                    sendMassagesInWhatsapp.Show();
+                    break;
+                case "SendSMSMassages":
+                    PresentationLayer.SendSMSMassages.frm_SendSMSMassages sendSMSMassages = new PresentationLayer.SendSMSMassages.frm_SendSMSMassages();
+                    sendSMSMassages.Show();
+                    break;
                 default:
                     break;
             }
@@ -204,6 +242,42 @@ namespace PowerStationDisktop
         private void btn_Collapse_Click(object sender, EventArgs e)
         {
             tv_Screens.CollapseAll();
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            DataTable DataTable1 = reports.ReportForCustomersTotalDues();
+
+            DataSet DataSet1 = new DataSet();
+
+            DataSet1.Tables.Add(DataTable1);
+
+            PresentationLayer.Reports.CustomerTotalDues.CustomerTotalDues customerTotalDues = new PresentationLayer.Reports.CustomerTotalDues.CustomerTotalDues();
+            customerTotalDues.SetDataSource(DataTable1);
+
+            e.Result = customerTotalDues;
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            // إغلاق نافذة التحميل
+            loadingForm.Close();
+
+            if (e.Error == null)
+            {
+                // استخراج التقرير
+                var customerTotalDues = (PresentationLayer.Reports.CustomerTotalDues.CustomerTotalDues)e.Result;
+
+                // عرض التقرير
+                PresentationLayer.Reports.frm_ReportViewer reportViewer = new PresentationLayer.Reports.frm_ReportViewer();
+                reportViewer.CRV.ReportSource = customerTotalDues;
+                reportViewer.CRV.RefreshReport();
+                reportViewer.Show();
+            }
+            else
+            {
+                MessageBox.Show("حدث خطأ أثناء تحميل التقرير: " + e.Error.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

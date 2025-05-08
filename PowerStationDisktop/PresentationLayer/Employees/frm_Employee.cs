@@ -37,6 +37,9 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             // To set the max length from my settings ..
             txt_EmployeeSalary.MaxLength = ClsFieldsRange.SalaryMaxLength;
 
+            // set an image for showing password button ..
+            button1.ImageIndex = 1; // صورة eye-slash
+
         }
 
         void AutocompeleteSearchText()
@@ -676,6 +679,21 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             }
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+                           
+            if (txt_EmployeePassword.PasswordChar == '*')
+            {
+                // إظهار كلمة المرور
+                txt_EmployeePassword.PasswordChar = '\0';
+                button1.ImageIndex = 0; // صورة eye-slash
+            }
+            else
+            {
+                // إخفاء كلمة المرور
+                txt_EmployeePassword.PasswordChar = '*';
+                button1.ImageIndex = 1; // صورة eye
+            }
+        }
     }
 }

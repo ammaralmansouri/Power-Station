@@ -223,6 +223,12 @@
       <DependentUpon>CustomerMovementWhenPaying.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="PresentationLayer\Reports\CustomerTotalDues\CustomerTotalDues.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerTotalDues.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PresentationLayer\Reports\DatasetForAllReports.cs">
       <DependentUpon>DatasetForAllReports.xsd</DependentUpon>
     </Compile>
@@ -248,6 +254,12 @@
     </Compile>
     <Compile Include="PresentationLayer\SendMassagesInWhatsapp\frm_SendMassagesInWhatsapp.Designer.cs">
       <DependentUpon>frm_SendMassagesInWhatsapp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\SendSMSMassages\frm_SendSMSMassages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\SendSMSMassages\frm_SendSMSMassages.Designer.cs">
+      <DependentUpon>frm_SendSMSMassages.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentationLayer\Suppliers\frm_Suppliers.cs">
       <SubType>Form</SubType>
@@ -319,6 +331,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CustomerMovementWhenPaying.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Reports\CustomerTotalDues\CustomerTotalDues.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CustomerTotalDues.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Reports\frm_ReportViewer.resx">
       <DependentUpon>frm_ReportViewer.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\SendMassagesInWhatsapp\frm_SendMassagesInWhatsapp.resx">
       <DependentUpon>frm_SendMassagesInWhatsapp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\SendSMSMassages\frm_SendSMSMassages.resx">
+      <DependentUpon>frm_SendSMSMassages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\Suppliers\frm_Suppliers.resx">
       <DependentUpon>frm_Suppliers.cs</DependentUpon>

@@ -41,6 +41,11 @@ namespace PowerStationDisktop.PresentationLayer
 
             // To set the max length from my settings ..
             txt_CustomerTotalDues.MaxLength = ClsFieldsRange.TotalDuesMaxLength;
+
+
+            // set an image for showing password button ..
+            button1.ImageIndex = 1; // صورة eye-slash
+
         }
 
 
@@ -567,18 +572,17 @@ namespace PowerStationDisktop.PresentationLayer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // إذا كان الحقل يعرض كلمة المرور (مخفي)
             if (txt_CustomerPassword.PasswordChar == '*')
             {
-                // إظهار النص
+                // إظهار كلمة المرور
                 txt_CustomerPassword.PasswordChar = '\0';
-                button1.Text = "إخفاء";
+                button1.ImageIndex = 0; // صورة eye-slash
             }
             else
             {
-                // إخفاء النص
+                // إخفاء كلمة المرور
                 txt_CustomerPassword.PasswordChar = '*';
-                button1.Text = "إظهار";
+                button1.ImageIndex = 1; // صورة eye
             }
         }
     }

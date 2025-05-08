@@ -72,5 +72,20 @@ namespace PowerStationDisktop.BusinessLayer.Reports
 
             return DataTable1;
         }
+
+        public DataTable ReportForCustomersTotalDues()
+        {
+            DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
+            con.OpenConnection();
+
+            DataTable DataTable1 = new DataTable();
+
+            
+
+            DataTable1 = con.SelectData("Report_For_Customers_Total_Dues");
+            con.CloseConnection();
+
+            return DataTable1;
+        }
     }
 }

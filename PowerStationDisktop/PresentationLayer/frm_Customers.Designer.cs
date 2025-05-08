@@ -29,6 +29,7 @@ namespace PowerStationDisktop.PresentationLayer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Customers));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -57,6 +58,7 @@ namespace PowerStationDisktop.PresentationLayer
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.btn_New = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Customers)).BeginInit();
@@ -89,11 +91,11 @@ namespace PowerStationDisktop.PresentationLayer
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 94);
+            this.button1.ImageList = this.imageList1;
+            this.button1.Location = new System.Drawing.Point(6, 90);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(44, 36);
+            this.button1.Size = new System.Drawing.Size(46, 36);
             this.button1.TabIndex = 16;
-            this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -380,6 +382,13 @@ namespace PowerStationDisktop.PresentationLayer
             this.btn_New.UseVisualStyleBackColor = true;
             this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "eye.png");
+            this.imageList1.Images.SetKeyName(1, "hidden.png");
+            // 
             // frm_Customers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -432,5 +441,6 @@ namespace PowerStationDisktop.PresentationLayer
         private System.Windows.Forms.TextBox txt_CustomerPhone;
         private System.Windows.Forms.Button btn_New;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

@@ -42,6 +42,7 @@ namespace PowerStationDisktop.PresentationLayer.Employees
                     {
                         permissions.UpdateStartAndEndDateOfCollectionForAllEmployees(dtp_StartDateOfCollection.Value, dtp_EndDateOfCollection.Value);
                         permissions.SetExpiredDateLikeEndOfCollectionDateForAllEmployee(dtp_EndDateOfCollection.Value);
+                        permissions.MakeElectronicMeterHasBeenReadToFalse();
                         MessageBox.Show("تم السماح لجميع المحصلين بالتحصيل في التاريخ المحدد", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
 

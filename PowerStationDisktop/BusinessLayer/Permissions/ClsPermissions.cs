@@ -234,5 +234,14 @@ namespace PowerStationDisktop.BusinessLayer.Permissions
             con.ExecuteCommands("Set_ExpiredDate_Like_EndOfCollectionDate_For_Specific_Employee", para);
             con.CloseConnection();
         }
+
+        public void MakeElectronicMeterHasBeenReadToFalse()
+        {
+            DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
+            con.OpenConnection();
+
+            con.ExecuteCommands("Make_ElectronicMeterHasBeenRead_To_False");
+            con.CloseConnection();
+        }
     }
 }
