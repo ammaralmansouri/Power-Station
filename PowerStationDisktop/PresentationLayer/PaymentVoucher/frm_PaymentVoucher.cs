@@ -212,7 +212,7 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
                         txt_PaymentVoucherEmployeeOrSupplierNameWhoTake.Text = DataTable1.Rows[0][1].ToString();
 
 
-                        txt_EmployeeIDWhoGive.Text = "1";
+                        txt_EmployeeIDWhoGive.Text = Program.EmployeeID;
                         txt_SupplierIDWhoTake.Text = "0"; // this is just to avoid showing error ( filed is empty ) .. but value in data base will be null ..
                         
                         btn_New.Enabled = true;
@@ -338,8 +338,6 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
                             {
                                 // PaymentVoucherID => for report ..
                                 PaymentVoucherID = Convert.ToInt32(txt_PaymentVoucherID.Text);
-
-                                MessageBox.Show("fdg: " + PaymentVoucherID);
 
                                 double EmployeeTotalCredit = Convert.ToDouble(txt_EmployeeTotalCredit.Text) + Convert.ToDouble(txt_PaymentVoucherAmount.Text);
                                 employee.UpdateEmployeeTotalCredit(Convert.ToInt32(txt_EmployeeIDWhoTake.Text), EmployeeTotalCredit);

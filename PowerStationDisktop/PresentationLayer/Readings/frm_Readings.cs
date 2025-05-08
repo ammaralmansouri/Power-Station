@@ -147,7 +147,7 @@ namespace PowerStationDisktop.PresentationLayer.Readings
                         txt_PriceID.Text = DataTable1.Rows[0][0].ToString();
                         txt_Price.Text = DataTable1.Rows[0][1].ToString();
 
-                        txt_EmployeeID.Text = "1";
+                        txt_EmployeeID.Text = Program.EmployeeID;
 
 
                         GetAllReadingsForSpecificElectronicMeter();
@@ -187,7 +187,7 @@ namespace PowerStationDisktop.PresentationLayer.Readings
                         txt_PriceID.Text = DataTable1.Rows[0][0].ToString();
                         txt_Price.Text = DataTable1.Rows[0][1].ToString();
 
-                        txt_EmployeeID.Text = "1";
+                        txt_EmployeeID.Text = Program.EmployeeID; 
 
 
                         ClearDataGridView();

@@ -58,7 +58,7 @@ namespace PowerStationDisktop.PresentationLayer.Prices
                     // التحقق من أن القيمة رقمية وصحيحة
                     if (double.TryParse(input, out double priceValue))
                     {
-                        price.AddNewPrice(priceValue, 1);
+                        price.AddNewPrice(priceValue, Convert.ToInt32(Program.EmployeeID));
                         MessageBox.Show("تم إضافة السعر بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         txt_PriceOfKilo.Text = string.Empty;

@@ -310,6 +310,7 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
             this.txt_SupplierIDWhoTake.Size = new System.Drawing.Size(27, 39);
             this.txt_SupplierIDWhoTake.TabIndex = 27;
             this.txt_SupplierIDWhoTake.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_SupplierIDWhoTake.Visible = false;
             // 
             // txt_EmployeeIDWhoGive
             // 
@@ -320,6 +321,7 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
             this.txt_EmployeeIDWhoGive.Size = new System.Drawing.Size(35, 39);
             this.txt_EmployeeIDWhoGive.TabIndex = 22;
             this.txt_EmployeeIDWhoGive.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_EmployeeIDWhoGive.Visible = false;
             // 
             // txt_EmployeeIDWhoTake
             // 
@@ -330,6 +332,7 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
             this.txt_EmployeeIDWhoTake.Size = new System.Drawing.Size(35, 39);
             this.txt_EmployeeIDWhoTake.TabIndex = 21;
             this.txt_EmployeeIDWhoTake.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_EmployeeIDWhoTake.Visible = false;
             // 
             // backgroundWorker1
             // 

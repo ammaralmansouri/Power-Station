@@ -175,6 +175,12 @@
     <Compile Include="PresentationLayer\frm_Customers.Designer.cs">
       <DependentUpon>frm_Customers.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentationLayer\Login\frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentationLayer\Login\frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\PaymentVoucher\frm_PaymentVoucher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\frm_Customers.resx">
       <DependentUpon>frm_Customers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentationLayer\Login\frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PresentationLayer\PaymentVoucher\frm_PaymentVoucher.resx">
       <DependentUpon>frm_PaymentVoucher.cs</DependentUpon>

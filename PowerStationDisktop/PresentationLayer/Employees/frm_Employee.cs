@@ -38,7 +38,16 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             txt_EmployeeSalary.MaxLength = ClsFieldsRange.SalaryMaxLength;
 
             // set an image for showing password button ..
-            button1.ImageIndex = 1; // صورة eye-slash
+            btn_ShowPassword.ImageIndex = 1; // صورة eye-slash
+
+            if (Program.EmployeePermission == "1")
+            {
+                btn_ShowPassword.Visible = true;
+            }
+            else
+            {
+                btn_ShowPassword.Visible = false;
+            }
 
         }
 
@@ -686,13 +695,13 @@ namespace PowerStationDisktop.PresentationLayer.Emloyees
             {
                 // إظهار كلمة المرور
                 txt_EmployeePassword.PasswordChar = '\0';
-                button1.ImageIndex = 0; // صورة eye-slash
+                btn_ShowPassword.ImageIndex = 0; // صورة eye-slash
             }
             else
             {
                 // إخفاء كلمة المرور
                 txt_EmployeePassword.PasswordChar = '*';
-                button1.ImageIndex = 1; // صورة eye
+                btn_ShowPassword.ImageIndex = 1; // صورة eye
             }
         }
     }

@@ -112,7 +112,7 @@ namespace PowerStationDisktop.PresentationLayer.CustomerMovements
                     txt_CustomerName.Text = DataTable1.Rows[0][1].ToString();
                     txt_ElectricityMeterID.Text = DataTable1.Rows[0][5].ToString();
 
-                    txt_EmployeeID.Text = "1";
+                    txt_EmployeeID.Text = Program.EmployeeID;
 
                     DataTable1.Clear();
 

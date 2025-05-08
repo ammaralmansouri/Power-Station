@@ -226,5 +226,49 @@ namespace PowerStationDisktop.BusinessLayer.Employees
 
             return DataTable1;
         }
+
+        public DataTable GetEmployeeInformationForLogIn(string EmployeePhoneNumber , string EmployeePassword)
+        {
+            DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
+            con.OpenConnection();
+
+            SqlParameter[] para = new SqlParameter[2];
+
+            para[0] = new SqlParameter("@EmployeePhoneNumber", SqlDbType.NVarChar, 20);
+            para[0].Value = EmployeePhoneNumber;
+
+            para[1] = new SqlParameter("@EmployeePassword", SqlDbType.NVarChar, 20);
+            para[1].Value = EmployeePassword;
+
+            DataTable DataTable1 = new DataTable();
+
+            DataTable1 = con.SelectData("Get_Employee_Information_For_Log_In", para);
+            con.CloseConnection();
+
+
+            return DataTable1;
+        }
+
+        public DataTable CheckIfEmployeeisActive(string EmployeePhoneNumber, string EmployeePassword)
+        {
+            DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
+            con.OpenConnection();
+
+            SqlParameter[] para = new SqlParameter[2];
+
+            para[0] = new SqlParameter("@EmployeePhoneNumber", SqlDbType.NVarChar, 20);
+            para[0].Value = EmployeePhoneNumber;
+
+            para[1] = new SqlParameter("@EmployeePassword", SqlDbType.NVarChar, 20);
+            para[1].Value = EmployeePassword;
+
+            DataTable DataTable1 = new DataTable();
+
+            DataTable1 = con.SelectData("Check_If_Employee_is_Active", para);
+            con.CloseConnection();
+
+
+            return DataTable1;
+        }
     }
 }

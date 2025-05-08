@@ -28,6 +28,8 @@ namespace PowerStationDisktop
 
             GetPowerStationINformation();
 
+            lbl_EmployeeName.Text = Program.EmployeeName;
+
         }
 
         void GetPowerStationINformation()
@@ -181,8 +183,16 @@ namespace PowerStationDisktop
                     break;
 
                 case "AllowReadings":
-                    PresentationLayer.Employees.frm_StartAndEndOfCollection startAndEndOfCollection = new PresentationLayer.Employees.frm_StartAndEndOfCollection();
-                    startAndEndOfCollection.Show();
+                    if(Program.EmployeePermission== "1")
+                    {
+                        PresentationLayer.Employees.frm_StartAndEndOfCollection startAndEndOfCollection = new PresentationLayer.Employees.frm_StartAndEndOfCollection();
+                        startAndEndOfCollection.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("لا توجد لديك الصلاحيات لدخول هذه الشاشة..!!");
+                    }
+                    
                     break;
 
                 case "ShowAllPermissions":
@@ -278,6 +288,14 @@ namespace PowerStationDisktop
             {
                 MessageBox.Show("حدث خطأ أثناء تحميل التقرير: " + e.Error.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btn_ChangeUser_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            PresentationLayer.Login.frm_Login login = new PresentationLayer.Login.frm_Login();
+            login.ShowDialog();
         }
     }
 }

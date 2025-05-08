@@ -9,7 +9,13 @@ namespace PowerStationDisktop
     static class Program
     {
 
-         
+        public static string EmployeeID;
+        public static string EmployeeName;
+        public static string EmployeeType;
+        public static string EmployeePermission;
+        public static string EmployeeState;
+
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -28,7 +34,7 @@ namespace PowerStationDisktop
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Home());
+            Application.Run(new PresentationLayer.Login.frm_Login());
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")]
 

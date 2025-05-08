@@ -126,6 +126,7 @@ namespace PowerStationDisktop.PresentationLayer.Employees
             this.txt_EmployeeID.Size = new System.Drawing.Size(41, 24);
             this.txt_EmployeeID.TabIndex = 6;
             this.txt_EmployeeID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_EmployeeID.Visible = false;
             // 
             // cmb_AreaName
             // 

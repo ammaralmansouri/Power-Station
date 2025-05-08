@@ -69,3 +69,4 @@ E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\Po
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.csproj.AssemblyReference.cache
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.frm_Home.resources
 E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.SendSMSMassages.frm_SendSMSMassages.resources
+E:\التخرج\Application\PowerStationDisktop\PowerStationDisktop\obj\Debug\PowerStationDisktop.PresentationLayer.Login.frm_Login.resources

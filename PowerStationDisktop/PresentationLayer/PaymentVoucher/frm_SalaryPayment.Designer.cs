@@ -234,6 +234,7 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
             this.txt_EmployeeIDWhoGive.Size = new System.Drawing.Size(35, 36);
             this.txt_EmployeeIDWhoGive.TabIndex = 22;
             this.txt_EmployeeIDWhoGive.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_EmployeeIDWhoGive.Visible = false;
             // 
             // txt_EmployeeIDWhoTake
             // 
@@ -245,6 +246,7 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
             this.txt_EmployeeIDWhoTake.Size = new System.Drawing.Size(35, 36);
             this.txt_EmployeeIDWhoTake.TabIndex = 21;
             this.txt_EmployeeIDWhoTake.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_EmployeeIDWhoTake.Visible = false;
             // 
             // dtp_PaymentVoucherDate
             // 

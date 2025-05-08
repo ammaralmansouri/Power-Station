@@ -30,74 +30,74 @@ namespace PowerStationDisktop
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("بيانات الشركة");
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("بيانات العدادات ");
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("بيانات المناطق ");
-            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("تسعيرة الكهرباء ");
-            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("السماح بالتحصيل");
-            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("تقارير العدادت ");
-            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("تقارير المناطق ");
-            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("تقارير تسعيرة الكهرباء ");
-            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("عرض جميع الصلاحيات الحالية");
-            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("التقاريــر", new System.Windows.Forms.TreeNode[] {
-            treeNode42,
-            treeNode43,
-            treeNode44,
-            treeNode45});
-            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("إنشاء نسخة احتياطية");
-            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("إستعادة نسخة احتياطية");
-            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("نسخة احتياطية", new System.Windows.Forms.TreeNode[] {
-            treeNode47,
-            treeNode48});
-            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("ادارة النظام ", new System.Windows.Forms.TreeNode[] {
-            treeNode37,
-            treeNode38,
-            treeNode39,
-            treeNode40,
-            treeNode41,
-            treeNode46,
-            treeNode49});
-            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("بيانات العملاء ");
-            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("كشف حساب");
-            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("تقارير المتأخرات للعملاء ");
-            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("تقارير العملاء المسددين ");
-            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("تقارير العملاء الغير مسددين ");
-            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("تقارير العملاء الموقفين ");
-            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("التقاريــر", new System.Windows.Forms.TreeNode[] {
-            treeNode52,
-            treeNode53,
-            treeNode54,
-            treeNode55,
-            treeNode56});
-            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("ادارة العملاء ", new System.Windows.Forms.TreeNode[] {
-            treeNode51,
-            treeNode57});
-            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("بيانات الموظفين ");
-            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("تقارير الموظفين");
-            System.Windows.Forms.TreeNode treeNode61 = new System.Windows.Forms.TreeNode("تقارير بيانات  الموظفين ");
-            System.Windows.Forms.TreeNode treeNode62 = new System.Windows.Forms.TreeNode("تقارير الموظفين الموقفين ", new System.Windows.Forms.TreeNode[] {
-            treeNode61});
-            System.Windows.Forms.TreeNode treeNode63 = new System.Windows.Forms.TreeNode("التقاريـــر ", new System.Windows.Forms.TreeNode[] {
-            treeNode60,
-            treeNode62});
-            System.Windows.Forms.TreeNode treeNode64 = new System.Windows.Forms.TreeNode("ادارة الموظفين ", new System.Windows.Forms.TreeNode[] {
-            treeNode59,
-            treeNode63});
-            System.Windows.Forms.TreeNode treeNode65 = new System.Windows.Forms.TreeNode("بيانات الموردين  ");
-            System.Windows.Forms.TreeNode treeNode66 = new System.Windows.Forms.TreeNode("سندات الصرف ");
-            System.Windows.Forms.TreeNode treeNode67 = new System.Windows.Forms.TreeNode("سندات القبض ");
-            System.Windows.Forms.TreeNode treeNode68 = new System.Windows.Forms.TreeNode("صرف الراتب");
-            System.Windows.Forms.TreeNode treeNode69 = new System.Windows.Forms.TreeNode("اضافة القراءات ");
-            System.Windows.Forms.TreeNode treeNode70 = new System.Windows.Forms.TreeNode("ارسال رسائل عبر الـ WhatsApp");
-            System.Windows.Forms.TreeNode treeNode71 = new System.Windows.Forms.TreeNode("ارسال رسائل SMS");
-            System.Windows.Forms.TreeNode treeNode72 = new System.Windows.Forms.TreeNode("ادارة حركة النظام ", new System.Windows.Forms.TreeNode[] {
-            treeNode65,
-            treeNode66,
-            treeNode67,
-            treeNode68,
-            treeNode69,
-            treeNode70,
-            treeNode71});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("بيانات الشركة");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("بيانات العدادات ");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("بيانات المناطق ");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("تسعيرة الكهرباء ");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("السماح بالتحصيل");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("تقارير العدادت ");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("تقارير المناطق ");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("تقارير تسعيرة الكهرباء ");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("عرض جميع الصلاحيات الحالية");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("التقاريــر", new System.Windows.Forms.TreeNode[] {
+            treeNode6,
+            treeNode7,
+            treeNode8,
+            treeNode9});
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("إنشاء نسخة احتياطية");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("إستعادة نسخة احتياطية");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("نسخة احتياطية", new System.Windows.Forms.TreeNode[] {
+            treeNode11,
+            treeNode12});
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("ادارة النظام ", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5,
+            treeNode10,
+            treeNode13});
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("بيانات العملاء ");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("كشف حساب");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("تقارير المتأخرات للعملاء ");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("تقارير العملاء المسددين ");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("تقارير العملاء الغير مسددين ");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("تقارير العملاء الموقفين ");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("التقاريــر", new System.Windows.Forms.TreeNode[] {
+            treeNode16,
+            treeNode17,
+            treeNode18,
+            treeNode19,
+            treeNode20});
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("ادارة العملاء ", new System.Windows.Forms.TreeNode[] {
+            treeNode15,
+            treeNode21});
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("بيانات الموظفين ");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("تقارير الموظفين");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("تقارير بيانات  الموظفين ");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("تقارير الموظفين الموقفين ", new System.Windows.Forms.TreeNode[] {
+            treeNode25});
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("التقاريـــر ", new System.Windows.Forms.TreeNode[] {
+            treeNode24,
+            treeNode26});
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("ادارة الموظفين ", new System.Windows.Forms.TreeNode[] {
+            treeNode23,
+            treeNode27});
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("بيانات الموردين  ");
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("سندات الصرف ");
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("سندات القبض ");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("صرف الراتب");
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("اضافة القراءات ");
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("ارسال رسائل عبر الـ WhatsApp");
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("ارسال رسائل SMS");
+            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("ادارة حركة النظام ", new System.Windows.Forms.TreeNode[] {
+            treeNode29,
+            treeNode30,
+            treeNode31,
+            treeNode32,
+            treeNode33,
+            treeNode34,
+            treeNode35});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Home));
             this.tv_Screens = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -109,7 +109,7 @@ namespace PowerStationDisktop
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.name_user = new System.Windows.Forms.Label();
+            this.lbl_EmployeeName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CurrentTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -133,127 +133,127 @@ namespace PowerStationDisktop
             this.tv_Screens.Location = new System.Drawing.Point(12, 129);
             this.tv_Screens.Margin = new System.Windows.Forms.Padding(4);
             this.tv_Screens.Name = "tv_Screens";
-            treeNode37.ImageKey = "office-building.png";
-            treeNode37.Name = "PowerStationData";
-            treeNode37.SelectedImageKey = "office-building.png";
-            treeNode37.Text = "بيانات الشركة";
-            treeNode38.ImageKey = "electric-meter.png";
-            treeNode38.Name = "ElectronicMetersData";
-            treeNode38.SelectedImageKey = "electric-meter.png";
-            treeNode38.Text = "بيانات العدادات ";
-            treeNode39.ImageKey = "map.png";
-            treeNode39.Name = "AreasData";
-            treeNode39.SelectedImageKey = "map.png";
-            treeNode39.Text = "بيانات المناطق ";
-            treeNode40.ImageKey = "inflation.png";
-            treeNode40.Name = "Prices";
-            treeNode40.SelectedImageKey = "inflation.png";
-            treeNode40.Text = "تسعيرة الكهرباء ";
-            treeNode41.ImageKey = "permissions.png";
-            treeNode41.Name = "AllowReadings";
-            treeNode41.SelectedImageKey = "permissions.png";
-            treeNode41.Text = "السماح بالتحصيل";
-            treeNode42.Name = "ElectronicMetersReport";
-            treeNode42.Text = "تقارير العدادت ";
-            treeNode43.Name = "AreasReport";
-            treeNode43.Text = "تقارير المناطق ";
-            treeNode44.Name = "PricesReport";
-            treeNode44.Text = "تقارير تسعيرة الكهرباء ";
-            treeNode45.Name = "ShowAllPermissions";
-            treeNode45.Text = "عرض جميع الصلاحيات الحالية";
-            treeNode46.Name = "Node4";
-            treeNode46.Text = "التقاريــر";
-            treeNode47.ImageKey = "cloud-upload.png";
-            treeNode47.Name = "CreateBackup";
-            treeNode47.SelectedImageKey = "cloud-upload.png";
-            treeNode47.Text = "إنشاء نسخة احتياطية";
-            treeNode48.ImageKey = "restore.png";
-            treeNode48.Name = "RestoreBackup";
-            treeNode48.SelectedImageKey = "restore.png";
-            treeNode48.Text = "إستعادة نسخة احتياطية";
-            treeNode49.ImageKey = "backup.png";
-            treeNode49.Name = "Node2";
-            treeNode49.SelectedImageKey = "backup.png";
-            treeNode49.Text = "نسخة احتياطية";
-            treeNode50.ForeColor = System.Drawing.Color.Black;
-            treeNode50.ImageKey = "content-management-system.png";
-            treeNode50.Name = "Node0";
-            treeNode50.SelectedImageKey = "content-management-system.png";
-            treeNode50.Text = "ادارة النظام ";
-            treeNode51.ImageKey = "ancestors.png";
-            treeNode51.Name = "CustomerData";
-            treeNode51.SelectedImageKey = "ancestors.png";
-            treeNode51.Text = "بيانات العملاء ";
-            treeNode52.Name = "AccountStatementForCustomer";
-            treeNode52.Text = "كشف حساب";
-            treeNode53.Name = "CustomerTotalDues";
-            treeNode53.Text = "تقارير المتأخرات للعملاء ";
-            treeNode54.Name = "Node12";
-            treeNode54.Text = "تقارير العملاء المسددين ";
-            treeNode55.Name = "Node13";
-            treeNode55.Text = "تقارير العملاء الغير مسددين ";
-            treeNode56.Name = "Node14";
-            treeNode56.Text = "تقارير العملاء الموقفين ";
-            treeNode57.Name = "Node10";
-            treeNode57.Text = "التقاريــر";
-            treeNode58.ForeColor = System.Drawing.Color.Black;
-            treeNode58.ImageKey = "ancestors.png";
-            treeNode58.Name = "Node8";
-            treeNode58.SelectedImageKey = "ancestors.png";
-            treeNode58.Text = "ادارة العملاء ";
-            treeNode59.ImageKey = "ancestors.png";
-            treeNode59.Name = "EmployeeData";
-            treeNode59.SelectedImageKey = "ancestors.png";
-            treeNode59.Text = "بيانات الموظفين ";
-            treeNode60.Name = "Node20";
-            treeNode60.Text = "تقارير الموظفين";
-            treeNode61.Name = "Node22";
-            treeNode61.Text = "تقارير بيانات  الموظفين ";
-            treeNode62.Name = "Node21";
-            treeNode62.Text = "تقارير الموظفين الموقفين ";
-            treeNode63.Name = "Node19";
-            treeNode63.Text = "التقاريـــر ";
-            treeNode64.ForeColor = System.Drawing.Color.Black;
-            treeNode64.ImageKey = "ancestors.png";
-            treeNode64.Name = "Node16";
-            treeNode64.SelectedImageKey = "ancestors.png";
-            treeNode64.Text = "ادارة الموظفين ";
-            treeNode65.ImageKey = "ancestors.png";
-            treeNode65.Name = "SupplierData";
-            treeNode65.SelectedImageKey = "ancestors.png";
-            treeNode65.Text = "بيانات الموردين  ";
-            treeNode66.ImageKey = "cashless-payment.png";
-            treeNode66.Name = "PaymentVoucher";
-            treeNode66.SelectedImageKey = "cashless-payment.png";
-            treeNode66.Text = "سندات الصرف ";
-            treeNode67.ImageKey = "payment-method.png";
-            treeNode67.Name = "CustomerMovement";
-            treeNode67.SelectedImageKey = "payment-method.png";
-            treeNode67.Text = "سندات القبض ";
-            treeNode68.ImageKey = "salary.png";
-            treeNode68.Name = "SalaryPayment";
-            treeNode68.SelectedImageKey = "salary.png";
-            treeNode68.Text = "صرف الراتب";
-            treeNode69.ImageKey = "electric-meter.png";
-            treeNode69.Name = "Readings";
-            treeNode69.SelectedImageKey = "electric-meter.png";
-            treeNode69.Text = "اضافة القراءات ";
-            treeNode70.Name = "SendMassagesInWhatsapp";
-            treeNode70.Text = "ارسال رسائل عبر الـ WhatsApp";
-            treeNode71.ImageKey = "sms.png";
-            treeNode71.Name = "SendSMSMassages";
-            treeNode71.SelectedImageKey = "sms.png";
-            treeNode71.Text = "ارسال رسائل SMS";
-            treeNode72.ForeColor = System.Drawing.Color.Black;
-            treeNode72.ImageKey = "control-system.png";
-            treeNode72.Name = "Node23";
-            treeNode72.SelectedImageKey = "control-system.png";
-            treeNode72.Text = "ادارة حركة النظام ";
+            treeNode1.ImageKey = "office-building.png";
+            treeNode1.Name = "PowerStationData";
+            treeNode1.SelectedImageKey = "office-building.png";
+            treeNode1.Text = "بيانات الشركة";
+            treeNode2.ImageKey = "electric-meter.png";
+            treeNode2.Name = "ElectronicMetersData";
+            treeNode2.SelectedImageKey = "electric-meter.png";
+            treeNode2.Text = "بيانات العدادات ";
+            treeNode3.ImageKey = "map.png";
+            treeNode3.Name = "AreasData";
+            treeNode3.SelectedImageKey = "map.png";
+            treeNode3.Text = "بيانات المناطق ";
+            treeNode4.ImageKey = "inflation.png";
+            treeNode4.Name = "Prices";
+            treeNode4.SelectedImageKey = "inflation.png";
+            treeNode4.Text = "تسعيرة الكهرباء ";
+            treeNode5.ImageKey = "permissions.png";
+            treeNode5.Name = "AllowReadings";
+            treeNode5.SelectedImageKey = "permissions.png";
+            treeNode5.Text = "السماح بالتحصيل";
+            treeNode6.Name = "ElectronicMetersReport";
+            treeNode6.Text = "تقارير العدادت ";
+            treeNode7.Name = "AreasReport";
+            treeNode7.Text = "تقارير المناطق ";
+            treeNode8.Name = "PricesReport";
+            treeNode8.Text = "تقارير تسعيرة الكهرباء ";
+            treeNode9.Name = "ShowAllPermissions";
+            treeNode9.Text = "عرض جميع الصلاحيات الحالية";
+            treeNode10.Name = "Node4";
+            treeNode10.Text = "التقاريــر";
+            treeNode11.ImageKey = "cloud-upload.png";
+            treeNode11.Name = "CreateBackup";
+            treeNode11.SelectedImageKey = "cloud-upload.png";
+            treeNode11.Text = "إنشاء نسخة احتياطية";
+            treeNode12.ImageKey = "restore.png";
+            treeNode12.Name = "RestoreBackup";
+            treeNode12.SelectedImageKey = "restore.png";
+            treeNode12.Text = "إستعادة نسخة احتياطية";
+            treeNode13.ImageKey = "backup.png";
+            treeNode13.Name = "Node2";
+            treeNode13.SelectedImageKey = "backup.png";
+            treeNode13.Text = "نسخة احتياطية";
+            treeNode14.ForeColor = System.Drawing.Color.Black;
+            treeNode14.ImageKey = "content-management-system.png";
+            treeNode14.Name = "Node0";
+            treeNode14.SelectedImageKey = "content-management-system.png";
+            treeNode14.Text = "ادارة النظام ";
+            treeNode15.ImageKey = "ancestors.png";
+            treeNode15.Name = "CustomerData";
+            treeNode15.SelectedImageKey = "ancestors.png";
+            treeNode15.Text = "بيانات العملاء ";
+            treeNode16.Name = "AccountStatementForCustomer";
+            treeNode16.Text = "كشف حساب";
+            treeNode17.Name = "CustomerTotalDues";
+            treeNode17.Text = "تقارير المتأخرات للعملاء ";
+            treeNode18.Name = "Node12";
+            treeNode18.Text = "تقارير العملاء المسددين ";
+            treeNode19.Name = "Node13";
+            treeNode19.Text = "تقارير العملاء الغير مسددين ";
+            treeNode20.Name = "Node14";
+            treeNode20.Text = "تقارير العملاء الموقفين ";
+            treeNode21.Name = "Node10";
+            treeNode21.Text = "التقاريــر";
+            treeNode22.ForeColor = System.Drawing.Color.Black;
+            treeNode22.ImageKey = "ancestors.png";
+            treeNode22.Name = "Node8";
+            treeNode22.SelectedImageKey = "ancestors.png";
+            treeNode22.Text = "ادارة العملاء ";
+            treeNode23.ImageKey = "ancestors.png";
+            treeNode23.Name = "EmployeeData";
+            treeNode23.SelectedImageKey = "ancestors.png";
+            treeNode23.Text = "بيانات الموظفين ";
+            treeNode24.Name = "Node20";
+            treeNode24.Text = "تقارير الموظفين";
+            treeNode25.Name = "Node22";
+            treeNode25.Text = "تقارير بيانات  الموظفين ";
+            treeNode26.Name = "Node21";
+            treeNode26.Text = "تقارير الموظفين الموقفين ";
+            treeNode27.Name = "Node19";
+            treeNode27.Text = "التقاريـــر ";
+            treeNode28.ForeColor = System.Drawing.Color.Black;
+            treeNode28.ImageKey = "ancestors.png";
+            treeNode28.Name = "Node16";
+            treeNode28.SelectedImageKey = "ancestors.png";
+            treeNode28.Text = "ادارة الموظفين ";
+            treeNode29.ImageKey = "ancestors.png";
+            treeNode29.Name = "SupplierData";
+            treeNode29.SelectedImageKey = "ancestors.png";
+            treeNode29.Text = "بيانات الموردين  ";
+            treeNode30.ImageKey = "cashless-payment.png";
+            treeNode30.Name = "PaymentVoucher";
+            treeNode30.SelectedImageKey = "cashless-payment.png";
+            treeNode30.Text = "سندات الصرف ";
+            treeNode31.ImageKey = "payment-method.png";
+            treeNode31.Name = "CustomerMovement";
+            treeNode31.SelectedImageKey = "payment-method.png";
+            treeNode31.Text = "سندات القبض ";
+            treeNode32.ImageKey = "salary.png";
+            treeNode32.Name = "SalaryPayment";
+            treeNode32.SelectedImageKey = "salary.png";
+            treeNode32.Text = "صرف الراتب";
+            treeNode33.ImageKey = "electric-meter.png";
+            treeNode33.Name = "Readings";
+            treeNode33.SelectedImageKey = "electric-meter.png";
+            treeNode33.Text = "اضافة القراءات ";
+            treeNode34.Name = "SendMassagesInWhatsapp";
+            treeNode34.Text = "ارسال رسائل عبر الـ WhatsApp";
+            treeNode35.ImageKey = "sms.png";
+            treeNode35.Name = "SendSMSMassages";
+            treeNode35.SelectedImageKey = "sms.png";
+            treeNode35.Text = "ارسال رسائل SMS";
+            treeNode36.ForeColor = System.Drawing.Color.Black;
+            treeNode36.ImageKey = "control-system.png";
+            treeNode36.Name = "Node23";
+            treeNode36.SelectedImageKey = "control-system.png";
+            treeNode36.Text = "ادارة حركة النظام ";
             this.tv_Screens.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode50,
-            treeNode58,
-            treeNode64,
-            treeNode72});
+            treeNode14,
+            treeNode22,
+            treeNode28,
+            treeNode36});
             this.tv_Screens.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tv_Screens.RightToLeftLayout = true;
             this.tv_Screens.SelectedImageIndex = 0;
@@ -304,6 +304,7 @@ namespace PowerStationDisktop
             this.btn_ChangeUser.TabIndex = 9;
             this.btn_ChangeUser.Text = "تبديل المستخدم";
             this.btn_ChangeUser.UseVisualStyleBackColor = true;
+            this.btn_ChangeUser.Click += new System.EventHandler(this.btn_ChangeUser_Click);
             // 
             // groupBox1
             // 
@@ -380,17 +381,16 @@ namespace PowerStationDisktop
             this.label3.TabIndex = 16;
             this.label3.Text = "المستخدم :";
             // 
-            // name_user
+            // lbl_EmployeeName
             // 
-            this.name_user.AutoSize = true;
-            this.name_user.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_user.ForeColor = System.Drawing.Color.Black;
-            this.name_user.Location = new System.Drawing.Point(481, 940);
-            this.name_user.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.name_user.Name = "name_user";
-            this.name_user.Size = new System.Drawing.Size(114, 38);
-            this.name_user.TabIndex = 15;
-            this.name_user.Text = "عدي محمد ";
+            this.lbl_EmployeeName.AutoSize = true;
+            this.lbl_EmployeeName.Font = new System.Drawing.Font("Droid Arabic Kufi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_EmployeeName.ForeColor = System.Drawing.Color.Black;
+            this.lbl_EmployeeName.Location = new System.Drawing.Point(481, 945);
+            this.lbl_EmployeeName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_EmployeeName.Name = "lbl_EmployeeName";
+            this.lbl_EmployeeName.Size = new System.Drawing.Size(0, 32);
+            this.lbl_EmployeeName.TabIndex = 15;
             // 
             // label2
             // 
@@ -474,7 +474,7 @@ namespace PowerStationDisktop
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CurrentTime);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.name_user);
+            this.Controls.Add(this.lbl_EmployeeName);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -503,7 +503,7 @@ namespace PowerStationDisktop
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label name_user;
+        private System.Windows.Forms.Label lbl_EmployeeName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label CurrentTime;
         private System.Windows.Forms.Timer timer1;

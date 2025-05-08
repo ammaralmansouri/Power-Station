@@ -156,7 +156,7 @@ namespace PowerStationDisktop.PresentationLayer.PaymentVoucher
                     txt_PaymentVoucherEmployeeNameWhoTake.Text = DataTable1.Rows[0][1].ToString();
 
 
-                    txt_EmployeeIDWhoGive.Text = "1";
+                    txt_EmployeeIDWhoGive.Text = Program.EmployeeID;
 
                     txt_PaymentVoucherAmount.Text = (Convert.ToDouble(DataTable1.Rows[0][3].ToString()) - Convert.ToDouble(DataTable1.Rows[0][5].ToString())).ToString();
 
