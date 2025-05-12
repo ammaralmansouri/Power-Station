@@ -146,8 +146,16 @@ namespace PowerStationDisktop
                     electronicMeters.Show();
                     break;
                 case "AreasData":
-                    PresentationLayer.Areas.frm_Areas area = new PresentationLayer.Areas.frm_Areas();
-                    area.Show();
+                    if (Program.EmployeePermission == "1")
+                    {
+                        PresentationLayer.Areas.frm_Areas area = new PresentationLayer.Areas.frm_Areas();
+                        area.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("لا توجد لديك الصلاحيات لدخول هذه الشاشة..!!" , "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    
                     break;
                 case "SupplierData":
                     PresentationLayer.Suppliers.frm_Suppliers supplier = new PresentationLayer.Suppliers.frm_Suppliers();
@@ -190,7 +198,7 @@ namespace PowerStationDisktop
                     }
                     else
                     {
-                        MessageBox.Show("لا توجد لديك الصلاحيات لدخول هذه الشاشة..!!");
+                        MessageBox.Show("لا توجد لديك الصلاحيات لدخول هذه الشاشة..!!" , "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     
                     break;

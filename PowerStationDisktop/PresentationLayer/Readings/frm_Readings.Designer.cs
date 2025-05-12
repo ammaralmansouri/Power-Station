@@ -30,9 +30,9 @@ namespace PowerStationDisktop.PresentationLayer.Readings
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Readings));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_DeleteReadingImage = new System.Windows.Forms.Button();
             this.btn_AddReadingImage = new System.Windows.Forms.Button();
@@ -57,8 +57,6 @@ namespace PowerStationDisktop.PresentationLayer.Readings
             this.label5 = new System.Windows.Forms.Label();
             this.txt_ElectricityMeterID = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btn_Delete = new System.Windows.Forms.Button();
-            this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.btn_New = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -133,6 +131,7 @@ namespace PowerStationDisktop.PresentationLayer.Readings
             this.pb_ReadingPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_ReadingPhoto.TabIndex = 66;
             this.pb_ReadingPhoto.TabStop = false;
+            this.pb_ReadingPhoto.Click += new System.EventHandler(this.pb_ReadingPhoto_Click);
             // 
             // txt_PriceID
             // 
@@ -340,11 +339,10 @@ namespace PowerStationDisktop.PresentationLayer.Readings
             this.txt_ElectricityMeterID.TabIndex = 1;
             this.txt_ElectricityMeterID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_ElectricityMeterID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_ElectricityMeterID_KeyDown);
+            this.txt_ElectricityMeterID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ElectricityMeterID_KeyPress);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.btn_Delete);
-            this.groupBox4.Controls.Add(this.btn_Edit);
             this.groupBox4.Controls.Add(this.btn_Save);
             this.groupBox4.Controls.Add(this.btn_New);
             this.groupBox4.Location = new System.Drawing.Point(11, 667);
@@ -353,32 +351,6 @@ namespace PowerStationDisktop.PresentationLayer.Readings
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             // 
-            // btn_Delete
-            // 
-            this.btn_Delete.Enabled = false;
-            this.btn_Delete.FlatAppearance.BorderSize = 0;
-            this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Delete.Image = ((System.Drawing.Image)(resources.GetObject("btn_Delete.Image")));
-            this.btn_Delete.Location = new System.Drawing.Point(152, 20);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(91, 80);
-            this.btn_Delete.TabIndex = 9;
-            this.btn_Delete.UseVisualStyleBackColor = true;
-            // 
-            // btn_Edit
-            // 
-            this.btn_Edit.Enabled = false;
-            this.btn_Edit.FlatAppearance.BorderSize = 0;
-            this.btn_Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Edit.Image = ((System.Drawing.Image)(resources.GetObject("btn_Edit.Image")));
-            this.btn_Edit.Location = new System.Drawing.Point(321, 21);
-            this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(91, 80);
-            this.btn_Edit.TabIndex = 8;
-            this.btn_Edit.UseVisualStyleBackColor = true;
-            // 
             // btn_Save
             // 
             this.btn_Save.Enabled = false;
@@ -386,7 +358,7 @@ namespace PowerStationDisktop.PresentationLayer.Readings
             this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save.Image = ((System.Drawing.Image)(resources.GetObject("btn_Save.Image")));
-            this.btn_Save.Location = new System.Drawing.Point(483, 12);
+            this.btn_Save.Location = new System.Drawing.Point(369, 12);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(91, 89);
             this.btn_Save.TabIndex = 7;
@@ -399,7 +371,7 @@ namespace PowerStationDisktop.PresentationLayer.Readings
             this.btn_New.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_New.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_New.Image = ((System.Drawing.Image)(resources.GetObject("btn_New.Image")));
-            this.btn_New.Location = new System.Drawing.Point(674, 20);
+            this.btn_New.Location = new System.Drawing.Point(560, 20);
             this.btn_New.Name = "btn_New";
             this.btn_New.Size = new System.Drawing.Size(91, 81);
             this.btn_New.TabIndex = 10;
@@ -420,28 +392,28 @@ namespace PowerStationDisktop.PresentationLayer.Readings
             // dgv_Readings
             // 
             this.dgv_Readings.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.5F);
-            this.dgv_Readings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Droid Arabic Kufi", 8.5F);
+            this.dgv_Readings.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_Readings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Readings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Readings.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_Readings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Readings.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Droid Arabic Kufi", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Readings.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_Readings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_Readings.Location = new System.Drawing.Point(3, 36);
             this.dgv_Readings.Name = "dgv_Readings";
@@ -500,8 +472,6 @@ namespace PowerStationDisktop.PresentationLayer.Readings
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_AreaName;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button btn_Delete;
-        private System.Windows.Forms.Button btn_Edit;
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Button btn_New;
         private System.Windows.Forms.TextBox txt_AreaID;

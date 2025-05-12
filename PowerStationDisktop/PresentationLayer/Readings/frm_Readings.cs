@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using PowerStationDisktop.BusinessLayer.Settings;
 
 namespace PowerStationDisktop.PresentationLayer.Readings
@@ -21,6 +22,11 @@ namespace PowerStationDisktop.PresentationLayer.Readings
         {
             InitializeComponent();
             AutocompeleteSearchText();
+
+            dgv_Readings.DefaultCellStyle.Font = ClsAppFontSize.GetDefaultCellStyleFont(dgv_Readings.DefaultCellStyle.Font);
+            dgv_Readings.AlternatingRowsDefaultCellStyle.Font = ClsAppFontSize.GetAlternatingRowsDefaultCellStyleFont(dgv_Readings.AlternatingRowsDefaultCellStyle.Font);
+            dgv_Readings.ColumnHeadersDefaultCellStyle.Font = ClsAppFontSize.GetColumnHeaderDefaultCellStyleFont(dgv_Readings.ColumnHeadersDefaultCellStyle.Font);
+
 
             dtp_DateOfCurrentReading.MaxDate = DateTime.Now.Date;
 
@@ -110,8 +116,8 @@ namespace PowerStationDisktop.PresentationLayer.Readings
                     EnableAndDisEnableTextBoxesAndButtons(true);
                     btn_New.Enabled = true;
                     btn_Save.Enabled = true;
-                    btn_Edit.Enabled = false;
-                    btn_Delete.Enabled = false;
+                    //btn_Edit.Enabled = false;
+                    //btn_Delete.Enabled = false;
 
 
                     DataTable1.Clear();
@@ -212,8 +218,8 @@ namespace PowerStationDisktop.PresentationLayer.Readings
         {
             EnableAndDisEnableTextBoxesAndButtons(true);
             btn_Save.Enabled = false;
-            btn_Edit.Enabled = true;
-            btn_Delete.Enabled = true;
+            //btn_Edit.Enabled = true;
+            //btn_Delete.Enabled = true;
 
 
 
@@ -225,6 +231,22 @@ namespace PowerStationDisktop.PresentationLayer.Readings
             txt_PriceID.Text = dgv_Readings.CurrentRow.Cells[6].Value.ToString();
             txt_EmployeeID.Text = dgv_Readings.CurrentRow.Cells[7].Value.ToString();
             txt_AreaID.Text = dgv_Readings.CurrentRow.Cells[8].Value.ToString();
+
+            var cellValue = dgv_Readings.CurrentRow?.Cells[5]?.Value;
+
+            if (cellValue != null && cellValue is byte[] BImage)
+            {
+                using (MemoryStream ms = new MemoryStream(BImage))
+                {
+                    pb_ReadingPhoto.Image = Image.FromStream(ms);
+                }
+            }
+            else
+            {
+                pb_ReadingPhoto.Image = Image.FromFile(@"E:\التخرج\Application\Images\no-camera.png");
+            }
+
+
 
 
 
@@ -305,49 +327,63 @@ namespace PowerStationDisktop.PresentationLayer.Readings
         {
             try
             {
-                if (CheckIfTextBoxesIsNull())
+                byte[] BImage;
+                if (pb_ReadingPhoto.Image == null)
+                    MessageBox.Show("يجب عليك ادخال صورة", "تنبية", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
                 {
-                    if(dtp_DateOfCurrentReading.Value.Date == DateTime.Now.Date)
+                    if (CheckIfTextBoxesIsNull())
                     {
-                        if (!CheckIfThisReadingHasBeenAddedBeforeOrNot(dtp_DateOfCurrentReading.Value.Date))
+                        if (dtp_DateOfCurrentReading.Value.Date == DateTime.Now.Date)
                         {
-                            if (ComparePreviousReadingAndCurrentReading(txt_PreviousReading.Text, txt_CurrentReading.Text))
+                            if (!CheckIfThisReadingHasBeenAddedBeforeOrNot(dtp_DateOfCurrentReading.Value.Date))
                             {
+                                if (ComparePreviousReadingAndCurrentReading(txt_PreviousReading.Text, txt_CurrentReading.Text))
+                                {
 
-                                double TotalBlanceForThisReading = (Convert.ToDouble(txt_CurrentReading.Text) - Convert.ToDouble(txt_PreviousReading.Text)) * Convert.ToDouble(txt_Price.Text);
-                                customer.UpdateCustomerTotalDues(Convert.ToDouble(txt_ElectricityMeterID.Text), TotalBlanceForThisReading);
+                                    MemoryStream ms = new MemoryStream(); // Lcate space in memory to store image in it befor send it to database..
+                                    pb_ReadingPhoto.Image.Save(ms, pb_ReadingPhoto.Image.RawFormat); // save in lacted space..
+                                    BImage = ms.ToArray(); // image now stored as bytes
 
-                                reading.AddNewReading(Convert.ToDouble(txt_PreviousReading.Text), Convert.ToDouble(txt_CurrentReading.Text), dtp_DateOfCurrentReading.Value, Convert.ToDouble(txt_TotalDuesInThisReading.Text), Convert.ToDouble(txt_ElectricityMeterID.Text), Convert.ToInt32(txt_PriceID.Text), Convert.ToInt32(txt_EmployeeID.Text), Convert.ToInt32(txt_AreaID.Text));
-                                MessageBox.Show("تم اضافة القراءة بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    double TotalBlanceForThisReading = (Convert.ToDouble(txt_CurrentReading.Text) - Convert.ToDouble(txt_PreviousReading.Text)) * Convert.ToDouble(txt_Price.Text);
+                                    customer.UpdateCustomerTotalDues(Convert.ToDouble(txt_ElectricityMeterID.Text), TotalBlanceForThisReading);
 
-
-                                EmptyTextBoxes();
-
-                                EnableAndDisEnableTextBoxesAndButtons(false);
-
-                                ClearDataGridView();
+                                    reading.AddNewReading(Convert.ToDouble(txt_PreviousReading.Text), Convert.ToDouble(txt_CurrentReading.Text), dtp_DateOfCurrentReading.Value, Convert.ToDouble(txt_TotalDuesInThisReading.Text),BImage ,Convert.ToDouble(txt_ElectricityMeterID.Text), Convert.ToInt32(txt_PriceID.Text), Convert.ToInt32(txt_EmployeeID.Text), Convert.ToInt32(txt_AreaID.Text));
+                                    MessageBox.Show("تم اضافة القراءة بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                                btn_Edit.Enabled = false;
-                                btn_Delete.Enabled = false;
+                                    EmptyTextBoxes();
+
+                                    EnableAndDisEnableTextBoxesAndButtons(false);
+
+                                    ClearDataGridView();
+                                    pb_ReadingPhoto.Image = null;
+
+
+
+                                    //btn_Edit.Enabled = false;
+                                    //btn_Delete.Enabled = false;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("لا يمكن أن تكون القراءة الجديدة أصغر أو تساوي القراءة السابقة..!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("لا يمكن أن تكون القراءة الجديدة أصغر أو تساوي القراءة السابقة..!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                                MessageBox.Show("هناك قراءة سابقة بنفس التاريخ المختار", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("هناك قراءة سابقة بنفس التاريخ المختار", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show(" لا يمكن أن يكون التاريخ المدخل أكبر أو أصغر من التاريخ الحالي", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show(" لا يمكن أن يكون التاريخ المدخل أكبر أو أصغر من التاريخ الحالي", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    }
                 }
+
+                    
 
             }
             catch (Exception ex)
@@ -382,6 +418,34 @@ namespace PowerStationDisktop.PresentationLayer.Readings
         {
             pb_ReadingPhoto.Image = null;
 
+        }
+
+        private void txt_ElectricityMeterID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)  // e.KeyChar == 8    => this for backspace button.. ,  e.KeyChar == 46    => this for dot ( . ) ..
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void pb_ReadingPhoto_Click(object sender, EventArgs e)
+        {
+            if (pb_ReadingPhoto.Image != null)
+            {
+                Form fullSizeForm = new Form();
+                fullSizeForm.StartPosition = FormStartPosition.CenterScreen;
+                fullSizeForm.Size = new Size(800, 600); // حجم النافذة الجديدة
+                fullSizeForm.Text = "صورة القراءة";
+
+                PictureBox pbFullSize = new PictureBox();
+                pbFullSize.Dock = DockStyle.Fill;
+                pbFullSize.Image = pb_ReadingPhoto.Image;
+                pbFullSize.SizeMode = PictureBoxSizeMode.Zoom; // يجعل الصورة تتناسب مع النافذة
+                pbFullSize.BackColor = Color.Black;
+
+                fullSizeForm.Controls.Add(pbFullSize);
+                fullSizeForm.ShowDialog(); // عرض النافذة كمودال
+            }
         }
     }
 }

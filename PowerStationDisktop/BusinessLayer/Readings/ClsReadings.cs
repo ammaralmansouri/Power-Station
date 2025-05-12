@@ -109,12 +109,12 @@ namespace PowerStationDisktop.BusinessLayer.Readings
             return DataTable1;
         }
 
-        public void AddNewReading(double PreviousReading ,double CurrentReading ,DateTime DateOfCurrentReading ,double TotalDuesInThisReading ,double ElectronicMeterID ,int PriceID ,int EmployeeID ,int AreaID )
+        public void AddNewReading(double PreviousReading ,double CurrentReading ,DateTime DateOfCurrentReading ,double TotalDuesInThisReading,byte[] ReadingImage, double ElectronicMeterID ,int PriceID ,int EmployeeID ,int AreaID )
         {
             DataAccessLayer.ClsConnection con = new DataAccessLayer.ClsConnection();
             con.OpenConnection();
 
-            SqlParameter[] para = new SqlParameter[8];
+            SqlParameter[] para = new SqlParameter[9];
 
             para[0] = new SqlParameter("@PreviousReading", SqlDbType.Float);
             para[0].Value = PreviousReading;
@@ -128,17 +128,20 @@ namespace PowerStationDisktop.BusinessLayer.Readings
             para[3] = new SqlParameter("@TotalDuesInThisReading", SqlDbType.Money);
             para[3].Value = TotalDuesInThisReading;
 
-            para[4] = new SqlParameter("@ElectronicMeterID", SqlDbType.Float);
-            para[4].Value = ElectronicMeterID;
+            para[4] = new SqlParameter("@ReadingImage", SqlDbType.Image);
+            para[4].Value = ReadingImage;
 
-            para[5] = new SqlParameter("@PriceID", SqlDbType.Int);
-            para[5].Value = PriceID;
+            para[5] = new SqlParameter("@ElectronicMeterID", SqlDbType.Float);
+            para[5].Value = ElectronicMeterID;
 
-            para[6] = new SqlParameter("@EmployeeID", SqlDbType.Int);
-            para[6].Value = EmployeeID;
+            para[6] = new SqlParameter("@PriceID", SqlDbType.Int);
+            para[6].Value = PriceID;
 
-            para[7] = new SqlParameter("@AreaID", SqlDbType.Int);
-            para[7].Value = AreaID;
+            para[7] = new SqlParameter("@EmployeeID", SqlDbType.Int);
+            para[7].Value = EmployeeID;
+
+            para[8] = new SqlParameter("@AreaID", SqlDbType.Int);
+            para[8].Value = AreaID;
 
             con.ExecuteCommands("Add_New_Reading", para);
             con.CloseConnection();

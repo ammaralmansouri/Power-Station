@@ -42,6 +42,9 @@ namespace PowerStationDisktop.PresentationLayer
             // To set the max length from my settings ..
             txt_CustomerTotalDues.MaxLength = ClsFieldsRange.TotalDuesMaxLength;
 
+            // To set the max length from my settings ..
+            txt_CustomerPassword.MaxLength = ClsFieldsRange.PasswordMaxLength;
+
 
             // set an image for showing password button ..
             btn_ShowPassword.ImageIndex = 1; // صورة eye-slash
@@ -150,7 +153,7 @@ namespace PowerStationDisktop.PresentationLayer
             btn_Edit.Enabled = false;
             btn_Delete.Enabled = false;
 
-            txt_CustomerPassword.Text = "123456"; // give defult value to the password ..
+            txt_CustomerPassword.Text = "12345678"; // give defult value to the password ..
             
             txt_CustomerTotalDues.Text = "0";
 
@@ -241,42 +244,51 @@ namespace PowerStationDisktop.PresentationLayer
                 {
                     if (CheckIfPhoneNumberTrueOrNot())
                     {
-                        DataTable DataTable1 = customer.GetElectronicMeterswhichHaveNotBeenChoosen();
-
-                        if (DataTable1.Rows.Count > 0)
+                        if (txt_CustomerPassword.TextLength >= 8)
                         {
-                            DialogResult result = MessageBox.Show("هل أنت متأكد من البيانات المُدخلة..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            DataTable DataTable1 = customer.GetElectronicMeterswhichHaveNotBeenChoosen();
 
-                            if (result == DialogResult.Yes)
+                            if (DataTable1.Rows.Count > 0)
                             {
-                                DataTable DataTable2 = powerStation.GetAllPowerStation();
-                                int PoweStationID = Convert.ToInt32(DataTable2.Rows[0][0].ToString());
+                                DialogResult result = MessageBox.Show("هل أنت متأكد من البيانات المُدخلة..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                                customer.AddNewCustomer(txt_CustomerName.Text, txt_CustomerPhone.Text, txt_CustomerPassword.Text, Convert.ToDouble(txt_CustomerTotalDues.Text), Convert.ToDouble(cmb_ElectronicMeters.SelectedValue), Convert.ToInt32(cmb_AreaID.SelectedValue), PoweStationID);
-                                normalize.ChangeLettersToStandardLettersToMakeItEasyWhenSearchForCustomer();
-                                MessageBox.Show("تم اضافة العميل بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                if (result == DialogResult.Yes)
+                                {
+                                    DataTable DataTable2 = powerStation.GetAllPowerStation();
+                                    int PoweStationID = Convert.ToInt32(DataTable2.Rows[0][0].ToString());
 
-
-                                EmptyTextBoxes();
-
-                                EnableAndDisEnableTextBoxesAndButtons(false);
-
-                                GetElectronicMeterswhichHaveNotBeenChoosen();
-
-                                GetAllCustomers();
-
-                                txt_CustomerPhone.Text = string.Empty;
+                                    customer.AddNewCustomer(txt_CustomerName.Text, txt_CustomerPhone.Text, txt_CustomerPassword.Text, Convert.ToDouble(txt_CustomerTotalDues.Text), Convert.ToDouble(cmb_ElectronicMeters.SelectedValue), Convert.ToInt32(cmb_AreaID.SelectedValue), PoweStationID);
+                                    normalize.ChangeLettersToStandardLettersToMakeItEasyWhenSearchForCustomer();
+                                    MessageBox.Show("تم اضافة العميل بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                                btn_Edit.Enabled = false;
-                                btn_Delete.Enabled = false;
+                                    EmptyTextBoxes();
+
+                                    EnableAndDisEnableTextBoxesAndButtons(false);
+
+                                    GetElectronicMeterswhichHaveNotBeenChoosen();
+
+                                    GetAllCustomers();
+
+                                    txt_CustomerPhone.Text = string.Empty;
+
+
+                                    btn_Edit.Enabled = false;
+                                    btn_Delete.Enabled = false;
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("يبدو أنه لا توجد عدادات متاحة .. تأكد من اختيار العداد", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("يبدو أنه لا توجد عدادات متاحة .. تأكد من اختيار العداد", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("يجب أن تكون كلمة المرور أكبر من 8 حروف", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                         }
-                       
+
+
                     }
                 }    
             }
@@ -413,36 +425,45 @@ namespace PowerStationDisktop.PresentationLayer
                 {
                     if (CheckIfPhoneNumberTrueOrNot())
                     {
-
-                        DialogResult result = MessageBox.Show("هل أنت متأكد من التعديلات..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                        if (result == DialogResult.Yes)
+                        if (txt_CustomerPassword.TextLength >= 8)
                         {
-                            DataTable DataTable1 = powerStation.GetAllPowerStation();
-                            int PoweStationID = Convert.ToInt32(DataTable1.Rows[0][0].ToString());
+                            DialogResult result = MessageBox.Show("هل أنت متأكد من التعديلات..؟", "تنبيه", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                            //MessageBox.Show("fgfd "+cmb_ElectronicMeters.Text);
+                            if (result == DialogResult.Yes)
+                            {
+                                DataTable DataTable1 = powerStation.GetAllPowerStation();
+                                int PoweStationID = Convert.ToInt32(DataTable1.Rows[0][0].ToString());
 
-                            customer.UpdateCustomer(Convert.ToInt32(txt_CustomerID.Text), txt_CustomerName.Text, txt_CustomerPhone.Text, txt_CustomerPassword.Text, Convert.ToDouble(txt_CustomerTotalDues.Text), Convert.ToDouble(cmb_ElectronicMeters.Text), Convert.ToInt32(cmb_AreaID.SelectedValue), PoweStationID);
-                            MessageBox.Show("تم تعديل العميل بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //MessageBox.Show("fgfd "+cmb_ElectronicMeters.Text);
 
-
-                            EmptyTextBoxes();
-
-                            cmb_ElectronicMeters.Text = string.Empty;
-
-                            EnableAndDisEnableTextBoxesAndButtons(false);
-
-                            GetElectronicMeterswhichHaveNotBeenChoosen();
-
-                            GetAllCustomers();
-
-                            txt_CustomerPhone.Text = string.Empty;
+                                customer.UpdateCustomer(Convert.ToInt32(txt_CustomerID.Text), txt_CustomerName.Text, txt_CustomerPhone.Text, txt_CustomerPassword.Text, Convert.ToDouble(txt_CustomerTotalDues.Text), Convert.ToDouble(cmb_ElectronicMeters.Text), Convert.ToInt32(cmb_AreaID.SelectedValue), PoweStationID);
+                                MessageBox.Show("تم تعديل العميل بنجاح", "تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                            btn_Edit.Enabled = false;
-                            btn_Delete.Enabled = false;
+                                EmptyTextBoxes();
+
+                                cmb_ElectronicMeters.Text = string.Empty;
+
+                                EnableAndDisEnableTextBoxesAndButtons(false);
+
+                                GetElectronicMeterswhichHaveNotBeenChoosen();
+
+                                GetAllCustomers();
+
+                                txt_CustomerPhone.Text = string.Empty;
+
+
+                                btn_Edit.Enabled = false;
+                                btn_Delete.Enabled = false;
+                            }
                         }
+                        else
+                        {
+                            MessageBox.Show("يجب أن تكون كلمة المرور أكبر من 8 حروف", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        }
+
+                        
 
                     }
                 }

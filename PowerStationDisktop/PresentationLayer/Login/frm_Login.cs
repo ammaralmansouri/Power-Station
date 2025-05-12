@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using PowerStationDisktop.BusinessLayer.Settings;
+
 
 
 namespace PowerStationDisktop.PresentationLayer.Login
@@ -22,6 +24,9 @@ namespace PowerStationDisktop.PresentationLayer.Login
         public frm_Login()
         {
             InitializeComponent();
+
+            // To set the max length from my settings ..
+            txt_EmployeePassword.MaxLength = ClsFieldsRange.PasswordMaxLength;
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -64,40 +69,49 @@ namespace PowerStationDisktop.PresentationLayer.Login
 
         void LogIn()
         {
-            DataTable DataTable1 = new DataTable();
-
-            DataTable1 = employees.GetEmployeeInformationForLogIn(txt_EmployeePhoneNumber.Text, txt_EmployeePassword.Text); //we reach LoginTest function and send the parameters..
-
-            if (DataTable1.Rows.Count > 0)
+            if(txt_EmployeePassword.TextLength >= 8)
             {
-                DataTable DataTable2 = new DataTable();
+                DataTable DataTable1 = new DataTable();
 
+                DataTable1 = employees.GetEmployeeInformationForLogIn(txt_EmployeePhoneNumber.Text, txt_EmployeePassword.Text); //we reach LoginTest function and send the parameters..
 
-                DataTable2 = employees.CheckIfEmployeeisActive(txt_EmployeePhoneNumber.Text, txt_EmployeePassword.Text); //we reach LoginTest function and send the parameters..
-
-                if (DataTable2.Rows[0][0].ToString() == "1")
+                if (DataTable1.Rows.Count > 0)
                 {
-                    Program.EmployeeID = DataTable1.Rows[0][0].ToString();  // give the ID of the user to the varible which we had declare inside Program.cs ..
-                    Program.EmployeeName = DataTable1.Rows[0][1].ToString();// give the name of the user to the varible which we had declare inside Program.cs ..
-                    Program.EmployeeType = DataTable1.Rows[0][6].ToString(); // give the Type of the user to the varible which we had declare inside Program.cs ..
-                    Program.EmployeePermission = DataTable1.Rows[0][7].ToString(); // give Permissions name of the user to the varible which we had declare inside Program.cs ..
-                    Program.EmployeeState = DataTable1.Rows[0][8].ToString(); // give the State of the user to the varible which we had declare inside Program.cs ..
+                    DataTable DataTable2 = new DataTable();
 
 
-                    this.Hide();
-                    frm_Home home = new frm_Home();
-                    home.Show();
+                    DataTable2 = employees.CheckIfEmployeeisActive(txt_EmployeePhoneNumber.Text, txt_EmployeePassword.Text); //we reach LoginTest function and send the parameters..
+
+                    if (DataTable2.Rows[0][0].ToString() == "1")
+                    {
+                        Program.EmployeeID = DataTable1.Rows[0][0].ToString();  // give the ID of the user to the varible which we had declare inside Program.cs ..
+                        Program.EmployeeName = DataTable1.Rows[0][1].ToString();// give the name of the user to the varible which we had declare inside Program.cs ..
+                        Program.EmployeeType = DataTable1.Rows[0][6].ToString(); // give the Type of the user to the varible which we had declare inside Program.cs ..
+                        Program.EmployeePermission = DataTable1.Rows[0][7].ToString(); // give Permissions name of the user to the varible which we had declare inside Program.cs ..
+                        Program.EmployeeState = DataTable1.Rows[0][8].ToString(); // give the State of the user to the varible which we had declare inside Program.cs ..
+
+
+                        this.Hide();
+                        frm_Home home = new frm_Home();
+                        home.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("لقد تم ايقاف هذا الحساب ..!!", "تنبيه" , MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("لقد تم ايقاف هذا الحساب ..!!");
-
+                    MessageBox.Show("كلمة المرور أو اسم المستخدم غير صحيح", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("كلمة المرور أو اسم المستخدم غير صحيح");
+                MessageBox.Show("يجب أن تكون كلمة المرور أكبر من 8 حروف", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
 
         }
 
@@ -176,6 +190,15 @@ namespace PowerStationDisktop.PresentationLayer.Login
             if (txt_EmployeePhoneNumber.Text.Length >= 9 && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void txt_EmployeePhoneNumber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // يمنع صوت الـ Beep
+                txt_EmployeePassword.Focus(); // ينقل التركيز للحقل التالي
             }
         }
     }

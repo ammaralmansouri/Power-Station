@@ -13,6 +13,7 @@ namespace PowerStationDisktop.BusinessLayer.Settings
         public static int PriceMaxLength = 7;
         public static int ElectronicMeterIDMaxLength = 20;
         public static int CurrentReasingMaxLength = 10;
+        public static int PasswordMaxLength = 20;
 
     }
 }

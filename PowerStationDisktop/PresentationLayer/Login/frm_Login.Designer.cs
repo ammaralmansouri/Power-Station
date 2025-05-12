@@ -91,6 +91,7 @@ namespace PowerStationDisktop.PresentationLayer.Login
             this.txt_EmployeePhoneNumber.TabIndex = 1;
             this.txt_EmployeePhoneNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_EmployeePhoneNumber.TextChanged += new System.EventHandler(this.txt_EmployeePhoneNumber_TextChanged);
+            this.txt_EmployeePhoneNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_EmployeePhoneNumber_KeyDown);
             this.txt_EmployeePhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_EmployeePhoneNumber_KeyPress);
             // 
             // txt_EmployeePassword
@@ -124,7 +125,6 @@ namespace PowerStationDisktop.PresentationLayer.Login
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "تسجيل الدخول";
-
             this.Load += new System.EventHandler(this.frm_Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
