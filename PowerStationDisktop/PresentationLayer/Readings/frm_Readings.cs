@@ -99,8 +99,11 @@ namespace PowerStationDisktop.PresentationLayer.Readings
             dgv_Readings.Columns[6].Visible = false;
             dgv_Readings.Columns[7].Visible = false;
             dgv_Readings.Columns[8].Visible = false;
-            dgv_Readings.Columns[9].HeaderText = "المحصل";
-            dgv_Readings.Columns[10].HeaderText = "سعر الكيلو";
+            dgv_Readings.Columns[9].Visible = false;
+            dgv_Readings.Columns[10].HeaderText = "المحصل";
+            dgv_Readings.Columns[11].HeaderText = "سعر الكيلو";
+            
+
         }
 
         private void txt_ElectricityMeterID_KeyDown(object sender, KeyEventArgs e)
